@@ -1,0 +1,614 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean sans-serif */
+    font-size: 16px; /* Slightly larger base font */
+    line-height: 1.7;
+    color: #444; /* Slightly softer black */
+    background-color: #fff; /* White base */
+    background-image: url('https://www.myfreetextures.com/wp-content/uploads/2012/05/2011-06-11-09430.jpg'); /* New subtle wood texture */
+    background-attachment: fixed; /* Keep background fixed during scroll */
+    background-size: cover; /* Cover the whole page */
+}
+
+/* Add a semi-transparent overlay to ensure text readability over background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.85); /* White overlay with opacity */
+    z-index: -1; /* Place it behind the content */
+}
+
+header {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white header */
+    backdrop-filter: blur(5px); /* Subtle blur effect */
+    color: #333;
+    padding: 1.5rem 0; /* Further increase header padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+    box-shadow: none; /* Remove shadow for flatter look */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+#logo {
+    height: 75px; /* Significantly larger logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2.5rem; /* More spacing */
+}
+
+nav ul li a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: color 0.2s ease-in-out;
+    position: relative; /* Needed for pseudo-element */
+    padding-bottom: 4px; /* Space for underline */
+}
+
+/* Add pseudo-element for hover underline effect */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+nav ul li a:hover::after {
+    visibility: visible;
+    width: 100%;
+}
+
+main {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 0; /* Remove padding here, apply to sections */
+    background-color: #fff; /* Opaque white */
+    box-shadow: none; /* Remove shadow */
+    border: 1px solid #eee; /* Subtle border */
+    border-radius: 4px;
+    overflow: hidden; /* Contain sections */
+}
+
+section {
+    padding: 3.5rem 2rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Remove border from last section inside main */
+main > section:last-of-type {
+    border-bottom: none;
+}
+
+h1, h2 {
+    margin-bottom: 1.5rem;
+    color: #111;
+    font-weight: 500;
+    letter-spacing: 0.5px; /* Add slight letter spacing */
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+#hero {
+    text-align: center;
+    padding: 5rem 1rem; /* More padding */
+    background: none; /* Remove hero background color */
+    border-radius: 0;
+    margin: 0 -2rem; /* Adjust to align with main's padding */
+    max-width: initial;
+    position: relative;
+    left: 0;
+    transform: none;
+    width: auto;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#hero h1 {
+    font-size: 3.2rem; /* Adjusted size */
+    color: #111;
+    font-weight: 500;
+}
+
+#hero p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    color: #555;
+    max-width: 600px; /* Limit width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button,
+#quote-form button[type="submit"] {
+    display: inline-block;
+    padding: 0.9rem 2rem; /* Adjust padding */
+    background: #333; /* Dark gray button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Added transform transition */
+    border: none; /* Remove border */
+    cursor: pointer;
+}
+
+.cta-button:hover,
+#quote-form button[type="submit"]:hover {
+    background: #000; /* Black hover */
+    color: #fff;
+    transform: translateY(-2px); /* Add subtle lift on hover */
+}
+
+/* Gallery Styles Refinement */
+#gallery {
+    border-top: none; /* Remove double border */
+}
+
+#gallery h2 {
+    text-align: center;
+    font-size: 2rem; /* Adjusted size */
+}
+
+#gallery h2 + p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 3rem; /* More space */
+    color: #555;
+    line-height: 1.8;
+}
+
+#gallery .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Adjust min size */
+    gap: 2.5rem; /* More gap */
+    text-align: left;
+    color: #333;
+    margin-top: 2rem; /* Increased margin */
+}
+
+.gallery-item {
+    border: none; /* Remove border */
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06); /* Slightly adjusted shadow */
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out; /* Smoother transition */
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px); /* Slightly less lift */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Slightly softer hover shadow */
+    border-color: #ddd; /* Show border on hover */
+}
+
+.gallery-item a {
+    display: block;
+    line-height: 0;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 240px; /* Adjust height */
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    border-bottom: 1px solid #f0f0f0; /* Separator for text */
+}
+
+.gallery-item:hover img {
+    opacity: 1; /* No fade on hover */
+}
+
+.gallery-item p {
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: #fff;
+    margin: 0;
+    color: #444;
+    flex-grow: 1;
+    border-top: none; /* Remove top border */
+}
+
+/* Style for the container holding ref paragraph and button */
+.ref-container {
+    padding: 0.8rem 1.2rem; /* Match paragraph padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ref-container p {
+    padding: 0; /* Remove padding from original p */
+    margin: 0;
+    flex-grow: 1; /* Allow text to take available space */
+    text-align: left;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.add-to-quote-btn {
+    font-size: 0.8rem;
+    color: #007bff; /* Or your preferred link color */
+    text-decoration: none;
+    border: 1px solid #007bff;
+    padding: 0.3rem 0.6rem; /* Increased vertical padding */
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* Prevent button text wrapping */
+    line-height: 1.2; /* Ensure line height isn't collapsing text */
+    display: inline-block; /* Ensure padding applies correctly */
+}
+
+.add-to-quote-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Form Styles Refinement */
+#quote {
+    background-color: #fdfdfd; /* Very slightly off-white section background */
+    margin: 0 -2rem; /* Align with main padding */
+    padding: 3rem 2rem; /* Match section padding */
+}
+
+#quote h2 {
+    text-align: center;
+    font-size: 2rem; /* Adjusted size */
+}
+#quote p {
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+}
+
+#quote-form {
+    max-width: 700px; /* Limit form width */
+    margin: 0 auto;
+}
+
+#quote-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#quote-form input[type="text"],
+#quote-form input[type="email"],
+#quote-form input[type="tel"],
+#quote-form input[type="number"],
+#quote-form select,
+#quote-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem; /* More space below inputs */
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#quote-form input[type="text"]:focus,
+#quote-form input[type="email"]:focus,
+#quote-form input[type="tel"]:focus,
+#quote-form input[type="number"]:focus,
+#quote-form select:focus,
+#quote-form textarea:focus {
+    border-color: #aaa;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(100,100,100,0.1);
+}
+
+#quote-form textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+#quote-form button[type="submit"] {
+    display: block; /* Make button block */
+    width: 100%; /* Full width */
+    margin-top: 1rem;
+}
+
+/* About & Contact Section Refinements */
+#about h2, #contact h2 {
+    font-size: 2rem; /* Adjusted size */
+}
+
+#about p, #contact p {
+    line-height: 1.8;
+    color: #555;
+}
+
+#contact p strong {
+    color: #333;
+}
+
+/* Footer Styles Refinement */
+footer {
+    text-align: left;
+    padding: 4rem 0 0 0; /* More top padding, no bottom */
+    margin-top: 4rem;
+    background: #f8f8f8; /* Light gray footer background */
+    color: #666;
+    border-top: 1px solid #eee;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem 3rem 2rem; /* Padding below columns */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+}
+
+.footer-column h4 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.footer-column p,
+.footer-column ul {
+    font-size: 0.9rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.9;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-column a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #000;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: 0; /* Remove margin */
+    border-top: 1px solid #eee;
+    font-size: 0.85rem;
+    color: #888;
+    background-color: #fff; /* White bottom bar */
+}
+
+/* Lightbox Styles (keep as is, they fit the dark overlay theme) */
+#lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px; /* Add padding around image */
+}
+
+#lightbox-overlay.lightbox-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#lightbox-image {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+#lightbox-close:hover {
+    color: #ccc;
+}
+
+/* --- Responsive Refinements --- */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px; /* Adjust base font size slightly */
+    }
+
+    nav {
+        padding: 0 1rem; /* Less padding on mobile nav */
+    }
+
+    #logo {
+        height: 45px; /* Adjusted mobile logo size */
+    }
+
+    nav ul li {
+        margin: 0.6rem 0;
+        margin-left: 0;
+    }
+
+    main {
+        margin: 2.5rem auto;
+        padding: 0 1rem; /* Less padding */
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    section {
+        padding: 2.5rem 1rem; /* Adjust padding */
+    }
+
+    #hero {
+        padding: 4rem 1rem;
+        margin: 0 -1rem; /* Adjust negative margins */
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+       font-size: 1.8rem; /* Adjust mobile heading size */
+    }
+
+    #gallery .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+
+    #quote {
+         margin: 0 -1rem; /* Adjust negative margins */
+         padding: 2.5rem 1rem;
+    }
+
+    .footer-content {
+        padding: 0 1rem 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .footer-column {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Gallery Category Styling */
+.gallery-category {
+    margin-bottom: 3.5rem; /* Space below each category block */
+}
+
+.gallery-category:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-category h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2.5rem; /* Increased space */
+    padding-bottom: 0; /* Remove padding */
+    border-bottom: none; /* Remove underline */
+    display: block;
+}
+
+#gallery .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Adjust min size */
+    gap: 2.5rem; /* More gap */
+    text-align: left;
+    color: #333;
+    margin-top: 2rem; /* Increased margin */
+}
+
+.gallery-item {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Slightly softer shadow */
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, border-color 0.25s ease-in-out; /* Added border transition */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent; /* Start with transparent border */
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px); /* Slightly less lift */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Slightly softer hover shadow */
+    border-color: #ddd; /* Show border on hover */
+}
+
+.gallery-item a {
+    display: block;
+    line-height: 0;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 240px; /* Adjust height */
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    border-bottom: 1px solid #f0f0f0; /* Separator for text */
+}
+
+.gallery-item:hover img {
+    opacity: 1; /* No fade on hover */
+}
+
+.gallery-item p {
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: #fff;
+    margin: 0;
+    color: #444;
+    flex-grow: 1;
+    border-top: none; /* Remove top border */
+} 
