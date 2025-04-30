@@ -97,4 +97,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Animated Headline Logic ---
+    const dynamicHeadlineSpan = document.querySelector('.headline-dynamic');
+    if (dynamicHeadlineSpan) {
+        const headlines = [
+            "Custom Laser Cutting & Engraving", // Initial text from HTML
+            "Custom Wedding Decor",
+            "Corporate Branding Solutions", // Added Solutions
+            "Personalized Gifts & Awards",  // Added Awards
+            "Precision Industrial Signage" // Added Precision
+        ];
+        let currentIndex = 0;
+        dynamicHeadlineSpan.textContent = headlines[0]; 
+
+        const changeInterval = 4000; // Time in ms (e.g., 4 seconds)
+        const fadeTime = 500; // Must match CSS transition time
+
+        setInterval(() => {
+            dynamicHeadlineSpan.classList.add('fade-out');
+
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % headlines.length;
+                dynamicHeadlineSpan.textContent = headlines[currentIndex];
+                dynamicHeadlineSpan.classList.remove('fade-out');
+            }, fadeTime);
+
+        }, changeInterval);
+    }
+
 }); 

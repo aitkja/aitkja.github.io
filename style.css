@@ -6,49 +6,50 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean sans-serif */
-    font-size: 16px; /* Slightly larger base font */
+    /* Using a common system font stack for clean sans-serif */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
     line-height: 1.7;
-    color: #444; /* Slightly softer black */
-    background-color: #fff; /* White base */
-    background-image: url('https://www.myfreetextures.com/wp-content/uploads/2012/05/2011-06-11-09430.jpg'); /* New subtle wood texture */
-    background-attachment: fixed; /* Keep background fixed during scroll */
-    background-size: cover; /* Cover the whole page */
+    color: #2d2d2d; /* Slightly darker, less harsh than pure black */
+    background-color: #fcfcfc; /* Slightly off-white background */
+    background-image: url('videos/13551792_1920_1080_30fps.mp4'); /* Background video reference remains */
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-/* Add a semi-transparent overlay to ensure text readability over background */
 body::before {
     content: "";
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(255, 255, 255, 0.85); /* White overlay with opacity */
-    z-index: -1; /* Place it behind the content */
+    /* Adjust overlay to be lighter if needed over the new video */
+    background-color: rgba(255, 255, 255, 0.9); /* Lighter overlay */
+    z-index: -1;
 }
 
 header {
-    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white header */
-    backdrop-filter: blur(5px); /* Subtle blur effect */
+    background: rgba(255, 255, 255, 0.95); /* Less transparent header */
+    backdrop-filter: blur(8px); /* Slightly more blur */
     color: #333;
-    padding: 1.5rem 0; /* Further increase header padding */
+    padding: 1.5rem 0; /* Keep generous padding */
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #eee;
-    box-shadow: none; /* Remove shadow for flatter look */
+    border-bottom: 1px solid #f0f0f0; /* Lighter border */
+    box-shadow: none;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1280px; /* Wider max-width */
     margin: auto;
-    padding: 0 2rem;
+    padding: 0 2.5rem; /* More side padding */
 }
 
 #logo {
-    height: 75px; /* Significantly larger logo */
+    height: 60px; /* Adjusted logo size */
 }
 
 nav ul {
@@ -57,34 +58,33 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 2.5rem; /* More spacing */
+    margin-left: 3rem; /* Even more spacing */
 }
 
 nav ul li a {
-    color: #555;
+    color: #444; /* Adjusted link color */
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 500; /* Medium weight */
     font-size: 1rem;
     transition: color 0.2s ease-in-out;
-    position: relative; /* Needed for pseudo-element */
-    padding-bottom: 4px; /* Space for underline */
+    position: relative;
+    padding-bottom: 4px;
 }
 
-/* Add pseudo-element for hover underline effect */
 nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 1px;
+    height: 1.5px; /* Slightly thicker underline */
     bottom: 0;
     left: 0;
-    background-color: #000;
+    background-color: #111;
     visibility: hidden;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #000;
+    color: #111;
 }
 
 nav ul li a:hover::after {
@@ -93,131 +93,225 @@ nav ul li a:hover::after {
 }
 
 main {
-    max-width: 1100px;
-    margin: 5rem auto;
-    padding: 0; /* Remove padding here, apply to sections */
-    background-color: #fff; /* Opaque white */
-    box-shadow: none; /* Remove shadow */
-    border: 1px solid #eee; /* Subtle border */
-    border-radius: 4px;
-    overflow: hidden; /* Contain sections */
+    max-width: 1150px; /* Adjusted max-width */
+    margin: 6rem auto; /* More vertical margin */
+    padding: 0; /* Remove padding */
+    background-color: #fff; /* White content background */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft, modern shadow */
+    border: none; /* Remove border */
+    border-radius: 6px; /* Slightly larger radius */
+    overflow: hidden;
 }
 
 section {
-    padding: 3.5rem 2rem;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 4rem 3rem; /* Increased padding */
+    border-bottom: 1px solid #f5f5f5; /* Very light separator */
 }
 
-/* Remove border from last section inside main */
 main > section:last-of-type {
     border-bottom: none;
 }
 
-h1, h2 {
-    margin-bottom: 1.5rem;
-    color: #111;
-    font-weight: 500;
-    letter-spacing: 0.5px; /* Add slight letter spacing */
-}
-
-h2 {
-    font-size: 1.8rem;
-}
-
+/* Hero Section - Adjusting for potential contrast issues with new video */
 #hero {
-    text-align: center;
-    padding: 5rem 1rem; /* More padding */
-    background: none; /* Remove hero background color */
-    border-radius: 0;
-    margin: 0 -2rem; /* Adjust to align with main's padding */
-    max-width: initial;
     position: relative;
+    overflow: hidden;
+    text-align: center;
+    /* Padding handled by .hero-content now */
+    padding: 0;
+    margin: 0; /* Remove negative margins */
+    max-width: initial;
     left: 0;
     transform: none;
     width: auto;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f5f5f5;
+    color: #fff;
+}
+
+.hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.6; /* Adjust opacity as needed */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Slightly darker overlay for better contrast if needed */
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 6rem 2rem; /* Generous padding */
+}
+
+h1, h2 {
+    margin-bottom: 1.5rem;
+    color: #1a1a1a; /* Darker heading color */
+    font-weight: 600; /* Bolder headings */
+    letter-spacing: 0.5px;
 }
 
 #hero h1 {
-    font-size: 3.2rem; /* Adjusted size */
-    color: #111;
-    font-weight: 500;
+    font-size: 3.5rem; /* Larger hero title */
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Subtle text shadow for readability */
+}
+
+h2 {
+    font-size: 2.2rem;
 }
 
 #hero p {
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
-    color: #555;
-    max-width: 600px; /* Limit width */
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem; /* More space before button */
+    color: #f0f0f0;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+/* Animated Headline Styles */
+.headline-dynamic {
+    display: inline-block; /* Or block if needed */
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.headline-dynamic.fade-out {
+    opacity: 0;
+}
+
+/* Hero Buttons Wrapper */
+.hero-buttons {
+    margin-top: 2.5rem; /* Space above buttons */
+}
+
+.cta-button {
+    margin: 0 0.5rem; /* Space between buttons */
 }
 
 .cta-button,
 #quote-form button[type="submit"] {
     display: inline-block;
-    padding: 0.9rem 2rem; /* Adjust padding */
-    background: #333; /* Dark gray button */
-    color: #fff;
+    padding: 1rem 2.2rem;
+    background: #fff; /* White button */
+    color: #1a1a1a; /* Dark text */
     text-decoration: none;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Added transform transition */
-    border: none; /* Remove border */
+    border-radius: 5px;
+    font-weight: 600; /* Bolder button text */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.15s ease-in-out;
+    border: none;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .cta-button:hover,
 #quote-form button[type="submit"]:hover {
+    background: #f0f0f0; /* Light gray hover */
+    color: #000;
+    transform: translateY(-2px) scale(1.02); /* Lift and slight scale */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Specific styles for primary/secondary buttons */
+.cta-button.primary {
+    background: #fff;
+    color: #1a1a1a;
+}
+.cta-button.secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: none;
+}
+
+.cta-button.primary:hover {
+    background: #f0f0f0;
+    color: #000;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.cta-button.secondary:hover {
+    background: #fff;
+    color: #1a1a1a;
+    border-color: #fff;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+#quote-form button[type="submit"] {
+    background: #2d2d2d; /* Dark button for form */
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+#quote-form button[type="submit"]:hover {
     background: #000; /* Black hover */
     color: #fff;
-    transform: translateY(-2px); /* Add subtle lift on hover */
 }
 
-/* Gallery Styles Refinement */
-#gallery {
-    border-top: none; /* Remove double border */
+/* Gallery Styles - Further Simplification */
+.gallery-category {
+    margin-bottom: 4rem;
 }
 
-#gallery h2 {
+.gallery-category:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-category h3 {
+    font-size: 1.8rem; /* Larger category titles */
+    font-weight: 500;
+    color: #333;
     text-align: center;
-    font-size: 2rem; /* Adjusted size */
-}
-
-#gallery h2 + p {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    margin-bottom: 3rem; /* More space */
-    color: #555;
-    line-height: 1.8;
+    margin-bottom: 3rem;
+    padding-bottom: 0;
+    border-bottom: none;
+    display: block;
 }
 
 #gallery .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Adjust min size */
-    gap: 2.5rem; /* More gap */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Larger items */
+    gap: 3rem; /* More gap */
     text-align: left;
     color: #333;
-    margin-top: 2rem; /* Increased margin */
+    margin-top: 2rem;
 }
 
 .gallery-item {
-    border: none; /* Remove border */
-    border-radius: 6px;
-    overflow: hidden;
     background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.06); /* Slightly adjusted shadow */
-    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out; /* Smoother transition */
+    box-shadow: none; /* Remove default shadow */
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out; /* Only transition transform/shadow */
     display: flex;
     flex-direction: column;
+    border: 1px solid #f0f0f0; /* Very light border */
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .gallery-item:hover {
-    transform: translateY(-3px); /* Slightly less lift */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Slightly softer hover shadow */
-    border-color: #ddd; /* Show border on hover */
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); /* Subtle shadow on hover only */
+    border-color: #f0f0f0; /* Keep border subtle */
 }
 
 .gallery-item a {
@@ -228,94 +322,87 @@ h2 {
 .gallery-item img {
     display: block;
     width: 100%;
-    height: 240px; /* Adjust height */
+    height: 260px; /* Adjusted height */
     object-fit: cover;
     transition: opacity 0.3s ease;
-    border-bottom: 1px solid #f0f0f0; /* Separator for text */
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .gallery-item:hover img {
-    opacity: 1; /* No fade on hover */
+    opacity: 1;
 }
 
-.gallery-item p {
-    padding: 1rem 1.2rem;
-    font-size: 0.9rem;
-    text-align: center;
-    background-color: #fff;
-    margin: 0;
-    color: #444;
-    flex-grow: 1;
-    border-top: none; /* Remove top border */
-}
-
-/* Style for the container holding ref paragraph and button */
+/* Reference container */
 .ref-container {
-    padding: 0.8rem 1.2rem; /* Match paragraph padding */
+    padding: 0.8rem 1rem; /* Adjusted padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    background-color: #fff;
 }
 
 .ref-container p {
-    padding: 0; /* Remove padding from original p */
+    padding: 0;
     margin: 0;
-    flex-grow: 1; /* Allow text to take available space */
+    flex-grow: 1;
     text-align: left;
     font-size: 0.9rem;
-    color: #444;
+    color: #333;
 }
 
 .add-to-quote-btn {
-    font-size: 0.8rem;
-    color: #007bff; /* Or your preferred link color */
+    font-size: 0.75rem; /* Smaller text */
+    color: #666; /* Subtle gray color */
     text-decoration: none;
-    border: 1px solid #007bff;
-    padding: 0.3rem 0.6rem; /* Increased vertical padding */
+    border: none; /* Remove border */
+    background: none; /* No background */
+    padding: 0.3rem 0; /* Adjust padding */
     border-radius: 3px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap; /* Prevent button text wrapping */
-    line-height: 1.2; /* Ensure line height isn't collapsing text */
-    display: inline-block; /* Ensure padding applies correctly */
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    line-height: 1.3;
+    display: inline-block;
+    font-weight: 500;
 }
 
 .add-to-quote-btn:hover {
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
+    background-color: transparent;
+    color: #000;
+    text-decoration: underline;
 }
 
-/* Form Styles Refinement */
+/* Quote Form Refinements */
 #quote {
-    background-color: #fdfdfd; /* Very slightly off-white section background */
-    margin: 0 -2rem; /* Align with main padding */
-    padding: 3rem 2rem; /* Match section padding */
+    background-color: #fcfcfc; /* Match body bg */
+    margin: 0;
+    padding: 4rem 3rem;
 }
 
 #quote h2 {
     text-align: center;
-    font-size: 2rem; /* Adjusted size */
+    font-size: 2.2rem;
 }
 #quote p {
     text-align: center;
-    max-width: 600px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    color: #555;
 }
 
 #quote-form {
-    max-width: 700px; /* Limit form width */
+    max-width: 750px;
     margin: 0 auto;
 }
 
 #quote-form label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     font-weight: 500;
     font-size: 0.9rem;
-    color: #555;
+    color: #444;
 }
 
 #quote-form input[type="text"],
@@ -325,13 +412,28 @@ h2 {
 #quote-form select,
 #quote-form textarea {
     width: 100%;
-    padding: 0.8rem 1rem;
-    margin-bottom: 1.5rem; /* More space below inputs */
-    border: 1px solid #ddd; /* Lighter border */
-    border-radius: 4px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 1.6rem;
+    border: 1px solid #e0e0e0; /* Slightly darker border */
+    border-radius: 5px;
     font-size: 1rem;
     background-color: #fff;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#quote-form input::placeholder, 
+#quote-form textarea::placeholder {
+    color: #aaa;
+}
+
+#quote-form select {
+    /* Add styling for select arrow if needed, or use default */
+    appearance: none; /* Basic reset */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23aaa%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: .65em auto;
+    padding-right: 2.5rem; /* Make space for arrow */
 }
 
 #quote-form input[type="text"]:focus,
@@ -340,96 +442,116 @@ h2 {
 #quote-form input[type="number"]:focus,
 #quote-form select:focus,
 #quote-form textarea:focus {
-    border-color: #aaa;
+    border-color: #888;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(100,100,100,0.1);
+    box-shadow: 0 0 0 3px rgba(50,50,50,0.1);
 }
 
-#quote-form textarea {
-    resize: vertical;
-    min-height: 130px;
-}
-
-#quote-form button[type="submit"] {
-    display: block; /* Make button block */
-    width: 100%; /* Full width */
-    margin-top: 1rem;
-}
-
-/* About & Contact Section Refinements */
-#about h2, #contact h2 {
-    font-size: 2rem; /* Adjusted size */
-}
-
-#about p, #contact p {
-    line-height: 1.8;
-    color: #555;
-}
-
-#contact p strong {
-    color: #333;
-}
-
-/* Footer Styles Refinement */
+/* Footer */
 footer {
     text-align: left;
-    padding: 4rem 0 0 0; /* More top padding, no bottom */
-    margin-top: 4rem;
-    background: #f8f8f8; /* Light gray footer background */
-    color: #666;
-    border-top: 1px solid #eee;
+    padding: 4rem 0 0 0;
+    margin-top: 6rem; /* More space above footer */
+    background: #fff; /* White footer */
+    color: #555;
+    border-top: 1px solid #f0f0f0;
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1280px; /* Match nav width */
     margin: auto;
-    padding: 0 2rem 3rem 2rem; /* Padding below columns */
+    padding: 0 2.5rem 4rem 2.5rem; /* Match nav padding */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 3rem;
 }
 
 .footer-column h4 {
-    color: #333;
-    margin-bottom: 1rem;
+    color: #1a1a1a;
+    margin-bottom: 1.2rem;
     font-weight: 600;
     font-size: 1.1rem;
 }
 
 .footer-column p,
 .footer-column ul {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     list-style: none;
     padding: 0;
     margin: 0;
     line-height: 1.9;
 }
 
-.footer-column ul li {
-    margin-bottom: 0.6rem;
-}
-
-.footer-column a {
-    color: #555;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.footer-column a:hover {
-    color: #000;
-}
-
 .footer-bottom {
     text-align: center;
-    padding: 1.5rem 2rem;
-    margin-top: 0; /* Remove margin */
-    border-top: 1px solid #eee;
-    font-size: 0.85rem;
+    padding: 2rem;
+    margin-top: 0;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.9rem;
     color: #888;
-    background-color: #fff; /* White bottom bar */
+    background-color: #fff;
 }
 
-/* Lightbox Styles (keep as is, they fit the dark overlay theme) */
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    nav {
+        padding: 0 1.5rem; /* Adjust padding */
+    }
+
+    #logo {
+        height: 50px;
+    }
+
+    nav ul li {
+        margin-left: 1.5rem;
+    }
+
+    main {
+        margin: 3rem auto;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    section {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-content {
+        padding: 4rem 1.5rem;
+    }
+
+    #hero h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+       font-size: 2rem;
+    }
+
+    #gallery .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+    }
+
+    .gallery-category h3 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    #quote {
+         padding: 3rem 1.5rem;
+    }
+
+    .footer-content {
+        padding: 0 1.5rem 3rem 1.5rem;
+    }
+}
+
+/* Lightbox Styles (Remain unchanged) */
 #lightbox-overlay {
     position: fixed;
     top: 0;
@@ -474,141 +596,4 @@ footer {
 
 #lightbox-close:hover {
     color: #ccc;
-}
-
-/* --- Responsive Refinements --- */
-
-@media (max-width: 768px) {
-    body {
-        font-size: 15px; /* Adjust base font size slightly */
-    }
-
-    nav {
-        padding: 0 1rem; /* Less padding on mobile nav */
-    }
-
-    #logo {
-        height: 45px; /* Adjusted mobile logo size */
-    }
-
-    nav ul li {
-        margin: 0.6rem 0;
-        margin-left: 0;
-    }
-
-    main {
-        margin: 2.5rem auto;
-        padding: 0 1rem; /* Less padding */
-        box-shadow: none;
-        border-radius: 0;
-    }
-
-    section {
-        padding: 2.5rem 1rem; /* Adjust padding */
-    }
-
-    #hero {
-        padding: 4rem 1rem;
-        margin: 0 -1rem; /* Adjust negative margins */
-    }
-
-    #hero h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-       font-size: 1.8rem; /* Adjust mobile heading size */
-    }
-
-    #gallery .image-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1.5rem;
-    }
-
-    #quote {
-         margin: 0 -1rem; /* Adjust negative margins */
-         padding: 2.5rem 1rem;
-    }
-
-    .footer-content {
-        padding: 0 1rem 2rem 1rem;
-        gap: 2rem;
-    }
-
-    .footer-column {
-        margin-bottom: 1rem;
-    }
-}
-
-/* Gallery Category Styling */
-.gallery-category {
-    margin-bottom: 3.5rem; /* Space below each category block */
-}
-
-.gallery-category:last-child {
-    margin-bottom: 0;
-}
-
-.gallery-category h3 {
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #333;
-    text-align: center;
-    margin-bottom: 2.5rem; /* Increased space */
-    padding-bottom: 0; /* Remove padding */
-    border-bottom: none; /* Remove underline */
-    display: block;
-}
-
-#gallery .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Adjust min size */
-    gap: 2.5rem; /* More gap */
-    text-align: left;
-    color: #333;
-    margin-top: 2rem; /* Increased margin */
-}
-
-.gallery-item {
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Slightly softer shadow */
-    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, border-color 0.25s ease-in-out; /* Added border transition */
-    display: flex;
-    flex-direction: column;
-    border: 1px solid transparent; /* Start with transparent border */
-}
-
-.gallery-item:hover {
-    transform: translateY(-3px); /* Slightly less lift */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Slightly softer hover shadow */
-    border-color: #ddd; /* Show border on hover */
-}
-
-.gallery-item a {
-    display: block;
-    line-height: 0;
-}
-
-.gallery-item img {
-    display: block;
-    width: 100%;
-    height: 240px; /* Adjust height */
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-    border-bottom: 1px solid #f0f0f0; /* Separator for text */
-}
-
-.gallery-item:hover img {
-    opacity: 1; /* No fade on hover */
-}
-
-.gallery-item p {
-    padding: 1rem 1.2rem;
-    font-size: 0.9rem;
-    text-align: center;
-    background-color: #fff;
-    margin: 0;
-    color: #444;
-    flex-grow: 1;
-    border-top: none; /* Remove top border */
 } 
