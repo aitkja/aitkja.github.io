@@ -5,13 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forest City Laser - Custom Laser Cutting & Engraving</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Favicon Links - Providing multiple sizes -->
+    <link rel="icon" href="images/logo/Logo_Image.png" sizes="any" type="image/png"> <!-- Default/Scalable -->
+    <link rel="icon" href="images/logo/Logo_Image.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="images/logo/Logo_Image.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="images/logo/Logo_Image.png" sizes="96x96" type="image/png">
+    <link rel="icon" href="images/logo/Logo_Image.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo/Logo_Image.png" sizes="180x180"> <!-- Standard Apple size -->
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
+    <!-- Proudly Canadian Banner -->
+    <div class="proudly-canadian-banner">
+        <img src="images/misc/Canadian_Flag.png" alt="Canadian Flag" class="canadian-flag-img"> Proudly Canadian
+    </div>
+
     <header>
         <nav>
-            <img src="images/logo/logo.png" alt="Forest City Laser Logo" id="logo">
+            <img src="images/logo/Logo_Text.png" alt="Forest City Laser Logo Text" id="logo">
             <ul>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#gallery">Portfolio</a></li>
                 <li><a href="#quote">Request Quote</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -40,172 +56,312 @@
         </section>
 
         <section id="gallery">
-            <h2>Our Work & Examples</h2>
+            <h2>Our Portfolio</h2>
             <p>Explore examples of our past work below, categorized for inspiration. While we showcase popular items, <strong>every project is custom!</strong> We love bringing unique ideas to life. If you don't see exactly what you want, don't worry – use the quote form below to describe your vision.</p>
 
-            <div class="gallery-category">
-                <h3>Wedding Items</h3>
-                <div class="image-grid">
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Valentine_Signs.png" class="lightbox-trigger"><img src="images/stock/Weddings/Valentine_Signs.png" alt="Valentine Signs"></a>
-                        <div class="ref-container">
-                            <p>Valentine_Signs</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Valentine_Signs">Add to Quote</a>
+            <!-- Featured Projects Carousel -->
+            <div class="featured-projects">
+                <h3>Featured Projects</h3>
+                <div class="swiper featured-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Add featured project slides here -->
+                        <!-- Example Slide (Repeat 3-5 times with actual featured projects) -->
+                        <div class="swiper-slide">
+                            <div class="featured-item">
+                                <img src="images/stock/Weddings/Table_Numbers.png" alt="Featured Project 1">
+                                <div class="featured-caption">
+                                    <h4>Elegant Wedding Table Numbers</h4>
+                                    <p>Custom wood table numbers with intricate design.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Table_Numbers.png" class="lightbox-trigger"><img src="images/stock/Weddings/Table_Numbers.png" alt="Table Numbers"></a>
-                        <div class="ref-container">
-                            <p>Table_Numbers</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Table_Numbers">Add to Quote</a>
+                        <div class="swiper-slide">
+                            <div class="featured-item">
+                                <img src="images/stock/Corperate/Business_Card_Holder.png" alt="Featured Project 2">
+                                <div class="featured-caption">
+                                    <h4>Branded Card Holder</h4>
+                                    <p>Sleek corporate business card holder with logo engraving.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Table_Numbers_2.png" class="lightbox-trigger"><img src="images/stock/Weddings/Table_Numbers_2.png" alt="Table Numbers 2"></a>
-                        <div class="ref-container">
-                            <p>Table_Numbers_2</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Table_Numbers_2">Add to Quote</a>
+                         <div class="swiper-slide">
+                            <div class="featured-item">
+                                <img src="images/stock/Personal/Welcome_Signs.png" alt="Featured Project 3">
+                                <div class="featured-caption">
+                                    <h4>Personalized Welcome Sign</h4>
+                                    <p>Rustic wood welcome sign for home entryway.</p>
+                                </div>
+                            </div>
                         </div>
+                        <!-- End Example Slide -->
                     </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Cake_Toppers.png" class="lightbox-trigger"><img src="images/stock/Weddings/Cake_Toppers.png" alt="Cake Toppers"></a>
-                        <div class="ref-container">
-                            <p>Cake_Toppers</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Cake_Toppers">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Name_Tags.png" class="lightbox-trigger"><img src="images/stock/Weddings/Name_Tags.png" alt="Name Tags"></a>
-                        <div class="ref-container">
-                            <p>Name_Tags</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Name_Tags">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Place_Tags.png" class="lightbox-trigger"><img src="images/stock/Weddings/Place_Tags.png" alt="Place Tags"></a>
-                        <div class="ref-container">
-                            <p>Place_Tags</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Place_Tags">Add to Quote</a>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <a href="images/stock/Weddings/Custom_Fridge_Magnets.png" class="lightbox-trigger"><img src="images/stock/Weddings/Custom_Fridge_Magnets.png" alt="Custom Fridge Magnets"></a>
-                        <div class="ref-container">
-                            <p>Custom_Fridge_Magnets</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Fridge_Magnets">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Champaign_Glass_Tags.png" class="lightbox-trigger"><img src="images/stock/Weddings/Champaign_Glass_Tags.png" alt="Champagne Glass Tags"></a>
-                        <div class="ref-container">
-                            <p>Champaign_Glass_Tags</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Champaign_Glass_Tags">Add to Quote</a>
-                        </div>
-                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </div>
 
-            <div class="gallery-category">
-                <h3>Corporate Items</h3>
-                <div class="image-grid">
-                     <div class="gallery-item">
-                        <a href="images/stock/Corperate/Business_Card_Holder.png" class="lightbox-trigger"><img src="images/stock/Corperate/Business_Card_Holder.png" alt="Business Card Holder"></a>
-                        <div class="ref-container">
-                            <p>Business_Card_Holder</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Business_Card_Holder">Add to Quote</a>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <a href="images/stock/Corperate/Corperate_Pens.png" class="lightbox-trigger"><img src="images/stock/Corperate/Corperate_Pens.png" alt="Corporate Pens"></a>
-                        <div class="ref-container">
-                            <p>Corperate_Pens</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Corperate_Pens">Add to Quote</a>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <a href="images/stock/Corperate/Coasters.png" class="lightbox-trigger"><img src="images/stock/Corperate/Coasters.png" alt="Coasters"></a>
-                        <div class="ref-container">
-                            <p>Coasters</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Coasters">Add to Quote</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Portfolio Filters -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="*">All</button>
+                <button class="filter-btn" data-filter=".wedding">Wedding</button>
+                <button class="filter-btn" data-filter=".corporate">Corporate</button>
+                <button class="filter-btn" data-filter=".personal">Personal</button>
+                <button class="filter-btn" data-filter=".industrial">Industrial</button>
             </div>
 
-            <div class="gallery-category">
-                <h3>Personal Items & Gifts</h3>
-                <div class="image-grid">
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Welcome_Signs.png" class="lightbox-trigger"><img src="images/stock/Personal/Welcome_Signs.png" alt="Welcome Signs"></a>
-                        <div class="ref-container">
-                            <p>Welcome_Signs</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Welcome_Signs">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Custom_Pencils.png" class="lightbox-trigger"><img src="images/stock/Personal/Custom_Pencils.png" alt="Custom Pencils"></a>
-                        <div class="ref-container">
-                            <p>Custom_Pencils</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Pencils">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Welcome_Signs_2.png" class="lightbox-trigger"><img src="images/stock/Personal/Welcome_Signs_2.png" alt="Welcome Signs 2"></a>
-                        <div class="ref-container">
-                            <p>Welcome_Signs_2</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Welcome_Signs_2">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Mom_Signs.png" class="lightbox-trigger"><img src="images/stock/Personal/Mom_Signs.png" alt="Mom Signs"></a>
-                        <div class="ref-container">
-                            <p>Mom_Signs</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Mom_Signs">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Custom_Pens.png" class="lightbox-trigger"><img src="images/stock/Personal/Custom_Pens.png" alt="Custom Pens"></a>
-                        <div class="ref-container">
-                            <p>Custom_Pens</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Pens">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Key_Chains.png" class="lightbox-trigger"><img src="images/stock/Personal/Key_Chains.png" alt="Key Chains"></a>
-                        <div class="ref-container">
-                            <p>Key_Chains</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Key_Chains">Add to Quote</a>
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Wedding Items -->
+                <div class="gallery-item wedding">
+                    <a href="images/stock/Weddings/Valentine_Signs.png" class="lightbox-trigger"><img src="images/stock/Weddings/Valentine_Signs.png" alt="Valentine Signs"></a>
+                    <div class="item-caption">
+                         <p class="item-title">Valentine Signs</p>
+                         <p class="item-description">Charming signs perfect for Valentine's or anniversaries.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Valentine_Signs</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Valentine_Signs">Get Quote</a>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="gallery-item wedding">
+                    <a href="images/stock/Weddings/Table_Numbers.png" class="lightbox-trigger"><img src="images/stock/Weddings/Table_Numbers.png" alt="Table Numbers"></a>
+                    <div class="item-caption">
+                         <p class="item-title">Table Numbers</p>
+                         <p class="item-description">Elegant script table numbers for events.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Table_Numbers</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Table_Numbers">Get Quote</a>
+                         </div>
+                    </div>
+                </div>
+                <div class="gallery-item wedding">
+                    <a href="images/stock/Weddings/Table_Numbers_2.png" class="lightbox-trigger"><img src="images/stock/Weddings/Table_Numbers_2.png" alt="Table Numbers 2"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Table Numbers Style 2</p>
+                         <p class="item-description">Alternative style event table numbers.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Table_Numbers_2</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Table_Numbers_2">Get Quote</a>
+                         </div>
+                    </div>
+                </div>
+                <div class="gallery-item wedding">
+                    <a href="images/stock/Weddings/Cake_Toppers.png" class="lightbox-trigger"><img src="images/stock/Weddings/Cake_Toppers.png" alt="Cake Toppers"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Cake Toppers</p>
+                         <p class="item-description">Custom cake toppers for special occasions.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Cake_Toppers</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Cake_Toppers">Get Quote</a>
+                         </div>
+                    </div>
+                </div>
+                <div class="gallery-item wedding">
+                    <a href="images/stock/Weddings/Name_Tags.png" class="lightbox-trigger"><img src="images/stock/Weddings/Name_Tags.png" alt="Name Tags"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Name Tags</p>
+                         <p class="item-description">Personalized name tags for guests or events.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Name_Tags</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Name_Tags">Get Quote</a>
+                         </div>
+                    </div>
+                </div>
+                <div class="gallery-item wedding">
+                    <a href="images/stock/Weddings/Place_Tags.png" class="lightbox-trigger"><img src="images/stock/Weddings/Place_Tags.png" alt="Place Tags"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Place Tags</p>
+                         <p class="item-description">Elegant place setting tags for events.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                          <div class="ref-container">
+                            <p>Ref: Place_Tags</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Place_Tags">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-item wedding">
+                    <a href="images/stock/Weddings/Custom_Fridge_Magnets.png" class="lightbox-trigger"><img src="images/stock/Weddings/Custom_Fridge_Magnets.png" alt="Custom Fridge Magnets"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Custom Fridge Magnets</p>
+                         <p class="item-description">Unique fridge magnets, perfect for favors.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Custom_Fridge_Magnets</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Fridge_Magnets">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item wedding">
+                    <a href="images/stock/Weddings/Champaign_Glass_Tags.png" class="lightbox-trigger"><img src="images/stock/Weddings/Champaign_Glass_Tags.png" alt="Champagne Glass Tags"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Champagne Glass Tags</p>
+                         <p class="item-description">Personalized tags for champagne or wine glasses.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Champaign_Glass_Tags</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Champaign_Glass_Tags">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
 
-             <div class="gallery-category">
-                <h3>Industrial Signage & Lamacoids</h3>
-                <div class="image-grid">
-                    <div class="gallery-item">
-                        <a href="images/stock/Industrial/Industrial_Signage.png" class="lightbox-trigger"><img src="images/stock/Industrial/Industrial_Signage.png" alt="Industrial Signage"></a>
-                        <div class="ref-container">
-                            <p>Industrial_Signage</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Industrial_Signage">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Industrial/Small_Lamacoids_2.png" class="lightbox-trigger"><img src="images/stock/Industrial/Small_Lamacoids_2.png" alt="Small Lamacoids 2"></a>
-                        <div class="ref-container">
-                            <p>Small_Lamacoids_2</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Small_Lamacoids_2">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Industrial/Small_Lamacoids.png" class="lightbox-trigger"><img src="images/stock/Industrial/Small_Lamacoids.png" alt="Small Lamacoids"></a>
-                        <div class="ref-container">
-                            <p>Small_Lamacoids</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Small_Lamacoids">Add to Quote</a>
+                <!-- Corporate Items -->
+                <div class="gallery-item corporate">
+                    <a href="images/stock/Corperate/Business_Card_Holder.png" class="lightbox-trigger"><img src="images/stock/Corperate/Business_Card_Holder.png" alt="Business Card Holder"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Business Card Holder</p>
+                         <p class="item-description">Professional card holder with optional branding.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Business_Card_Holder</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Business_Card_Holder">Get Quote</a>
                         </div>
                     </div>
                 </div>
-            </div>
+                 <div class="gallery-item corporate">
+                    <a href="images/stock/Corperate/Corperate_Pens.png" class="lightbox-trigger"><img src="images/stock/Corperate/Corperate_Pens.png" alt="Corporate Pens"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Corporate Pens</p>
+                         <p class="item-description">Engraved pens for corporate gifting or branding.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Corperate_Pens</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Corperate_Pens">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="gallery-item corporate">
+                    <a href="images/stock/Corperate/Coasters.png" class="lightbox-trigger"><img src="images/stock/Corperate/Coasters.png" alt="Coasters"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Coasters</p>
+                         <p class="item-description">Custom engraved coasters, wood or acrylic.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Coasters</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Coasters">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Items & Gifts -->
+                <div class="gallery-item personal">
+                    <a href="images/stock/Personal/Welcome_Signs.png" class="lightbox-trigger"><img src="images/stock/Personal/Welcome_Signs.png" alt="Welcome Signs"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Welcome Signs</p>
+                         <p class="item-description">Personalized welcome signs for homes.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Welcome_Signs</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Welcome_Signs">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item personal">
+                    <a href="images/stock/Personal/Custom_Pencils.png" class="lightbox-trigger"><img src="images/stock/Personal/Custom_Pencils.png" alt="Custom Pencils"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Custom Pencils</p>
+                         <p class="item-description">Engraved pencils for gifts or events.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Custom_Pencils</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Pencils">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item personal">
+                    <a href="images/stock/Personal/Welcome_Signs_2.png" class="lightbox-trigger"><img src="images/stock/Personal/Welcome_Signs_2.png" alt="Welcome Signs 2"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Welcome Signs Style 2</p>
+                         <p class="item-description">Layered 3D welcome signs.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Welcome_Signs_2</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Welcome_Signs_2">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item personal">
+                    <a href="images/stock/Personal/Mom_Signs.png" class="lightbox-trigger"><img src="images/stock/Personal/Mom_Signs.png" alt="Mom Signs"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Mom Signs</p>
+                         <p class="item-description">Special signs celebrating Mom.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Mom_Signs</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Mom_Signs">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item personal">
+                    <a href="images/stock/Personal/Custom_Pens.png" class="lightbox-trigger"><img src="images/stock/Personal/Custom_Pens.png" alt="Custom Pens"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Custom Pens</p>
+                         <p class="item-description">Personalized engraved pens.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Custom_Pens</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Pens">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item personal">
+                    <a href="images/stock/Personal/Key_Chains.png" class="lightbox-trigger"><img src="images/stock/Personal/Key_Chains.png" alt="Key Chains"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Key Chains</p>
+                         <p class="item-description">Customized key chains in various materials.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Key_Chains</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Key_Chains">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial Items -->
+                <div class="gallery-item industrial">
+                    <a href="images/stock/Industrial/Industrial_Signage.png" class="lightbox-trigger"><img src="images/stock/Industrial/Industrial_Signage.png" alt="Industrial Signage"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Industrial Signage</p>
+                         <p class="item-description">Durable signage for industrial applications.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Industrial_Signage</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Industrial_Signage">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item industrial">
+                    <a href="images/stock/Industrial/Small_Lamacoids_2.png" class="lightbox-trigger"><img src="images/stock/Industrial/Small_Lamacoids_2.png" alt="Small Lamacoids 2"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Small Lamacoids Style 2</p>
+                         <p class="item-description">Engraved lamacoid tags for equipment.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Small_Lamacoids_2</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Small_Lamacoids_2">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item industrial">
+                    <a href="images/stock/Industrial/Small_Lamacoids.png" class="lightbox-trigger"><img src="images/stock/Industrial/Small_Lamacoids.png" alt="Small Lamacoids"></a>
+                     <div class="item-caption">
+                         <p class="item-title">Small Lamacoids</p>
+                         <p class="item-description">Custom lamacoid labels and tags.</p>
+                         <a href="#" class="learn-more-btn">View Details</a>
+                         <div class="ref-container">
+                            <p>Ref: Small_Lamacoids</p>
+                            <a href="#quote" class="add-to-quote-btn" data-ref="Small_Lamacoids">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Portfolio Grid -->
 
         </section>
 
@@ -274,13 +430,14 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h4>Forest City Laser</h4>
+                <img src="images/logo/Full_Logo.png" alt="Forest City Laser Full Logo" class="footer-logo">
                 <p>Specializing in custom laser cutting and engraving for wood, acrylic, and leather. Based in London, Ontario.</p>
             </div>
             <div class="footer-column">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#gallery">Portfolio</a></li>
                     <li><a href="#quote">Request Quote</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -299,6 +456,13 @@
             <p>&copy; 2024 Forest City Laser. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Isotope JS -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <!-- ImagesLoaded (Recommended for Isotope with images) -->
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
     <script src="script.js"></script>
 
