@@ -5,53 +5,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxClose = document.getElementById('lightbox-close');
     const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
-    const galleryContainer = document.getElementById('gallery'); // Use gallery section as event scope
 
     // Function to open the lightbox
     function openLightbox(imageUrl) {
-        if (!lightboxOverlay || !lightboxImage) return; // Safety check
         lightboxImage.src = imageUrl;
         lightboxOverlay.classList.remove('lightbox-hidden');
         lightboxOverlay.classList.add('lightbox-visible');
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
 
     // Function to close the lightbox
     function closeLightbox() {
-        if (!lightboxOverlay || !lightboxImage) return;
         lightboxOverlay.classList.remove('lightbox-visible');
         lightboxOverlay.classList.add('lightbox-hidden');
-        lightboxImage.src = '';
-        document.body.style.overflow = '';
+        lightboxImage.src = ''; // Clear image src
+        document.body.style.overflow = ''; // Restore background scrolling
     }
 
-    // Consolidated click listener for lightbox triggers
-    if (galleryContainer) {
-        galleryContainer.addEventListener('click', (event) => {
-            const triggerLink = event.target.closest('.lightbox-trigger, .learn-more-btn');
-
-            if (triggerLink) {
-                event.preventDefault(); // Prevent default link behavior
-                let imageUrl = '';
-
-                if (triggerLink.classList.contains('lightbox-trigger')) {
-                    // Clicked directly on the image link
-                    imageUrl = triggerLink.href;
-                } else if (triggerLink.classList.contains('learn-more-btn')) {
-                    // Clicked on 'View Details', find the main image link within the same item
-                    const galleryItem = triggerLink.closest('.gallery-item');
-                    const imageLink = galleryItem?.querySelector('.lightbox-trigger');
-                    if (imageLink) {
-                        imageUrl = imageLink.href;
-                    }
-                }
-
-                if (imageUrl) {
-                    openLightbox(imageUrl);
-                }
-            }
+    // Add click listeners to all gallery image links
+    lightboxTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link navigation
+            const imageUrl = trigger.href;
+            openLightbox(imageUrl);
         });
-    }
+    });
 
     // Add click listener to close button
     if (lightboxClose) {
@@ -61,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click listener to overlay background (to close lightbox)
     if (lightboxOverlay) {
         lightboxOverlay.addEventListener('click', (event) => {
+            // Close only if clicking the overlay itself, not the image inside
             if (event.target === lightboxOverlay) {
                 closeLightbox();
             }
@@ -69,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Optional: Close lightbox with Escape key
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && lightboxOverlay?.classList.contains('lightbox-visible')) {
+        if (event.key === 'Escape' && lightboxOverlay.classList.contains('lightbox-visible')) {
             closeLightbox();
         }
     });
@@ -144,55 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, fadeTime);
 
         }, changeInterval);
-    }
-
-    // --- Initialize Swiper for Featured Projects Carousel ---
-    const featuredSwiper = new Swiper('.featured-swiper', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: { // Responsive adjustments
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 20
-            },
-            1024: {
-                 slidesPerView: 2.5, // Show parts of next/prev slides
-                 spaceBetween: 30
-            }
-        }
-    });
-
-    // --- Initialize Isotope for Portfolio Filtering ---
-    const portfolioGrid = document.querySelector('.portfolio-grid');
-
-    if (portfolioGrid) {
-        imagesLoaded( portfolioGrid, function() {
-            const iso = new Isotope( portfolioGrid, {
-                itemSelector: '.gallery-item',
-                layoutMode: 'masonry'
-            });
-
-            // Filter items on button click
-            const filterButtons = document.querySelectorAll('.portfolio-filters .filter-btn');
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    const filterValue = button.getAttribute('data-filter');
-                    iso.arrange({ filter: filterValue });
-                });
-            });
-        });
     }
 
 }); 
