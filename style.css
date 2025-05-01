@@ -528,9 +528,9 @@ footer {
         font-size: 15px;
     }
 
-    /* Reduce header padding on mobile */
+    /* Reduce header padding on mobile further */
     header {
-        padding: 0.8rem 0;
+        padding: 0.6rem 0;
     }
 
     nav {
@@ -541,14 +541,14 @@ footer {
     }
 
     #logo {
-        height: 50px; /* Reduced mobile logo size further */
+        height: 40px; /* Reduced mobile logo size again */
         width: auto;
-        max-width: 60%; /* Adjust max width if needed */
-        margin-bottom: 1rem; /* Add space below logo */
+        max-width: 50%; /* Further reduce max width */
+        margin-bottom: 0.5rem; /* Reduced space below logo */
     }
 
     nav ul {
-        padding-top: 0.5rem;
+        padding-top: 0.2rem; /* Minimize top padding */
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -556,8 +556,8 @@ footer {
 
     nav ul li {
         margin-left: 0; /* Remove left margin */
-        margin-top: 0.4rem; /* Reduced vertical margin */
-        margin-bottom: 0.4rem; /* Reduced vertical margin */
+        margin-top: 0.2rem; /* Further reduced vertical margin */
+        margin-bottom: 0.2rem; /* Further reduced vertical margin */
     }
 
     main {
@@ -600,9 +600,9 @@ footer {
         padding: 0 1.5rem 3rem 1.5rem;
     }
 
-    /* Hide Canadian icons on smaller mobile screens */
+    /* Hide Canadian icons on smaller mobile screens - Force it */
     .canadian-icons {
-        display: none;
+        display: none !important;
     }
 }
 
