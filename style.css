@@ -160,7 +160,13 @@ main > section:last-of-type {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 6rem 2rem; /* Generous padding */
+    padding: 4rem 1.5rem;
+    /* Ensure hero content doesn't get too small, but allow expansion */
+    min-height: 16rem; /* Reverted to min-height, adjust value if needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* REMOVED fixed height */
 }
 
 h1, h2 {
@@ -171,10 +177,18 @@ h1, h2 {
 }
 
 #hero h1 {
-    font-size: 3.5rem; /* Larger hero title */
+    font-size: 2.8rem;
+    /* Remove fixed height and flex from H1 */
+    margin-bottom: 1.5rem; /* Ensure consistent bottom margin */
+    line-height: 1.2; /* Set explicit line height */
+    /* Approx height for 3 lines + small buffer */
+    height: calc(2.8rem * 1.2 * 3 + 0.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide potential overflow if calculation is off */
     color: #fff;
     font-weight: 600;
-    margin-bottom: 1rem;
     text-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Subtle text shadow for readability */
 }
 
@@ -183,8 +197,8 @@ h2 {
 }
 
 #hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem; /* More space before button */
+    /* Ensure paragraph margin is appropriate with fixed H1 height */
+    margin-bottom: 2rem;
     color: #f0f0f0;
     max-width: 650px;
     margin-left: auto;
@@ -558,16 +572,31 @@ footer {
 
     .hero-content {
         padding: 4rem 1.5rem;
+        /* Revert min-height here, let content determine height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     #hero h1 {
         font-size: 2.8rem;
-        /* Prevent layout shift from changing text lines */
-        min-height: 8rem; /* Adjust this value as needed based on longest text */
-        /* Optional: Vertically center text within the fixed height */
+        /* Remove fixed height and flex from H1 */
+        margin-bottom: 1.5rem; /* Ensure consistent bottom margin */
+        line-height: 1.2; /* Set explicit line height */
+        /* Approx height for 3 lines + small buffer */
+        height: calc(2.8rem * 1.2 * 3 + 0.5rem);
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden; /* Hide potential overflow if calculation is off */
+    }
+
+    /* Target the dynamic span specifically on mobile */
+    #hero h1 .headline-dynamic {
+        display: inline-block; /* Allow text wrapping */
+        min-height: auto; /* Remove previous min-height */
+        vertical-align: baseline; /* Reset vertical align */
+        width: 100%; /* Allow span to take full width for centering */
     }
 
     h2 {
@@ -582,6 +611,18 @@ footer {
     .gallery-category h3 {
         font-size: 1.6rem;
         margin-bottom: 2rem;
+    }
+
+    /* Process steps stack vertically */
+    .process-steps {
+        grid-template-columns: 1fr; /* Single column */
+        text-align: center; /* Center step content */
+        gap: 2rem; /* Adjust gap for vertical */
+    }
+
+    .step-icon {
+        margin-left: auto; /* Center icon */
+        margin-right: auto; /* Center icon */
     }
 
     #quote {
@@ -662,4 +703,84 @@ footer {
     height: 18px; /* Adjust size for footer */
     width: auto;
     display: block;
-} 
+}
+
+/* Process Section Styling */
+#process {
+    background-color: #fdfdfd; /* Slightly different background */
+    text-align: center;
+}
+
+#process h2 {
+    margin-bottom: 3rem;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive grid */
+    gap: 2.5rem; /* Gap between steps */
+    max-width: 1000px; /* Limit max width */
+    margin: 0 auto; /* Center the grid */
+    text-align: left;
+}
+
+.process-step {
+    /* Add styling for individual steps */
+}
+
+.step-icon {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #aaa;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px; /* Vertically center text */
+    text-align: center;
+    margin-bottom: 1rem;
+    /* For real icons, replace with img or SVG styles */
+}
+
+.process-step h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.process-step p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Add connector lines (Optional - basic example) */
+/* This requires adjustments based on exact layout */
+/* .process-step:not(:last-child)::after { */
+/*    content: ''; */
+/*    position: absolute; */
+/*    top: 25px; /* Adjust vertical position */
+/*    left: 100%; */
+/*    width: calc(100% + 2.5rem); /* Span gap */
+/*    height: 2px; */
+/*    background-color: #eee; */
+/*    z-index: -1; /* Behind step content */
+/* } */
+
+/* Quote Form Refinements */
+#quote {
+    background-color: #fcfcfc; /* Match body bg */
+    margin: 0;
+    padding: 4rem 3rem;
+    /* Process steps stack vertically */
+    .process-steps {
+        grid-template-columns: 1fr; /* Single column */
+        text-align: center; /* Center step content */
+    }
+
+    .step-icon {
+        margin-left: auto; /* Center icon */
+        margin-right: auto; /* Center icon */
+    }
+}
