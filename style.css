@@ -31,7 +31,7 @@ header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     color: #333;
-    padding: 2rem 0; /* Increased padding substantially */
+    padding: 1.5rem 0; /* Reduced padding slightly */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -49,9 +49,9 @@ nav {
 }
 
 #logo {
-    height: 95px; /* Much larger text logo */
+    height: 110px; /* Increased logo size significantly */
     /* Consider adding max-width if the text logo is very wide */
-    /* max-width: 450px; */
+    /* max-width: 500px; */
 }
 
 nav ul {
@@ -528,9 +528,10 @@ footer {
         font-size: 15px;
     }
 
-    /* Reduce header padding on mobile further */
+    /* Make header scroll normally on mobile */
     header {
-        padding: 0.6rem 0;
+        position: static; /* Override sticky positioning */
+        padding: 1rem 0; /* Adjust padding for non-sticky */
     }
 
     nav {
@@ -541,9 +542,9 @@ footer {
     }
 
     #logo {
-        height: 40px; /* Reduced mobile logo size again */
+        height: 80px; /* Significantly larger mobile logo */
         width: auto;
-        max-width: 50%; /* Further reduce max width */
+        max-width: 75%; /* Allow slightly more width */
         margin-bottom: 0.5rem; /* Reduced space below logo */
     }
 
@@ -600,10 +601,7 @@ footer {
         padding: 0 1.5rem 3rem 1.5rem;
     }
 
-    /* Hide Canadian icons on smaller mobile screens - Force it */
-    .canadian-icons {
-        display: none !important;
-    }
+    /* Hide Canadian icons on smaller mobile screens - REMOVED */
 }
 
 /* Lightbox Styles (Remain unchanged) */
@@ -653,25 +651,24 @@ footer {
     color: #ccc;
 }
 
-/* Canadian Icons Styling */
-.canadian-icons {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem; /* Space between icons */
-    /* Position it - adjust margin-left if needed */
-    margin-left: auto; /* Push to the right */
-    padding-left: 2rem; /* Space from nav links */
-}
-
-.canadian-icons img {
-    height: 24px; /* Adjust size as needed */
-    width: auto;
-    display: block; /* Remove extra space below img */
-}
-
-/* Style for the added text span */
-.proudly-canadian-text {
+/* Style for the added text span - Now in Footer Context */
+.footer-canadian-icons .proudly-canadian-text {
     font-size: 0.85rem;
     color: #555; /* Adjust color as needed */
     font-weight: 500;
+}
+
+/* Footer Canadian Icons Styling */
+.footer-canadian-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    gap: 0.6rem; /* Space between text and flag */
+    margin-top: 0.8rem; /* Space above */
+}
+
+.footer-canadian-icons img {
+    height: 18px; /* Adjust size for footer */
+    width: auto;
+    display: block;
 } 
