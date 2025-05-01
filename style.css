@@ -31,7 +31,7 @@ header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     color: #333;
-    padding: 1rem 0; /* Reduced vertical padding */
+    padding: 2rem 0; /* Increased padding substantially */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -49,9 +49,9 @@ nav {
 }
 
 #logo {
-    height: 55px; /* Reduced logo size to match padding */
+    height: 95px; /* Much larger text logo */
     /* Consider adding max-width if the text logo is very wide */
-    /* max-width: 400px; */
+    /* max-width: 450px; */
 }
 
 nav ul {
@@ -530,14 +530,30 @@ footer {
 
     nav {
         padding: 0 1.5rem; /* Adjust padding */
+        flex-direction: column;
+        width: 100%; /* Ensure nav takes full width */
+        align-items: center; /* Center items like logo */
     }
 
     #logo {
-        height: 45px; /* Reduced mobile logo size */
+        height: 70px; /* Larger mobile logo */
+        width: auto;
+        max-width: 70%; /* Prevent logo from being too wide */
+        margin-bottom: 1rem; /* Add space below logo */
+    }
+
+    nav ul {
+        padding-top: 0.5rem;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     nav ul li {
         margin-left: 1.5rem;
+        margin-left: 0; /* Remove left margin */
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
     }
 
     main {
