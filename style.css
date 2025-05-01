@@ -497,21 +497,6 @@ footer {
     background-color: #fff;
 }
 
-.attribution {
-    font-size: 0.8rem;
-    color: #aaa;
-    margin-top: 0.5rem;
-}
-
-.attribution a {
-    color: #aaa;
-    text-decoration: underline;
-}
-
-.attribution a:hover {
-    color: #777;
-}
-
 /* Footer Logo Styling */
 .footer-logo {
     max-height: 80px; /* Control footer logo size */
