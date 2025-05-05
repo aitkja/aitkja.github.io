@@ -634,6 +634,15 @@ footer {
     }
 
     /* Hide Canadian icons on smaller mobile screens - REMOVED */
+
+    /* Adjust hero content padding/background if needed without video */
+    .hero-content {
+        padding: 4rem 1.5rem;
+        /* Revert min-height here, let content determine height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 /* Lightbox Styles (Remain unchanged) */
