@@ -125,21 +125,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, changeInterval);
     }
 
-    // Force Hero Video Play Attempt on Load
-    const heroVideo = document.querySelector('.hero-background-video');
-    if (heroVideo) {
-        // Attempt to play the video
-        const playPromise = heroVideo.play();
-
-        if (playPromise !== undefined) {
-            playPromise.then(_ => {
-                // Autoplay started!
-            }).catch(error => {
-                // Autoplay was prevented.
-                // You could potentially show a play button here if desired
-                console.warn("Hero video autoplay prevented:", error);
-            });
-        }
-    }
-
 }); 
