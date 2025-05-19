@@ -159,7 +159,7 @@ main > section:last-of-type {
     height: auto;
     transform: translate(-50%, -50%);
     z-index: 1;
-    opacity: 0.6; /* Adjust opacity as needed */
+    opacity: 1;
 }
 
 .hero-overlay {
@@ -183,6 +183,10 @@ main > section:last-of-type {
     flex-direction: column;
     justify-content: center;
     /* REMOVED fixed height */
+    background: rgba(0,0,0,0.18);
+    border-radius: 8px;
+    padding: 1.2rem 2.5rem;
+    display: inline-block;
 }
 
 h1, h2 {
@@ -219,7 +223,7 @@ h2 {
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 
 /* Animated Headline Styles */
@@ -587,15 +591,11 @@ footer {
     }
 
     #hero {
-        background-image: url('images/misc/video_poster.jpg');
+        background-image: url('images/misc/video_poster.webp');
         background-color: #2c3e50; /* Fallback color if image fails or while loading */
         background-size: cover;    /* Ensure the image covers the area */
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Prevent tiling */
-    }
-
-    .hero-background-video {
-        display: none !important; /* Hide the video element on mobile */
     }
 
     .hero-content {
@@ -607,16 +607,15 @@ footer {
     }
 
     #hero h1 {
-        font-size: 2.8rem;
-        /* Remove fixed height and flex from H1 */
-        margin-bottom: 1.5rem; /* Ensure consistent bottom margin */
-        line-height: 1.2; /* Set explicit line height */
-        /* Approx height for 3 lines + small buffer */
-        height: calc(2.8rem * 1.2 * 3 + 0.5rem);
+        font-size: 2rem;
+        line-height: 1.15;
+        height: 7.2rem;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden; /* Hide potential overflow if calculation is off */
+        text-align: center;
+        padding: 0 0.5rem;
     }
 
     /* Target the dynamic span specifically on mobile */
