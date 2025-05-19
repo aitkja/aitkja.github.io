@@ -101,11 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const dynamicHeadlineSpan = document.querySelector('.headline-dynamic');
     if (dynamicHeadlineSpan) {
         const headlines = [
-            "Custom Laser Cutting & Engraving", // Initial text from HTML
-            "Elegant Wedding & Event Decor",    // Refined
-            "Your Corporate Branding Partner",  // Refined
-            "Unique Personalized Gifts",        // Refined
-            "Precision Industrial Engraving & Cutting" // Refined
+            "Custom Laser Cutting & Engraving", 
+            "Elegant Wedding & Event Decor",    
+            "Your Corporate Branding Partner",  
+            "Unique Personalized Gifts",        
+            "Industrial Engraving & Cutting" // Shortened
         ];
         let currentIndex = 0;
         dynamicHeadlineSpan.textContent = headlines[0]; 
