@@ -12,7 +12,6 @@ body {
     line-height: 1.7;
     color: #2d2d2d; /* Slightly darker, less harsh than pure black */
     background-color: #fcfcfc; /* Slightly off-white background */
-    background-image: url('videos/13551792_1920_1080_30fps.mp4'); /* Background video reference remains */
     background-attachment: fixed;
     background-size: cover;
 }
