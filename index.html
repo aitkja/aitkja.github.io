@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Forest City Laser: Expert custom laser cutting & engraving for gifts, wedding decor, corporate branding, & industrial parts. Precision quality for your vision.">
     <title>Forest City Laser - Custom Laser Cutting & Engraving</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <style type="text/css">/* Critical CSS will go here. Manually identify and add the CSS rules needed for above-the-fold content. */</style>
     <!-- Favicon Links - Providing multiple sizes -->
     <link rel="icon" href="images/logo/Logo_Image.png" sizes="16x16" type="image/png">
     <link rel="icon" href="images/logo/Logo_Image.png" sizes="32x32" type="image/png">
@@ -31,7 +33,7 @@
     <main>
         <section id="hero">
             <!-- Background Video -->
-            <video autoplay loop muted playsinline preload="metadata" class="hero-background-video">
+            <video autoplay loop muted playsinline preload="metadata" class="hero-background-video" poster="images/misc/video_poster.jpg">
                 <source src="videos/Hero_Video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
