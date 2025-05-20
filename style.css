@@ -147,6 +147,10 @@ main > section:last-of-type {
     width: auto;
     border-bottom: 1px solid #f5f5f5;
     color: #fff;
+    background-image: url('images/misc/video_poster.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-background-video {
