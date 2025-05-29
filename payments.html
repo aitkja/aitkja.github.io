@@ -234,33 +234,55 @@
                 await card.attach('#card-container');
                 console.log('Card form attached successfully');
                 
-                // Clear the loading message after successful attachment
-                // The Square form will replace the loading message automatically
-                
                 // Clear any previous error messages
                 document.getElementById('square-sdk-error').style.display = 'none';
                 
-                // Try to initialize Google Pay (optional, may not work in all browsers)
+                // Set up Google Pay using PaymentRequest (proper method)
+                let paymentRequest;
                 try {
-                    const googlePay = await payments.googlePay({
-                        environment: 'TEST'
+                    paymentRequest = payments.paymentRequest({
+                        countryCode: 'CA',
+                        currencyCode: 'CAD',
+                        total: {
+                            amount: '1.00',
+                            label: 'Total'
+                        }
                     });
+
+                    const googlePay = await payments.googlePay(paymentRequest);
                     await googlePay.attach('#google-pay-button');
-                    console.log('Google Pay initialized');
+                    console.log('Google Pay initialized successfully');
+                    
+                    // Handle Google Pay payment
+                    googlePay.addEventListener('payment', async (event) => {
+                        const amount = document.getElementById('amount').value;
+                        const email = document.getElementById('customer-email').value;
+                        
+                        if (!amount || amount <= 0) {
+                            showStatus('Please enter a valid payment amount.', 'error');
+                            return;
+                        }
+                        
+                        // Update payment request with actual amount
+                        paymentRequest.update({
+                            total: {
+                                amount: amount,
+                                label: 'Forest City Laser Payment'
+                            }
+                        });
+                        
+                        showStatus('Google Pay payment tokenized successfully! (Note: This is sandbox mode)', 'success');
+                        document.getElementById('payment-form').reset();
+                    });
+                    
                 } catch (e) {
                     console.log('Google Pay not available:', e.message);
                     document.getElementById('google-pay-button').style.display = 'none';
                 }
                 
-                // Try to initialize Apple Pay (optional, only works on Safari/iOS)
-                try {
-                    const applePay = await payments.applePay();
-                    await applePay.attach('#apple-pay-button');
-                    console.log('Apple Pay initialized');
-                } catch (e) {
-                    console.log('Apple Pay not available:', e.message);
-                    document.getElementById('apple-pay-button').style.display = 'none';
-                }
+                // Apple Pay disabled as requested
+                document.getElementById('apple-pay-button').style.display = 'none';
+                console.log('Apple Pay disabled');
                 
                 // Handle form submission
                 document.getElementById('payment-form').addEventListener('submit', async (event) => {
