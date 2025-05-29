@@ -212,6 +212,7 @@
                 // Initialize card payment method
                 console.log('Creating card payment method...');
                 card = await payments.card({
+                    postalCode: true,
                     style: {
                         input: {
                             fontSize: '16px',
@@ -233,6 +234,9 @@
                 console.log('Attaching card to container...');
                 await card.attach('#card-container');
                 console.log('Card form attached successfully');
+                
+                // Clear the loading message after successful attachment
+                // The Square form will replace the loading message automatically
                 
                 // Clear any previous error messages
                 document.getElementById('square-sdk-error').style.display = 'none';
