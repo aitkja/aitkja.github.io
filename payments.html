@@ -207,7 +207,7 @@
                 let card;
                 
                 // Add loading message
-                document.getElementById('card-container').innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">Loading payment form...</p>';
+                document.getElementById('card-container').innerHTML = '<p id="loading-message" style="text-align: center; color: #666; padding: 1rem;">Loading payment form...</p>';
                 
                 // Initialize card payment method
                 console.log('Creating card payment method...');
@@ -234,51 +234,18 @@
                 await card.attach('#card-container');
                 console.log('Card form attached successfully');
                 
+                // Remove the loading message after card form is attached
+                const loadingMessage = document.getElementById('loading-message');
+                if (loadingMessage) {
+                    loadingMessage.remove();
+                }
+                
                 // Clear any previous error messages
                 document.getElementById('square-sdk-error').style.display = 'none';
                 
-                // Set up Google Pay using PaymentRequest (proper method)
-                let paymentRequest;
-                try {
-                    paymentRequest = payments.paymentRequest({
-                        countryCode: 'CA',
-                        currencyCode: 'CAD',
-                        total: {
-                            amount: '1.00',
-                            label: 'Total'
-                        }
-                    });
-
-                    const googlePay = await payments.googlePay(paymentRequest);
-                    await googlePay.attach('#google-pay-button');
-                    console.log('Google Pay initialized successfully');
-                    
-                    // Handle Google Pay payment
-                    googlePay.addEventListener('payment', async (event) => {
-                        const amount = document.getElementById('amount').value;
-                        const email = document.getElementById('customer-email').value;
-                        
-                        if (!amount || amount <= 0) {
-                            showStatus('Please enter a valid payment amount.', 'error');
-                            return;
-                        }
-                        
-                        // Update payment request with actual amount
-                        paymentRequest.update({
-                            total: {
-                                amount: amount,
-                                label: 'Forest City Laser Payment'
-                            }
-                        });
-                        
-                        showStatus('Google Pay payment tokenized successfully! (Note: This is sandbox mode)', 'success');
-                        document.getElementById('payment-form').reset();
-                    });
-                    
-                } catch (e) {
-                    console.log('Google Pay not available:', e.message);
-                    document.getElementById('google-pay-button').style.display = 'none';
-                }
+                // Google Pay disabled as requested
+                document.getElementById('google-pay-button').style.display = 'none';
+                console.log('Google Pay disabled');
                 
                 // Apple Pay disabled as requested
                 document.getElementById('apple-pay-button').style.display = 'none';
