@@ -349,13 +349,6 @@
             console.log('DOM loaded, initializing payments...');
             initializeSquarePayments();
         });
-        
-        // Fallback initialization in case DOMContentLoaded already fired
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeSquarePayments);
-        } else {
-            initializeSquarePayments();
-        }
     </script>
 </body>
 </html> 
