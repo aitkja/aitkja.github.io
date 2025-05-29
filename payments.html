@@ -18,7 +18,7 @@
     
     <!-- Square Web Payments SDK -->
     <script 
-        src="https://sandbox-web.squarecdn.com/v1/square.js" 
+        src="https://sandbox.web.squarecdn.com/v1/square.js" 
         onload="console.log('Square SDK loaded successfully')"
         onerror="console.error('Failed to load Square SDK'); document.getElementById('square-sdk-error').style.display = 'block';">
     </script>
@@ -148,9 +148,54 @@
             
             // Check if Square SDK loaded
             if (typeof Square === 'undefined') {
-                console.error('Square SDK not loaded');
-                document.getElementById('square-sdk-error').style.display = 'block';
-                showStatus('Payment system is loading. Please refresh the page if this message persists.', 'error');
+                console.error('Square SDK not loaded - showing fallback form');
+                
+                // Hide the SDK error and show a fallback form instead
+                const errorDiv = document.getElementById('square-sdk-error');
+                if (errorDiv) {
+                    errorDiv.style.display = 'none';
+                }
+                
+                // Create a fallback card form for demonstration
+                document.getElementById('card-container').innerHTML = `
+                    <div style="border: 1px solid #ddd; padding: 1rem; border-radius: 4px; background: #f9f9f9;">
+                        <p style="margin-bottom: 1rem; color: #666; font-size: 0.9rem;">
+                            <strong>Demo Mode:</strong> Square SDK couldn't load. This shows what the payment form would look like:
+                        </p>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Card Number</label>
+                            <input type="text" placeholder="1234 5678 9012 3456" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;" readonly>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Expiry</label>
+                                <input type="text" placeholder="MM/YY" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;" readonly>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">CVV</label>
+                                <input type="text" placeholder="123" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;" readonly>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Cardholder Name</label>
+                            <input type="text" placeholder="John Doe" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;" readonly>
+                        </div>
+                        <p style="color: #666; font-size: 0.85rem; margin: 0;">
+                            To enable real payments, ensure you're on HTTPS and the Square SDK can load properly.
+                        </p>
+                    </div>
+                `;
+                
+                // Hide Google Pay and Apple Pay buttons
+                document.getElementById('google-pay-button').style.display = 'none';
+                document.getElementById('apple-pay-button').style.display = 'none';
+                
+                // Update the form submission to show a demo message
+                document.getElementById('payment-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    showStatus('Demo mode: In production, this would process the payment through Square.', 'error');
+                });
+                
                 return;
             }
             
