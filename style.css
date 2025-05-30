@@ -1121,27 +1121,62 @@ nav ul li a.active::after {
     }
 }
 
-/* Tawk.to Chat Widget Customization */
-/* Hide promotional banners and make widget less intrusive */
-#tawkchat-container iframe {
-    border-radius: 8px !important;
+/* Tawk.to Chat Widget Customization - More Aggressive Approach */
+/* Hide ALL Tawk.to promotional banners and overlays */
+iframe[src*="tawk.to"] + div,
+div[id*="tawk"][style*="position: fixed"],
+div[id*="tawk"][style*="position: absolute"],
+[id*="tawk"][style*="top: 0"],
+[id*="tawk"][style*="z-index"][style*="position"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
 }
 
-/* Hide Tawk.to promotional banner */
-div[id*="tawk"] div[style*="position: fixed"][style*="top: 0"] {
+/* Target specific Tawk.to promotional elements */
+.tawk-promo,
+.tawk-banner,
+div[class*="tawk"][class*="banner"],
+div[class*="tawk"][class*="promo"] {
     display: none !important;
 }
 
-/* Hide the top banner specifically */
-#tawkchat-minified-container + div,
-#tawkchat-container + div {
+/* Hide any elements that might be the promotional banner */
+body > div:not([id]):not([class])[style*="position: fixed"][style*="top: 0"] {
     display: none !important;
+}
+
+/* Only show the actual chat widget */
+#tawkchat-container,
+#tawkchat-minified-container {
+    display: block !important;
+}
+
+/* Ensure page loads at top */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+/* Prevent auto-scroll to bottom */
+html, body {
+    overflow-x: hidden;
 }
 
 /* Mobile specific Tawk.to adjustments */
 @media (max-width: 768px) {
-    /* Hide any promotional banners on mobile */
-    div[id*="tawk"][style*="position: fixed"][style*="top"] {
+    /* More aggressive banner hiding on mobile */
+    body > div[style*="position: fixed"]:not(#tawkchat-container):not(#tawkchat-minified-container) {
+        display: none !important;
+    }
+    
+    /* Hide any full-width top banners */
+    div[style*="width: 100%"][style*="position: fixed"][style*="top"] {
         display: none !important;
     }
     
@@ -1149,15 +1184,15 @@ div[id*="tawk"] div[style*="position: fixed"][style*="top: 0"] {
     #tawkchat-minified-container {
         bottom: 20px !important;
         right: 15px !important;
-        transform: scale(0.9) !important;
+        transform: scale(0.8) !important; /* Made even smaller */
     }
     
     /* Adjust chat window size on mobile */
     #tawkchat-container {
-        width: 95% !important;
-        max-width: 350px !important;
-        height: 80% !important;
-        max-height: 500px !important;
+        width: 90% !important;
+        max-width: 320px !important;
+        height: 70% !important;
+        max-height: 400px !important;
         bottom: 20px !important;
         right: 15px !important;
     }

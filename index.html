@@ -564,6 +564,82 @@
 
     <!-- Dynamic Chat Status Script -->
     <script type="text/javascript">
+        // Force page to load at top
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            }, 100);
+        });
+
+        // Aggressive Tawk.to banner removal
+        function removeTawkBanners() {
+            // Remove all potential banner elements
+            const selectors = [
+                'div[id*="tawk"][style*="position: fixed"]',
+                'div[id*="tawk"][style*="top: 0"]',
+                'div[style*="position: fixed"][style*="top: 0"]:not(#tawkchat-container):not(#tawkchat-minified-container)',
+                'iframe[src*="tawk.to"] + div',
+                '.tawk-promo',
+                '.tawk-banner',
+                'div[class*="tawk"][class*="banner"]',
+                'div[class*="tawk"][class*="promo"]'
+            ];
+            
+            selectors.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(element => {
+                    if (element && element.id !== 'tawkchat-container' && element.id !== 'tawkchat-minified-container') {
+                        element.style.display = 'none';
+                        element.style.visibility = 'hidden';
+                        element.style.opacity = '0';
+                        element.style.height = '0';
+                        element.style.width = '0';
+                        element.remove();
+                    }
+                });
+            });
+        }
+
+        // Run banner removal multiple times
+        setInterval(removeTawkBanners, 1000);
+        
+        // Mutation observer to catch dynamically added content
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.addedNodes) {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1) { // Element node
+                            // Check if it's a potential Tawk.to banner
+                            const style = node.style;
+                            if (style && style.position === 'fixed' && 
+                                (style.top === '0px' || style.top === '0') &&
+                                node.id !== 'tawkchat-container' && 
+                                node.id !== 'tawkchat-minified-container') {
+                                node.remove();
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+        // Start observing
+        if (document.body) {
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        } else {
+            document.addEventListener('DOMContentLoaded', function() {
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+            });
+        }
+
         // Wait for Tawk.to to load and then monitor status
         Tawk_API = Tawk_API || {};
         
@@ -608,6 +684,7 @@
         // Initial status check after Tawk.to loads
         Tawk_API.onLoad = function() {
             updateChatStatus();
+            removeTawkBanners(); // Remove banners when Tawk.to loads
         };
         
         // Fallback check in case onLoad doesn't fire
@@ -618,6 +695,8 @@
         // Also check when page loads
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(updateChatStatus, 2000);
+            // Ensure page is at top
+            window.scrollTo(0, 0);
         });
     </script>
 </body>
