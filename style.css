@@ -48,7 +48,7 @@ nav {
 }
 
 #logo {
-    max-height: 120px; /* Doubled from 60px to match desktop logo size */
+    max-height: 240px; /* Doubled to 2X the current size for mobile */
     width: auto;      /* Added for maintaining aspect ratio */
     /* max-width: 200px; */ /* Example max-width for mobile */
     margin-bottom: 0.5rem; /* Reduced space below logo */
@@ -594,7 +594,7 @@ footer {
     }
 
     #logo {
-        max-height: 120px; /* Doubled from 60px to match desktop logo size */
+        max-height: 240px; /* Doubled to 2X the current size for mobile */
         width: auto;      /* Added for maintaining aspect ratio */
         /* max-width: 200px; */ /* Example max-width for mobile */
         margin-bottom: 0.5rem; /* Reduced space below logo */
@@ -702,6 +702,12 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    /* Ensure About and Contact text stays centered on mobile */
+    #about p,
+    #contact p {
+        text-align: center;
     }
 }
 
