@@ -510,6 +510,47 @@
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    
+    // Configure Tawk.to to hide promotional content
+    Tawk_API.customStyle = {
+        visibility : {
+            desktop : {
+                position : 'br',
+                xOffset : 20,
+                yOffset : 20
+            },
+            mobile : {
+                position : 'br',
+                xOffset : 15,
+                yOffset : 20
+            }
+        }
+    };
+    
+    // Hide promotional banners when widget loads
+    Tawk_API.onLoad = function(){
+        // Hide any promotional banners
+        var promoElements = document.querySelectorAll('div[id*="tawk"][style*="position: fixed"][style*="top"]');
+        promoElements.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        
+        // Update chat status after load
+        if (typeof updateChatStatus === 'function') {
+            updateChatStatus();
+        }
+    };
+    
+    // Monitor for dynamically added promotional content
+    Tawk_API.onChatMaximized = function(){
+        setTimeout(function() {
+            var promoElements = document.querySelectorAll('div[id*="tawk"][style*="position: fixed"][style*="top"]');
+            promoElements.forEach(function(element) {
+                element.style.display = 'none';
+            });
+        }, 500);
+    };
+    
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
