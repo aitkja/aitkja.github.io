@@ -709,6 +709,11 @@ footer {
     #contact p {
         text-align: center;
     }
+
+    /* Reduce step icon font size on mobile to prevent text wrapping */
+    .step-icon {
+        font-size: 0.75rem; /* Smaller font size for mobile to ensure single line */
+    }
 }
 
 /* Lightbox Styles (Remain unchanged) */
