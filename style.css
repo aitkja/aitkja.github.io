@@ -1121,48 +1121,6 @@ nav ul li a.active::after {
     }
 }
 
-/* Tawk.to Chat Widget Customization - More Aggressive Approach */
-/* Hide ALL Tawk.to promotional banners and overlays */
-iframe[src*="tawk.to"] + div,
-div[id*="tawk"][style*="position: fixed"],
-div[id*="tawk"][style*="position: absolute"],
-[id*="tawk"][style*="top: 0"],
-[id*="tawk"][style*="z-index"][style*="position"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    width: 0 !important;
-}
-
-/* Target specific Tawk.to promotional elements */
-.tawk-promo,
-.tawk-banner,
-div[class*="tawk"][class*="banner"],
-div[class*="tawk"][class*="promo"] {
-    display: none !important;
-}
-
-/* Hide any elements that might be the promotional banner */
-body > div:not([id]):not([class])[style*="position: fixed"][style*="top: 0"] {
-    display: none !important;
-}
-
-/* Only show the actual chat widget */
-#tawkchat-container,
-#tawkchat-minified-container {
-    display: block !important;
-}
-
-/* Ensure page loads at top */
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    scroll-behavior: smooth;
-}
-
 /* Prevent auto-scroll to bottom */
 html, body {
     overflow-x: hidden;
@@ -1194,34 +1152,4 @@ section {
 :target {
     scroll-margin-top: 0;
     scroll-padding-top: 0;
-}
-
-/* Mobile specific Tawk.to adjustments */
-@media (max-width: 768px) {
-    /* More aggressive banner hiding on mobile */
-    body > div[style*="position: fixed"]:not(#tawkchat-container):not(#tawkchat-minified-container) {
-        display: none !important;
-    }
-    
-    /* Hide any full-width top banners */
-    div[style*="width: 100%"][style*="position: fixed"][style*="top"] {
-        display: none !important;
-    }
-    
-    /* Make chat widget smaller and less intrusive on mobile */
-    #tawkchat-minified-container {
-        bottom: 20px !important;
-        right: 15px !important;
-        transform: scale(0.8) !important; /* Made even smaller */
-    }
-    
-    /* Adjust chat window size on mobile */
-    #tawkchat-container {
-        width: 90% !important;
-        max-width: 320px !important;
-        height: 70% !important;
-        max-height: 400px !important;
-        bottom: 20px !important;
-        right: 15px !important;
-    }
 }
