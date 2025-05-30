@@ -385,9 +385,9 @@
             
             <!-- Live Chat Notice -->
             <div class="live-chat-container">
-                <div class="chat-notice">
-                    <h3>💬 Live Chat Available</h3>
-                    <p>Look for the chat widget in the bottom right corner to start an instant conversation with us during business hours!</p>
+                <div class="chat-notice" id="chat-status-notice">
+                    <h3 id="chat-status-title">💬 Live Chat Available</h3>
+                    <p id="chat-status-message">Look for the chat widget in the bottom right corner to start an instant conversation with us during business hours!</p>
                 </div>
             </div>
         </section>
@@ -520,5 +520,64 @@
     })();
     </script>
     <!--End of Tawk.to Script-->
+
+    <!-- Dynamic Chat Status Script -->
+    <script type="text/javascript">
+        // Wait for Tawk.to to load and then monitor status
+        Tawk_API = Tawk_API || {};
+        
+        function updateChatStatus() {
+            const titleElement = document.getElementById('chat-status-title');
+            const messageElement = document.getElementById('chat-status-message');
+            const noticeElement = document.getElementById('chat-status-notice');
+            
+            if (!titleElement || !messageElement || !noticeElement) return;
+            
+            // Check if Tawk.to is loaded and get status
+            if (typeof Tawk_API !== 'undefined' && Tawk_API.getStatus) {
+                const status = Tawk_API.getStatus();
+                
+                if (status === 'online') {
+                    // Online - show available message
+                    titleElement.innerHTML = '💬 Live Chat Available';
+                    messageElement.innerHTML = 'Look for the chat widget in the bottom right corner to start an instant conversation with us right now!';
+                    noticeElement.style.borderColor = '#28a745';
+                    noticeElement.style.background = 'linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%)';
+                } else {
+                    // Offline - show unavailable message
+                    titleElement.innerHTML = '💤 Live Chat Currently Offline';
+                    messageElement.innerHTML = 'We\'re currently outside of our chat hours. Please use the quote form above or email us directly for assistance!';
+                    noticeElement.style.borderColor = '#ffc107';
+                    noticeElement.style.background = 'linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%)';
+                }
+            } else {
+                // Fallback if status can't be determined
+                titleElement.innerHTML = '💬 Live Chat';
+                messageElement.innerHTML = 'Look for the chat widget in the bottom right corner during business hours, or use our quote form above!';
+                noticeElement.style.borderColor = '#e9ecef';
+                noticeElement.style.background = 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)';
+            }
+        }
+        
+        // Monitor Tawk.to status changes
+        Tawk_API.onStatusChange = function(status) {
+            updateChatStatus();
+        };
+        
+        // Initial status check after Tawk.to loads
+        Tawk_API.onLoad = function() {
+            updateChatStatus();
+        };
+        
+        // Fallback check in case onLoad doesn't fire
+        setTimeout(function() {
+            updateChatStatus();
+        }, 3000);
+        
+        // Also check when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(updateChatStatus, 2000);
+        });
+    </script>
 </body>
 </html> 
