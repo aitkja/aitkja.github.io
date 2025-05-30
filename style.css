@@ -30,7 +30,7 @@ header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     color: #333;
-    padding: 1.5rem 0; /* Reduced padding slightly */
+    padding: 0.8rem 0; /* Reduced from 1.5rem to 0.8rem */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -48,10 +48,9 @@ nav {
 }
 
 #logo {
-    max-height: 240px; /* Doubled to 2X the current size for mobile */
+    max-height: 120px; /* Increased by 50% from 80px to 120px */
     width: auto;      /* Added for maintaining aspect ratio */
-    /* max-width: 200px; */ /* Example max-width for mobile */
-    margin-bottom: 0.5rem; /* Reduced space below logo */
+    margin-bottom: 0; /* Remove bottom margin */
 }
 
 nav ul {
@@ -191,17 +190,13 @@ main > section:last-of-type {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 4rem 1.5rem;
+    padding: 1.5rem 2.5rem; /* Consolidated and reduced padding */
     /* Ensure hero content doesn't get too small, but allow expansion */
-    min-height: 16rem; /* Reverted to min-height, adjust value if needed */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    min-height: 10rem; /* Reduced from 16rem to 10rem */
+    display: inline-block;
     /* REMOVED fixed height */
     background: rgba(0,0,0,0.18);
     border-radius: 8px;
-    padding: 1.2rem 2.5rem;
-    display: inline-block;
 }
 
 h1, h2 {
@@ -214,7 +209,7 @@ h1, h2 {
 #hero h1 {
     font-size: 2.8rem;
     /* Remove fixed height and flex from H1 */
-    margin-bottom: 1.5rem; /* Ensure consistent bottom margin */
+    margin-bottom: 1rem; /* Reduced from 1.5rem to 1rem */
     line-height: 1.2; /* Set explicit line height */
     /* Approx height for 3 lines + small buffer */
     height: calc(2.8rem * 1.2 * 3 + 0.5rem);
@@ -234,7 +229,7 @@ h2 {
 
 #hero p {
     /* Ensure paragraph margin is appropriate with fixed H1 height */
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* Reduced from 2rem to 1.5rem */
     color: #f0f0f0;
     max-width: 650px;
     margin-left: auto;
@@ -255,7 +250,7 @@ h2 {
 
 /* Hero Buttons Wrapper */
 .hero-buttons {
-    margin-top: 2.5rem; /* Space above buttons */
+    margin-top: 1.5rem; /* Reduced from 2.5rem to 1.5rem */
 }
 
 .cta-button {
