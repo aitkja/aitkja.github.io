@@ -564,13 +564,56 @@
 
     <!-- Dynamic Chat Status Script -->
     <script type="text/javascript">
-        // Force page to load at top
+        // IMMEDIATE scroll to top - run as soon as possible
+        (function() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        })();
+
+        // Force page to load at top - multiple methods
+        function forceScrollToTop() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollLeft = 0;
+            document.body.scrollLeft = 0;
+            
+            // Additional methods for stubborn cases
+            if (window.pageYOffset !== 0) {
+                window.pageYOffset = 0;
+            }
+            if (window.scrollY !== 0) {
+                window.scrollY = 0;
+            }
+        }
+
+        // Run immediately and repeatedly
+        forceScrollToTop();
+        
+        // Override any hash navigation
+        if (window.location.hash) {
+            window.location.hash = '';
+            history.replaceState('', document.title, window.location.pathname + window.location.search);
+        }
+
+        // Run on various events
+        window.addEventListener('DOMContentLoaded', forceScrollToTop);
         window.addEventListener('load', function() {
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-                document.documentElement.scrollTop = 0;
-                document.body.scrollTop = 0;
-            }, 100);
+            forceScrollToTop();
+            setTimeout(forceScrollToTop, 50);
+            setTimeout(forceScrollToTop, 100);
+            setTimeout(forceScrollToTop, 200);
+            setTimeout(forceScrollToTop, 500);
+            setTimeout(forceScrollToTop, 1000);
+        });
+
+        // Prevent any auto-scrolling from other scripts
+        window.addEventListener('scroll', function() {
+            // If page somehow gets scrolled during initial load, force back to top
+            if (document.readyState !== 'complete') {
+                forceScrollToTop();
+            }
         });
 
         // Aggressive Tawk.to banner removal
@@ -685,18 +728,19 @@
         Tawk_API.onLoad = function() {
             updateChatStatus();
             removeTawkBanners(); // Remove banners when Tawk.to loads
+            forceScrollToTop(); // Ensure we're at top after Tawk.to loads
         };
         
         // Fallback check in case onLoad doesn't fire
         setTimeout(function() {
             updateChatStatus();
+            forceScrollToTop();
         }, 3000);
         
         // Also check when page loads
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(updateChatStatus, 2000);
-            // Ensure page is at top
-            window.scrollTo(0, 0);
+            forceScrollToTop();
         });
     </script>
 </body>

@@ -1166,6 +1166,34 @@ body {
 /* Prevent auto-scroll to bottom */
 html, body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* Ensure initial position is at top */
+    scroll-padding-top: 0;
+    scroll-margin-top: 0;
+}
+
+/* Prevent any elements from auto-focusing and causing scroll */
+input:focus, textarea:focus, select:focus, button:focus {
+    scroll-margin: 0;
+    scroll-padding: 0;
+}
+
+/* Ensure main content doesn't cause scroll on load */
+main {
+    scroll-margin-top: 0;
+    scroll-padding-top: 0;
+}
+
+/* Make sure sections don't auto-scroll */
+section {
+    scroll-margin-top: 0;
+    scroll-padding-top: 0;
+}
+
+/* Prevent hash navigation from affecting initial load */
+:target {
+    scroll-margin-top: 0;
+    scroll-padding-top: 0;
 }
 
 /* Mobile specific Tawk.to adjustments */
