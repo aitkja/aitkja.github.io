@@ -8,6 +8,7 @@
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
     <style type="text/css">/* Critical CSS will go here. Manually identify and add the CSS rules needed for above-the-fold content. */</style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
     <!-- Favicon Links - Providing multiple sizes -->
     <link rel="icon" href="images/logo/Logo_Image.webp" sizes="16x16" type="image/webp">
     <link rel="icon" href="images/logo/Logo_Image.webp" sizes="32x32" type="image/webp">
@@ -25,7 +26,6 @@
                 <li><a href="#gallery">Portfolio</a></li>
                 <li><a href="#quote">Request Quote</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="payments.html">Make Payment</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -376,11 +376,9 @@
         </section>
 
         <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions or a project in mind? Reach out to us!</p>
-            <p><strong>Email:</strong> <a href="mailto:info@forestcitylaser.com">info@forestcitylaser.com</a></p>
-            <p><strong>Location:</strong> Riverbend area, London, Ontario (Please contact for specific address/appointments)</p>
-            <!-- Add Phone Number here if desired -->
+            <h2>Get In Touch</h2>
+            <p>Have questions or a project in mind? We'd love to hear from you!</p>
+            <p>Ready to get started? Use our quote form above or reach out directly using the contact information in the footer below.</p>
         </section>
     </main>
 
@@ -390,6 +388,12 @@
                 <h4>Forest City Laser</h4>
                 <img src="images/logo/Full_Logo.webp" alt="Forest City Laser Full Logo" class="footer-logo">
                 <p>Specializing in custom laser cutting and engraving for wood, acrylic, and leather. Based in London, Ontario.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:info@forestcitylaser.com">info@forestcitylaser.com</a></p>
+                <p>Location: Riverbend, London, ON</p>
+                <p>(Please contact for specific address/appointments)</p>
             </div>
             <div class="footer-column">
                 <h4>Quick Links</h4>
@@ -402,12 +406,43 @@
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Contact Us</h4>
-                <p>Email: <a href="mailto:info@forestcitylaser.com">info@forestcitylaser.com</a></p>
-                <p>Location: Riverbend, London, ON</p>
-                <!-- Add Phone here if desired -->
-                <!-- Add Social Media Links here -->
-                <!-- e.g., <p><a href="#">Instagram</a></p> -->
+                <h4>Make a Payment</h4>
+                <div style="margin-top: 10px;">
+                    <div style="
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        align-items: center;
+                        width: 259px;
+                        background: #FFFFFF;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        box-shadow: -2px 10px 5px rgba(0, 0, 0, 0);
+                        border-radius: 10px;
+                        font-family: Rubik, SQ Market, Helvetica, Arial, sans-serif;
+                    ">
+                        <img src="https://items-images-production.s3.us-west-2.amazonaws.com/files/2543ccabf7a67309926221279dec1bc5d157961b/original.png" alt="Forest City Laser Payment" onerror="this.style.display='none'" style="width: 100%;">
+                        <div style="padding: 20px;">
+                            <a target="_blank" 
+                               id="embedded-checkout-modal-checkout-button"
+                               data-url="https://square.link/u/xrE4uABv?src=embed" 
+                               href="https://square.link/u/xrE4uABv?src=embed" 
+                               style="
+                                   display: inline-block;
+                                   font-size: 18px;
+                                   line-height: 48px;
+                                   height: 48px;
+                                   color: #000000;
+                                   min-width: 212px;
+                                   background-color: #d9d9d9;
+                                   text-align: center;
+                                   box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
+                                   border-radius: 6px;
+                                   text-decoration: none;
+                               ">Payment Portal</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -420,6 +455,38 @@
     </footer>
 
     <script src="script.js" defer></script>
+
+    <!-- Square Payment Popup Script -->
+    <script>
+        function showCheckoutWindow(e) {
+            e.preventDefault();
+
+            const url = document.getElementById('embedded-checkout-modal-checkout-button').getAttribute('data-url');
+            const title = 'Square Payment Links';
+
+            // Some platforms embed in an iframe, so we want to top window to calculate sizes correctly
+            const topWindow = window.top ? window.top : window;
+
+            // Get full screen dimensions
+            const width = topWindow.screen.availWidth;
+            const height = topWindow.screen.availHeight;
+
+            // Open in full screen
+            const newWindow = window.open(url, title, `scrollbars=yes, width=${width}, height=${height}, top=0, left=0, resizable=yes, menubar=no, toolbar=no, location=no, status=no`);
+
+            if (window.focus) newWindow.focus();
+        }
+
+        // Initialize Square payment button when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const payButton = document.getElementById('embedded-checkout-modal-checkout-button');
+            if (payButton) {
+                payButton.addEventListener('click', function(e) {
+                    showCheckoutWindow(e);
+                });
+            }
+        });
+    </script>
 
     <!-- Lightbox Structure -->
     <div id="lightbox-overlay" class="lightbox-hidden">
