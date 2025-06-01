@@ -366,7 +366,18 @@
                 <label for="image-reference">Stock Image Reference (If applicable):</label>
                 <input type="text" id="image-reference" name="image-reference">
 
-                <button type="submit">Submit Quote Request</button>
+                <div class="form-group">
+                    <label for="details">Additional Details:</label>
+                    <textarea id="details" name="details" rows="4" placeholder="Please provide any additional information about your project..."></textarea>
+                </div>
+
+                <!-- Coupon Code Section -->
+                <div class="form-group">
+                    <label for="coupon">Coupon Code (Optional):</label>
+                    <input type="text" id="coupon" name="coupon" placeholder="Enter your coupon code here">
+                </div>
+
+                <button type="submit" class="submit-btn">Get Quote</button>
             </form>
         </section>
 
@@ -627,6 +638,71 @@
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(updateChatStatus, 3000);
             forceScrollToTop();
+        });
+    </script>
+
+    <style>
+        /* Coupon Code Styles */
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+    </style>
+
+    <script>
+        // Add this to your existing JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const couponInput = document.getElementById('coupon');
+            const applyButton = document.getElementById('apply-coupon');
+            const messageDiv = document.getElementById('coupon-message');
+
+            // Example coupon codes - you can modify these
+            const validCoupons = {
+                'WELCOME10': 10,
+                'SUMMER25': 25,
+                'FCLASER15': 15
+            };
+
+            applyButton.addEventListener('click', function() {
+                const code = couponInput.value.trim().toUpperCase();
+                
+                if (!code) {
+                    showMessage('Please enter a coupon code', 'error');
+                    return;
+                }
+
+                if (validCoupons[code]) {
+                    showMessage(`Coupon applied! You'll receive ${validCoupons[code]}% off your order.`, 'success');
+                    // You can add additional logic here to handle the discount
+                } else {
+                    showMessage('Invalid coupon code. Please try again.', 'error');
+                }
+            });
+
+            function showMessage(text, type) {
+                messageDiv.textContent = text;
+                messageDiv.className = 'coupon-message ' + type;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            }
+
+            // Clear message when user starts typing
+            couponInput.addEventListener('input', function() {
+                messageDiv.style.display = 'none';
+            });
         });
     </script>
 </body>
