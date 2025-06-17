@@ -190,7 +190,7 @@ main > section:last-of-type {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 1.5rem 2.5rem; /* Consolidated and reduced padding */
+    padding: 2rem 1.5rem; /* Reduced from 4rem to 2rem */
     /* Ensure hero content doesn't get too small, but allow expansion */
     min-height: 10rem; /* Reduced from 16rem to 10rem */
     display: inline-block;
@@ -207,19 +207,16 @@ h1, h2 {
 }
 
 #hero h1 {
-    font-size: 2.8rem;
-    /* Remove fixed height and flex from H1 */
-    margin-bottom: 1rem; /* Reduced from 1.5rem to 1rem */
-    line-height: 1.2; /* Set explicit line height */
-    /* Approx height for 3 lines + small buffer */
-    height: calc(2.8rem * 1.2 * 3 + 0.5rem);
+    font-size: 1.8rem; /* Slightly smaller to fit better */
+    line-height: 1.15;
+    height: auto; /* Allow natural height instead of fixed */
+    overflow: visible; /* Allow text to show fully */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Hide potential overflow if calculation is off */
-    color: #fff;
-    font-weight: 600;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Subtle text shadow for readability */
+    text-align: center;
+    padding: 0 0.5rem;
+    margin-bottom: 1rem; /* Add margin for better spacing */
 }
 
 h2 {
@@ -578,7 +575,7 @@ footer {
     /* Make header scroll normally on mobile */
     header {
         position: static; /* Override sticky positioning */
-        padding: 1rem 0; /* Adjust padding for non-sticky */
+        padding: 0.5rem 0; /* Reduced from 1rem to 0.5rem */
     }
 
     nav {
@@ -589,14 +586,14 @@ footer {
     }
 
     #logo {
-        max-height: 240px; /* Doubled to 2X the current size for mobile */
+        max-height: 100px; /* Significantly reduced from 240px to 100px */
         width: auto;      /* Added for maintaining aspect ratio */
         /* max-width: 200px; */ /* Example max-width for mobile */
-        margin-bottom: 0.5rem; /* Reduced space below logo */
+        margin-bottom: 0.25rem; /* Further reduced space below logo */
     }
 
     nav ul {
-        padding-top: 0.2rem; /* Minimize top padding */
+        padding-top: 0.1rem; /* Further minimize top padding */
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -604,8 +601,8 @@ footer {
 
     nav ul li {
         margin-left: 0; /* Remove left margin */
-        margin-top: 0.2rem; /* Further reduced vertical margin */
-        margin-bottom: 0.2rem; /* Further reduced vertical margin */
+        margin-top: 0.1rem; /* Further reduced vertical margin */
+        margin-bottom: 0.1rem; /* Further reduced vertical margin */
     }
 
     main {
@@ -627,7 +624,7 @@ footer {
     }
 
     .hero-content {
-        padding: 4rem 1.5rem;
+        padding: 2rem 1.5rem; /* Reduced from 4rem to 2rem */
         /* Revert min-height here, let content determine height */
         display: flex;
         flex-direction: column;
@@ -635,15 +632,16 @@ footer {
     }
 
     #hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Slightly smaller to fit better */
         line-height: 1.15;
-        height: 7.2rem;
-        overflow: hidden;
+        height: auto; /* Allow natural height instead of fixed */
+        overflow: visible; /* Allow text to show fully */
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         padding: 0 0.5rem;
+        margin-bottom: 1rem; /* Add margin for better spacing */
     }
 
     /* Target the dynamic span specifically on mobile */
@@ -692,7 +690,7 @@ footer {
 
     /* Adjust hero content padding/background if needed without video */
     .hero-content {
-        padding: 4rem 1.5rem;
+        padding: 2rem 1.5rem; /* Reduced from 4rem to 2rem */
         /* Revert min-height here, let content determine height */
         display: flex;
         flex-direction: column;

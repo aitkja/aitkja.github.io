@@ -855,7 +855,13 @@
             }
 
             .product-track {
-                animation: none; /* Disable auto-scroll on mobile */
+                animation: scroll 40s linear infinite; /* Restore auto-scroll on mobile */
+            }
+
+            /* Pause animation when user is actively scrolling */
+            .product-carousel:active .product-track,
+            .product-carousel:focus .product-track {
+                animation-play-state: paused;
             }
 
             /* Hide scrollbar but keep functionality */
