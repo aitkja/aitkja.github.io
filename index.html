@@ -779,7 +779,7 @@
         .product-track {
             display: flex;
             animation: scroll 40s linear infinite;
-            width: calc(250px * 28);
+            width: calc(250px * 28); /* 14 original + 14 clones = 28 total */
         }
 
         /* Manual scroll state - disable auto-scroll and enable overflow */
@@ -850,13 +850,8 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-250px * 14)); /* Half of total width */
+                transform: translateX(calc(-250px * 14)); /* Scroll through original set */
             }
-        }
-
-        /* Pause animation on hover */
-        .product-carousel:hover .product-track {
-            animation-play-state: paused;
         }
 
         /* Responsive adjustments */
@@ -866,7 +861,7 @@
             }
             
             .product-track {
-                width: calc(200px * 28);
+                width: calc(200px * 28); /* 14 original + 14 clones = 28 total */
                 /* Auto-scroll by default on mobile too */
                 animation: scroll 40s linear infinite;
             }
@@ -898,126 +893,202 @@
                     transform: translateX(0);
                 }
                 100% {
-                    transform: translateX(calc(-200px * 14));
+                    transform: translateX(calc(-200px * 14)); /* Scroll through original set */
                 }
             }
         }
     </style>
 
     <script>
-        // Add this to your existing JavaScript
         document.addEventListener('DOMContentLoaded', function() {
+            // --- Coupon Code Logic ---
             const couponInput = document.getElementById('coupon');
             const applyButton = document.getElementById('apply-coupon');
             const messageDiv = document.getElementById('coupon-message');
 
-            // Example coupon codes - you can modify these
-            const validCoupons = {
-                'WELCOME10': 10,
-                'SUMMER25': 25,
-                'FCLASER15': 15
-            };
-
-            applyButton.addEventListener('click', function() {
-                const code = couponInput.value.trim().toUpperCase();
-                
-                if (!code) {
-                    showMessage('Please enter a coupon code', 'error');
-                    return;
-                }
-
-                if (validCoupons[code]) {
-                    showMessage(`Coupon applied! You'll receive ${validCoupons[code]}% off your order.`, 'success');
-                    // You can add additional logic here to handle the discount
-                } else {
-                    showMessage('Invalid coupon code. Please try again.', 'error');
-                }
-            });
-
+            if (applyButton) {
+                applyButton.addEventListener('click', function() {
+                    const code = couponInput.value.trim().toUpperCase();
+                    if (!code) {
+                        showMessage('Please enter a coupon code.', 'error');
+                        return;
+                    }
+                    showMessage(`Coupon code "${code}" will be applied if valid.`, 'success');
+                    setTimeout(() => { if(messageDiv) messageDiv.style.display = 'none'; }, 5000);
+                });
+            }
+            if (couponInput) {
+                couponInput.addEventListener('input', function() {
+                    if(messageDiv) {
+                        messageDiv.textContent = '';
+                        messageDiv.style.display = 'none';
+                    }
+                });
+            }
             function showMessage(text, type) {
-                messageDiv.textContent = text;
-                messageDiv.className = 'coupon-message ' + type;
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    messageDiv.style.display = 'none';
-                }, 5000);
+                if(messageDiv) {
+                    messageDiv.textContent = text;
+                    messageDiv.className = 'coupon-message ' + type;
+                    messageDiv.style.display = 'block';
+                }
             }
 
-            // Clear message when user starts typing
-            couponInput.addEventListener('input', function() {
-                messageDiv.style.display = 'none';
-            });
-        });
-
-        // Add this to your existing JavaScript
-        document.addEventListener('DOMContentLoaded', function() {
-            // Clone slides for infinite scroll effect
-            const track = document.querySelector('.product-track');
+            // --- Fixed Popular Products Carousel Logic ---
             const carousel = document.querySelector('.product-carousel');
-            const slides = document.querySelectorAll('.product-slide');
+            if (!carousel) return;
+
+            const track = carousel.querySelector('.product-track');
+            const slides = Array.from(track.children);
             
+            // Clone slides for infinite loop
             slides.forEach(slide => {
                 const clone = slide.cloneNode(true);
                 track.appendChild(clone);
             });
 
-            let interactionTimeout;
+            let isScrolling = false;
+            let startX = 0;
+            let scrollLeft = 0;
+            let isAutoScrolling = true;
+            let resumeTimeout;
+            let autoScrollSpeed = 0.5; // pixels per frame
+            let animationFrame;
 
-            // Function to switch to manual scroll mode
-            function enableManualScroll() {
-                carousel.classList.add('manual-scroll');
-                clearTimeout(interactionTimeout);
+            // Smooth auto-scroll using requestAnimationFrame instead of CSS animation
+            function autoScroll() {
+                if (!isAutoScrolling || isScrolling) {
+                    return;
+                }
+
+                carousel.scrollLeft += autoScrollSpeed;
+                
+                // Handle infinite loop
+                const maxScroll = track.scrollWidth / 2;
+                if (carousel.scrollLeft >= maxScroll) {
+                    carousel.scrollLeft = 0;
+                }
+                
+                animationFrame = requestAnimationFrame(autoScroll);
             }
 
-            // Function to return to auto-scroll mode
-            function enableAutoScroll() {
-                carousel.classList.remove('manual-scroll');
+            function startAutoScroll() {
+                isAutoScrolling = true;
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+                animationFrame = requestAnimationFrame(autoScroll);
             }
 
-            // Function to set delayed return to auto-scroll
-            function scheduleAutoScrollReturn(delay = 2000) {
-                clearTimeout(interactionTimeout);
-                interactionTimeout = setTimeout(enableAutoScroll, delay);
+            function stopAutoScroll() {
+                isAutoScrolling = false;
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+                clearTimeout(resumeTimeout);
+                
+                // Resume after 3 seconds of no interaction
+                resumeTimeout = setTimeout(() => {
+                    startAutoScroll();
+                }, 3000);
             }
 
-            // Desktop interactions
-            if (window.innerWidth > 768) {
-                // Mouse enter - switch to manual scroll
-                carousel.addEventListener('mouseenter', function() {
-                    enableManualScroll();
-                });
+            // Mouse events
+            carousel.addEventListener('mousedown', (e) => {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+                
+                isScrolling = true;
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+                stopAutoScroll();
+                
+                carousel.style.cursor = 'grabbing';
+                carousel.style.userSelect = 'none';
+            });
 
-                // Mouse leave - return to auto-scroll
-                carousel.addEventListener('mouseleave', function() {
-                    enableAutoScroll();
-                });
+            carousel.addEventListener('mouseleave', () => {
+                isScrolling = false;
+                carousel.style.cursor = 'grab';
+                carousel.style.userSelect = 'auto';
+            });
 
-                // Mouse wheel scrolling - stay in manual mode longer
-                carousel.addEventListener('wheel', function() {
-                    enableManualScroll();
-                    scheduleAutoScrollReturn(3000); // 3 seconds after wheel scroll
-                });
-            }
+            carousel.addEventListener('mouseup', () => {
+                isScrolling = false;
+                carousel.style.cursor = 'grab';
+                carousel.style.userSelect = 'auto';
+            });
 
-            // Mobile interactions
-            if (window.innerWidth <= 768) {
-                // Touch start - switch to manual scroll
-                carousel.addEventListener('touchstart', function() {
-                    enableManualScroll();
-                });
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isScrolling) return;
+                e.preventDefault();
+                
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 2;
+                carousel.scrollLeft = scrollLeft - walk;
+            });
 
-                // Touch end - schedule return to auto-scroll
-                carousel.addEventListener('touchend', function() {
-                    scheduleAutoScrollReturn(2000); // 2 seconds after touch
-                });
+            // Touch events for mobile
+            let touchStartX = 0;
+            let touchScrollLeft = 0;
+            let isTouching = false;
 
-                // Scroll events - extend manual mode
-                carousel.addEventListener('scroll', function() {
-                    enableManualScroll();
-                    scheduleAutoScrollReturn(2500); // 2.5 seconds after scroll stops
-                });
-            }
+            carousel.addEventListener('touchstart', (e) => {
+                isTouching = true;
+                touchStartX = e.touches[0].clientX;
+                touchScrollLeft = carousel.scrollLeft;
+                stopAutoScroll();
+            }, { passive: true });
+
+            carousel.addEventListener('touchmove', (e) => {
+                if (!isTouching) return;
+                
+                const touchX = e.touches[0].clientX;
+                const walk = (touchStartX - touchX) * 1.5;
+                carousel.scrollLeft = touchScrollLeft + walk;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', () => {
+                isTouching = false;
+                // Don't immediately restart auto-scroll, let the timeout handle it
+            }, { passive: true });
+
+            // Prevent click events when dragging
+            let clickStartX = 0;
+            carousel.addEventListener('mousedown', (e) => {
+                clickStartX = e.pageX;
+            });
+
+            carousel.addEventListener('click', (e) => {
+                if (Math.abs(e.pageX - clickStartX) > 5) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }, true);
+
+            // Handle infinite scroll (remove the problematic scroll event listener)
+            // This will be handled in the autoScroll function instead
+
+            // Set initial cursor
+            carousel.style.cursor = 'grab';
+            
+            // Start auto-scroll
+            startAutoScroll();
+
+            // Hover pause (simplified - no immediate restart)
+            carousel.addEventListener('mouseenter', () => {
+                stopAutoScroll();
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                if (!isScrolling && !isTouching) {
+                    // Only restart if not currently dragging
+                    clearTimeout(resumeTimeout);
+                    resumeTimeout = setTimeout(() => {
+                        startAutoScroll();
+                    }, 1000);
+                }
+            });
         });
     </script>
 </body>
