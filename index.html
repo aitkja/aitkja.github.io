@@ -775,10 +775,33 @@
             padding: 20px 0;
         }
 
+        /* Default auto-scroll state */
         .product-track {
             display: flex;
             animation: scroll 40s linear infinite;
-            width: calc(250px * 14); /* Adjust based on number of slides */
+            width: calc(250px * 28);
+        }
+
+        /* Manual scroll state - disable auto-scroll and enable overflow */
+        .product-carousel.manual-scroll {
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        .product-carousel.manual-scroll .product-track {
+            animation: none;
+        }
+
+        /* Hide scrollbar but keep functionality */
+        .product-carousel.manual-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .product-carousel.manual-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
         .product-slide {
@@ -827,7 +850,7 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-250px * 7)); /* Half of total width */
+                transform: translateX(calc(-250px * 14)); /* Half of total width */
             }
         }
 
@@ -844,32 +867,28 @@
             
             .product-track {
                 width: calc(200px * 28);
+                /* Auto-scroll by default on mobile too */
+                animation: scroll 40s linear infinite;
             }
 
-            /* Enable touch scrolling on mobile */
-            .product-carousel {
+            /* Manual scroll mode on mobile */
+            .product-carousel.manual-scroll {
                 overflow-x: auto;
                 overflow-y: hidden;
                 -webkit-overflow-scrolling: touch;
                 scroll-behavior: smooth;
             }
 
-            .product-track {
-                animation: scroll 40s linear infinite; /* Restore auto-scroll on mobile */
+            .product-carousel.manual-scroll .product-track {
+                animation: none;
             }
 
-            /* Pause animation when user is actively scrolling */
-            .product-carousel:active .product-track,
-            .product-carousel:focus .product-track {
-                animation-play-state: paused;
-            }
-
-            /* Hide scrollbar but keep functionality */
-            .product-carousel::-webkit-scrollbar {
+            /* Hide scrollbar in manual mode */
+            .product-carousel.manual-scroll::-webkit-scrollbar {
                 display: none;
             }
 
-            .product-carousel {
+            .product-carousel.manual-scroll {
                 -ms-overflow-style: none;
                 scrollbar-width: none;
             }
@@ -935,12 +954,70 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Clone slides for infinite scroll effect
             const track = document.querySelector('.product-track');
+            const carousel = document.querySelector('.product-carousel');
             const slides = document.querySelectorAll('.product-slide');
             
             slides.forEach(slide => {
                 const clone = slide.cloneNode(true);
                 track.appendChild(clone);
             });
+
+            let interactionTimeout;
+
+            // Function to switch to manual scroll mode
+            function enableManualScroll() {
+                carousel.classList.add('manual-scroll');
+                clearTimeout(interactionTimeout);
+            }
+
+            // Function to return to auto-scroll mode
+            function enableAutoScroll() {
+                carousel.classList.remove('manual-scroll');
+            }
+
+            // Function to set delayed return to auto-scroll
+            function scheduleAutoScrollReturn(delay = 2000) {
+                clearTimeout(interactionTimeout);
+                interactionTimeout = setTimeout(enableAutoScroll, delay);
+            }
+
+            // Desktop interactions
+            if (window.innerWidth > 768) {
+                // Mouse enter - switch to manual scroll
+                carousel.addEventListener('mouseenter', function() {
+                    enableManualScroll();
+                });
+
+                // Mouse leave - return to auto-scroll
+                carousel.addEventListener('mouseleave', function() {
+                    enableAutoScroll();
+                });
+
+                // Mouse wheel scrolling - stay in manual mode longer
+                carousel.addEventListener('wheel', function() {
+                    enableManualScroll();
+                    scheduleAutoScrollReturn(3000); // 3 seconds after wheel scroll
+                });
+            }
+
+            // Mobile interactions
+            if (window.innerWidth <= 768) {
+                // Touch start - switch to manual scroll
+                carousel.addEventListener('touchstart', function() {
+                    enableManualScroll();
+                });
+
+                // Touch end - schedule return to auto-scroll
+                carousel.addEventListener('touchend', function() {
+                    scheduleAutoScrollReturn(2000); // 2 seconds after touch
+                });
+
+                // Scroll events - extend manual mode
+                carousel.addEventListener('scroll', function() {
+                    enableManualScroll();
+                    scheduleAutoScrollReturn(2500); // 2.5 seconds after scroll stops
+                });
+            }
         });
     </script>
 </body>
