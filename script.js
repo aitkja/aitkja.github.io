@@ -1,5 +1,38 @@
 // Future JavaScript for interactivity (e.g., form validation, gallery effects)
 
+// Google Analytics Event Tracking Functions
+function trackEvent(eventName, category, label = null, value = null) {
+    // Check if gtag is available (Google Analytics is loaded)
+    if (typeof gtag !== 'undefined') {
+        const eventData = {
+            event_category: category,
+            event_label: label,
+            value: value
+        };
+        
+        // Remove null values
+        Object.keys(eventData).forEach(key => eventData[key] === null && delete eventData[key]);
+        
+        gtag('event', eventName, eventData);
+        console.log('GA Event:', eventName, eventData); // For debugging
+    }
+}
+
+// Helper function to get product category from image path
+function getProductCategory(imagePath) {
+    if (imagePath.includes('/Weddings/')) return 'Wedding Items';
+    if (imagePath.includes('/Corperate/')) return 'Corporate Items';
+    if (imagePath.includes('/Personal/')) return 'Personal Items';
+    if (imagePath.includes('/Industrial/')) return 'Industrial Items';
+    return 'Unknown Category';
+}
+
+// Helper function to get product name from image path
+function getProductName(imagePath) {
+    const fileName = imagePath.split('/').pop().split('.')[0];
+    return fileName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const lightboxOverlay = document.getElementById('lightbox-overlay');
     const lightboxImage = document.getElementById('lightbox-image');
@@ -12,6 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxOverlay.classList.remove('lightbox-hidden');
         lightboxOverlay.classList.add('lightbox-visible');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        
+        // Track lightbox view
+        const category = getProductCategory(imageUrl);
+        const productName = getProductName(imageUrl);
+        trackEvent('product_view', 'Gallery Interaction', `${category} - ${productName}`);
     }
 
     // Function to close the lightbox
@@ -27,6 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent default link navigation
             const imageUrl = trigger.href;
+            
+            // Track gallery click
+            const category = getProductCategory(imageUrl);
+            const productName = getProductName(imageUrl);
+            
+            // Determine if this is from main gallery or popular products
+            const isPopularProduct = trigger.closest('.popular-products') !== null;
+            const section = isPopularProduct ? 'Popular Products' : 'Main Gallery';
+            
+            trackEvent('gallery_click', 'Product Interest', `${section} - ${category} - ${productName}`);
+            
             openLightbox(imageUrl);
         });
     });
@@ -65,6 +114,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const referenceName = event.target.dataset.ref;
                 if (referenceName) {
+                    // Track "Add to Quote" clicks
+                    const galleryItem = event.target.closest('.gallery-item');
+                    if (galleryItem) {
+                        const img = galleryItem.querySelector('img');
+                        if (img) {
+                            const category = getProductCategory(img.src);
+                            const productName = getProductName(img.src);
+                            trackEvent('add_to_quote', 'Quote Interest', `${category} - ${productName}`);
+                        }
+                    }
+                    
                     // Append reference if field is not empty, otherwise set it
                     if (quoteRefInput.value.trim() !== '') {
                         // Avoid adding duplicates
@@ -93,6 +153,96 @@ document.addEventListener('DOMContentLoaded', () => {
                         highlightTimeout = null; // Reset timer variable
                     }, 1500); // Highlight for 1.5 seconds
                 }
+            }
+        });
+    }
+
+    // Track Quote Form Submission
+    const quoteForm = document.getElementById('quote-form');
+    if (quoteForm) {
+        quoteForm.addEventListener('submit', (event) => {
+            // Get form data for tracking
+            const material = document.getElementById('material').value;
+            const quantity = document.getElementById('quantity').value;
+            const references = document.getElementById('image-reference').value;
+            
+            // Track quote submission
+            trackEvent('quote_submitted', 'Lead Generation', `Material: ${material || 'Not specified'}`, parseInt(quantity) || 1);
+            
+            // If references were added, track which products were quoted
+            if (references) {
+                references.split(',').forEach(ref => {
+                    const cleanRef = ref.trim();
+                    if (cleanRef) {
+                        trackEvent('product_quoted', 'Quote Interest', cleanRef);
+                    }
+                });
+            }
+        });
+    }
+
+    // Track Navigation Clicks
+    const navLinks = document.querySelectorAll('nav a, .cta-button');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            const linkText = link.textContent.trim();
+            const href = link.getAttribute('href');
+            
+            if (href && href.startsWith('#')) {
+                // Internal navigation
+                trackEvent('navigation', 'Site Navigation', linkText);
+            } else if (link.classList.contains('cta-button')) {
+                // CTA button clicks
+                trackEvent('cta_click', 'User Engagement', linkText);
+            }
+        });
+    });
+
+    // Track Payment Portal Clicks
+    const paymentButton = document.getElementById('embedded-checkout-modal-checkout-button');
+    if (paymentButton) {
+        paymentButton.addEventListener('click', () => {
+            trackEvent('payment_portal_click', 'Conversion', 'Payment Portal Access');
+        });
+    }
+
+    // Track Video Interactions (if video is present)
+    const heroVideo = document.querySelector('.hero-background-video');
+    if (heroVideo) {
+        let videoTrackingData = {
+            played: false,
+            quartile1: false,
+            quartile2: false,
+            quartile3: false,
+            completed: false
+        };
+
+        heroVideo.addEventListener('play', () => {
+            if (!videoTrackingData.played) {
+                trackEvent('video_play', 'Video Engagement', 'Hero Video Started');
+                videoTrackingData.played = true;
+            }
+        });
+
+        heroVideo.addEventListener('timeupdate', () => {
+            const progress = (heroVideo.currentTime / heroVideo.duration) * 100;
+            
+            if (progress >= 25 && !videoTrackingData.quartile1) {
+                trackEvent('video_progress', 'Video Engagement', 'Hero Video 25%');
+                videoTrackingData.quartile1 = true;
+            } else if (progress >= 50 && !videoTrackingData.quartile2) {
+                trackEvent('video_progress', 'Video Engagement', 'Hero Video 50%');
+                videoTrackingData.quartile2 = true;
+            } else if (progress >= 75 && !videoTrackingData.quartile3) {
+                trackEvent('video_progress', 'Video Engagement', 'Hero Video 75%');
+                videoTrackingData.quartile3 = true;
+            }
+        });
+
+        heroVideo.addEventListener('ended', () => {
+            if (!videoTrackingData.completed) {
+                trackEvent('video_complete', 'Video Engagement', 'Hero Video Completed');
+                videoTrackingData.completed = true;
             }
         });
     }
