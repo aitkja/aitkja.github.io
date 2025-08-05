@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Track Navigation Clicks
-    const navLinks = document.querySelectorAll('nav a, .cta-button');
+    const navLinks = document.querySelectorAll('nav a, .cta-button, .footer-column a');
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
             const linkText = link.textContent.trim();
@@ -195,6 +195,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 // CTA button clicks
                 trackEvent('cta_click', 'User Engagement', linkText);
             }
+        });
+    });
+
+    // Track social media/external links in the footer
+    const footerLinks = document.querySelectorAll('.footer-column a:not([href^="#"])');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+             trackEvent('outbound_link_click', 'Footer Engagement', link.href);
+        });
+    });
+
+    // Track Form Field Interactions
+    const formFields = document.querySelectorAll('#quote-form input, #quote-form textarea, #quote-form select');
+    formFields.forEach(field => {
+        field.addEventListener('focus', () => {
+             trackEvent('form_field_focus', 'Form Engagement', field.name);
+        });
+        field.addEventListener('change', () => {
+             trackEvent('form_field_change', 'Form Engagement', `${field.name}: ${field.value}`);
         });
     });
 

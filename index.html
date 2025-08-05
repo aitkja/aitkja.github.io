@@ -35,7 +35,6 @@
       "name": "Forest City Laser",
       "description": "Expert custom laser cutting and engraving for personalized gifts, wedding decor, corporate branding, and industrial parts",
       "url": "https://forestcitylaser.com",
-      "telephone": "",
       "email": "info@forestcitylaser.com",
       "address": {
         "@type": "PostalAddress",
@@ -703,60 +702,8 @@
     </script>
     <!--End of Tawk.to Script-->
 
-    <!-- Dynamic Chat Status and Scroll-to-Top Script -->
+    <!-- Dynamic Chat Status Script -->
     <script type="text/javascript">
-        // IMMEDIATE scroll to top - run as soon as possible
-        (function() {
-            window.scrollTo(0, 0);
-            document.documentElement.scrollTop = 0;
-            document.body.scrollTop = 0;
-        })();
-
-        // Force page to load at top - multiple methods
-        function forceScrollToTop() {
-            window.scrollTo(0, 0);
-            document.documentElement.scrollTop = 0;
-            document.body.scrollTop = 0;
-            document.documentElement.scrollLeft = 0;
-            document.body.scrollLeft = 0;
-            
-            // Additional methods for stubborn cases
-            if (window.pageYOffset !== 0) {
-                window.pageYOffset = 0;
-            }
-            if (window.scrollY !== 0) {
-                window.scrollY = 0;
-            }
-        }
-
-        // Run immediately and repeatedly
-        forceScrollToTop();
-        
-        // Override any hash navigation
-        if (window.location.hash) {
-            window.location.hash = '';
-            history.replaceState('', document.title, window.location.pathname + window.location.search);
-        }
-
-        // Run on various events
-        window.addEventListener('DOMContentLoaded', forceScrollToTop);
-        window.addEventListener('load', function() {
-            forceScrollToTop();
-            setTimeout(forceScrollToTop, 50);
-            setTimeout(forceScrollToTop, 100);
-            setTimeout(forceScrollToTop, 200);
-            setTimeout(forceScrollToTop, 500);
-            setTimeout(forceScrollToTop, 1000);
-        });
-
-        // Prevent any auto-scrolling from other scripts
-        window.addEventListener('scroll', function() {
-            // If page somehow gets scrolled during initial load, force back to top
-            if (document.readyState !== 'complete') {
-                forceScrollToTop();
-            }
-        });
-
         // Chat status functionality
         function updateChatStatus() {
             const titleElement = document.getElementById('chat-status-title');
@@ -808,7 +755,6 @@
         // Also check when page loads
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(updateChatStatus, 3000);
-            forceScrollToTop();
         });
     </script>
 
