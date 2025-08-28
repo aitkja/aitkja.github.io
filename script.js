@@ -33,6 +33,36 @@ function getProductName(imagePath) {
     return fileName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 }
 
+// Track a single GA4 event with parameters for image clicks
+function trackImageClick(params) {
+    if (typeof gtag === 'undefined') return;
+    const {
+        imageSrc,
+        imageAlt,
+        section,
+        category,
+        productName,
+        elementId,
+        pageLocation
+    } = params;
+
+    const imageName = productName || (imageSrc ? getProductName(imageSrc) : '') || (imageAlt || '');
+
+    const eventParams = {
+        image_src: imageSrc || '',
+        image_alt: imageAlt || '',
+        image_name: imageName || '',
+        section: section || '',
+        product_category: category || '',
+        product_name: productName || imageName || '',
+        element_id: elementId || '',
+        page_location: pageLocation || (typeof window !== 'undefined' ? window.location.href : '')
+    };
+
+    gtag('event', 'image_click', eventParams);
+    console.log('GA Image Event:', 'image_click', eventParams);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const lightboxOverlay = document.getElementById('lightbox-overlay');
     const lightboxImage = document.getElementById('lightbox-image');
@@ -75,6 +105,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const section = isPopularProduct ? 'Popular Products' : 'Main Gallery';
             
             trackEvent('gallery_click', 'Product Interest', `${section} - ${category} - ${productName}`);
+
+            // Also log a unique image-click event using the image name
+            const img = trigger.querySelector('img');
+            trackImageClick({
+                imageSrc: imageUrl,
+                imageAlt: img ? img.getAttribute('alt') : '',
+                section,
+                category,
+                productName,
+                elementId: img ? img.id : '',
+                pageLocation: window.location.href
+            });
             
             openLightbox(imageUrl);
         });
@@ -293,5 +335,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }, changeInterval);
     }
+
+    // --- Global image click tracking (non-lightbox images) ---
+    document.addEventListener('click', (event) => {
+        const img = event.target.closest('img');
+        if (!img) return;
+
+        // Avoid double-tracking for images inside lightbox triggers (already handled above)
+        if (img.closest('.lightbox-trigger')) return;
+
+        const src = img.currentSrc || img.src || '';
+        const alt = img.getAttribute('alt') || '';
+        const inPopular = !!img.closest('.popular-products');
+        const inGallery = !!img.closest('#gallery');
+        const inHeader = !!img.closest('header');
+        const inFooter = !!img.closest('footer');
+
+        let section = 'General';
+        if (inPopular) section = 'Popular Products';
+        else if (inGallery) section = 'Main Gallery';
+        else if (inHeader) section = 'Header';
+        else if (inFooter) section = 'Footer';
+
+        const category = getProductCategory(src);
+        const productName = getProductName(src);
+
+        trackImageClick({
+            imageSrc: src,
+            imageAlt: alt,
+            section,
+            category,
+            productName,
+            elementId: img.id || '',
+            pageLocation: window.location.href
+        });
+    });
 
 }); 
