@@ -85,7 +85,16 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         (function(){
-            var isDebug = location.search.indexOf('ga_debug=1') !== -1;
+            // Persist and detect debug across sessions, support GA Debugger extension (ar_debug)
+            var search = location.search || '';
+            try {
+                if (search.indexOf('ga_debug=1') !== -1) localStorage.setItem('ga_debug', '1');
+                if (search.indexOf('ga_debug=0') !== -1) localStorage.removeItem('ga_debug');
+            } catch(e) {}
+
+            var isDebug = (search.indexOf('ga_debug=1') !== -1)
+                || (document.cookie && document.cookie.indexOf('ar_debug=1') !== -1)
+                || (function(){ try { return localStorage.getItem('ga_debug') === '1'; } catch(e) { return false; } })();
             gtag('js', new Date());
             if (isDebug) {
                 gtag('config', 'G-J7QH9VR6J4', { debug_mode: true });

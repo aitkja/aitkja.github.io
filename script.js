@@ -4,11 +4,18 @@
 function trackEvent(eventName, category, label = null, value = null) {
     // Check if gtag is available (Google Analytics is loaded)
     if (typeof gtag !== 'undefined') {
+        const isDebug = (function(){
+            try {
+                return (window && window.location && window.location.search.indexOf('ga_debug=1') !== -1)
+                    || (document.cookie && document.cookie.indexOf('ar_debug=1') !== -1)
+                    || (localStorage && localStorage.getItem('ga_debug') === '1');
+            } catch(e) { return false; }
+        })();
         const eventData = {
             event_category: category,
             event_label: label,
             value: value,
-            debug_mode: (window && window.location && window.location.search.indexOf('ga_debug=1') !== -1) || undefined
+            debug_mode: isDebug || undefined
         };
         
         // Remove null values
@@ -37,6 +44,13 @@ function getProductName(imagePath) {
 // Track a single GA4 event with parameters for image clicks
 function trackImageClick(params) {
     if (typeof gtag === 'undefined') return;
+    const isDebug = (function(){
+        try {
+            return (window && window.location && window.location.search.indexOf('ga_debug=1') !== -1)
+                || (document.cookie && document.cookie.indexOf('ar_debug=1') !== -1)
+                || (localStorage && localStorage.getItem('ga_debug') === '1');
+        } catch(e) { return false; }
+    })();
     const {
         imageSrc,
         imageAlt,
@@ -58,7 +72,7 @@ function trackImageClick(params) {
         product_name: productName || imageName || '',
         element_id: elementId || '',
         page_location: pageLocation || (typeof window !== 'undefined' ? window.location.href : ''),
-        debug_mode: (window && window.location && window.location.search.indexOf('ga_debug=1') !== -1) || undefined
+        debug_mode: isDebug || undefined
     };
 
     gtag('event', 'image_click', eventParams);
