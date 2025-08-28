@@ -7,7 +7,8 @@ function trackEvent(eventName, category, label = null, value = null) {
         const eventData = {
             event_category: category,
             event_label: label,
-            value: value
+            value: value,
+            debug_mode: (window && window.location && window.location.search.indexOf('ga_debug=1') !== -1) || undefined
         };
         
         // Remove null values
@@ -56,7 +57,8 @@ function trackImageClick(params) {
         product_category: category || '',
         product_name: productName || imageName || '',
         element_id: elementId || '',
-        page_location: pageLocation || (typeof window !== 'undefined' ? window.location.href : '')
+        page_location: pageLocation || (typeof window !== 'undefined' ? window.location.href : ''),
+        debug_mode: (window && window.location && window.location.search.indexOf('ga_debug=1') !== -1) || undefined
     };
 
     gtag('event', 'image_click', eventParams);
