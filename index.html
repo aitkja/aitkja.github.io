@@ -1,1137 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Forest City Laser: Expert custom laser cutting & engraving for gifts, wedding decor, corporate branding, & industrial parts. Precision quality for your vision.">
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forest City Laser - Custom Laser Cutting & Engraving</title>
-    
-    <!-- Additional SEO Meta Tags -->
-    <meta name="keywords" content="laser cutting, laser engraving, custom gifts, wedding decor, corporate branding, industrial parts, London Ontario, Forest City">
-    <meta name="author" content="Forest City Laser">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://forestcitylaser.com/">
-    
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Expert custom laser cutting & engraving for gifts, wedding decor, corporate branding, & industrial parts in London, Ontario. Precision quality for your vision." />
+    <meta name="keywords" content="laser cutting, laser engraving, custom gifts, wedding decor, corporate branding, industrial parts, London Ontario, Forest City" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://forestcitylaser.com/" />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://forestcitylaser.com/">
-    <meta property="og:title" content="Forest City Laser - Custom Laser Cutting & Engraving">
-    <meta property="og:description" content="Expert laser cutting and engraving for personalized gifts, custom wedding & event decor, corporate branding, and precision industrial parts. Quality craftsmanship for your unique vision.">
-    <meta property="og:image" content="https://forestcitylaser.com/images/logo/Full_Logo.webp">
-    <meta property="og:site_name" content="Forest City Laser">
-    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://forestcitylaser.com/" />
+    <meta property="og:title" content="Forest City Laser - Custom Laser Cutting & Engraving" />
+    <meta property="og:description" content="Expert laser cutting and engraving for personalized gifts, custom wedding & event decor, corporate branding, and precision industrial parts." />
+    <meta property="og:image" content="https://forestcitylaser.com/og-image.jpg" />
+    <meta property="og:site_name" content="Forest City Laser" />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://forestcitylaser.com/">
-    <meta property="twitter:title" content="Forest City Laser - Custom Laser Cutting & Engraving">
-    <meta property="twitter:description" content="Expert laser cutting and engraving for personalized gifts, custom wedding & event decor, corporate branding, and precision industrial parts.">
-    <meta property="twitter:image" content="https://forestcitylaser.com/images/logo/Full_Logo.webp">
-    
-    <!-- Local Business Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Forest City Laser",
-      "description": "Expert custom laser cutting and engraving for personalized gifts, wedding decor, corporate branding, and industrial parts",
-      "url": "https://forestcitylaser.com",
-      "email": "info@forestcitylaser.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "London",
-        "addressRegion": "ON",
-        "addressCountry": "CA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "42.9849",
-        "longitude": "-81.2453"
-      },
-      "openingHours": "Mo-Fr 09:00-17:00",
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "42.9849",
-          "longitude": "-81.2453"
-        },
-        "geoRadius": "100000"
-      },
-      "services": [
-        "Laser Cutting",
-        "Laser Engraving", 
-        "Custom Wedding Decor",
-        "Corporate Branding",
-        "Industrial Signage",
-        "Personalized Gifts"
-      ]
-    }
-    </script>
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
-    <style type="text/css">/* Critical CSS will go here. Manually identify and add the CSS rules needed for above-the-fold content. */</style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
-    <!-- Favicon Links - Providing multiple sizes -->
-    <link rel="icon" href="images/logo/Logo_Image.webp" sizes="16x16" type="image/webp">
-    <link rel="icon" href="images/logo/Logo_Image.webp" sizes="32x32" type="image/webp">
-    <link rel="icon" href="images/logo/Logo_Image.webp" sizes="96x96" type="image/webp">
-    <link rel="icon" href="images/logo/Logo_Image.webp" sizes="192x192" type="image/webp">
-    <link rel="apple-touch-icon" href="images/logo/Logo_Image.webp" sizes="180x180"> <!-- Standard Apple size -->
-    <link rel="icon" href="images/logo/Logo_Image.webp" sizes="any" type="image/webp"> <!-- Default/Scalable -->
-    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://forestcitylaser.com/" />
+    <meta property="twitter:title" content="Forest City Laser - Custom Laser Cutting & Engraving" />
+    <meta property="twitter:description" content="Expert laser cutting and engraving for personalized gifts, custom wedding & event decor, corporate branding, and precision industrial parts." />
+    <meta property="twitter:image" content="https://forestcitylaser.com/twitter-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7QH9VR6J4"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        (function(){
-            // Persist and detect debug across sessions, support GA Debugger extension (ar_debug)
-            var search = location.search || '';
-            try {
-                if (search.indexOf('ga_debug=1') !== -1) localStorage.setItem('ga_debug', '1');
-                if (search.indexOf('ga_debug=0') !== -1) localStorage.removeItem('ga_debug');
-            } catch(e) {}
-
-            var isDebug = (search.indexOf('ga_debug=1') !== -1)
-                || (document.cookie && document.cookie.indexOf('ar_debug=1') !== -1)
-                || (function(){ try { return localStorage.getItem('ga_debug') === '1'; } catch(e) { return false; } })();
-            gtag('js', new Date());
-            if (isDebug) {
-                gtag('config', 'G-J7QH9VR6J4', { debug_mode: true });
-            } else {
-                gtag('config', 'G-J7QH9VR6J4');
-            }
-        })();
-    </script>
-</head>
-<body>
-    <header>
-        <nav>
-            <img src="images/logo/Logo_Text.webp" alt="Forest City Laser Logo Text" id="logo">
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#gallery">Portfolio</a></li>
-                <li><a href="#quote">Request Quote</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#payments">Payment Portal</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <!-- Background Video -->
-            <video autoplay loop muted playsinline preload="metadata" class="hero-background-video" poster="images/misc/video_poster.webp">
-                <source src="videos/Hero_Video.mp4" type="video/mp4">
-                <source src="videos/Hero_Video_Mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-                Your browser does not support the video tag.
-            </video>
-
-            <div class="hero-content"> <!-- Container for text content -->
-                <h1 id="animated-headline"><span class="headline-dynamic">Custom Laser Cutting & Engraving</span></h1>
-                <p class="value-proposition">Expert laser cutting and engraving for personalized gifts, custom wedding & event decor, corporate branding, and precision industrial parts. Quality craftsmanship for your unique vision.</p>
-                <div class="hero-buttons">
-                     <a href="#gallery" class="cta-button primary">View Portfolio</a>
-                     <a href="#quote" class="cta-button secondary">Get a Quote</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Popular Products Showcase -->
-        <section class="popular-products">
-            <div class="container">
-                <h2>Popular Products</h2>
-                <div class="product-carousel">
-                    <div class="product-track">
-                        <div class="product-slide">
-                            <a href="images/stock/Weddings/Valentine_Signs.webp" class="lightbox-trigger">
-                                <img src="images/stock/Weddings/Valentine_Signs.webp" alt="Valentine Signs">
-                            </a>
-                            <h3>Valentine Signs</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Weddings/Cake_Toppers.webp" class="lightbox-trigger">
-                                <img src="images/stock/Weddings/Cake_Toppers.webp" alt="Cake Toppers">
-                            </a>
-                            <h3>Cake Toppers</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Weddings/Place_Tags.webp" class="lightbox-trigger">
-                                <img src="images/stock/Weddings/Place_Tags.webp" alt="Place Tags">
-                            </a>
-                            <h3>Place Tags</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Weddings/Save_The_Date.webp" class="lightbox-trigger">
-                                <img src="images/stock/Weddings/Save_The_Date.webp" alt="Save the Date">
-                            </a>
-                            <h3>Save the Date</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Corperate/Business_Card_Holder.webp" class="lightbox-trigger">
-                                <img src="images/stock/Corperate/Business_Card_Holder.webp" alt="Business Card Holder">
-                            </a>
-                            <h3>Business Card Holders</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Corperate/Corperate_Pens.webp" class="lightbox-trigger">
-                                <img src="images/stock/Corperate/Corperate_Pens.webp" alt="Corporate Pens">
-                            </a>
-                            <h3>Corporate Pens</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Corperate/Wood_Coasters.webp" class="lightbox-trigger">
-                                <img src="images/stock/Corperate/Wood_Coasters.webp" alt="Wood Coasters">
-                            </a>
-                            <h3>Wood Coasters</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Personal/Welcome_Signs.webp" class="lightbox-trigger">
-                                <img src="images/stock/Personal/Welcome_Signs.webp" alt="Welcome Signs">
-                            </a>
-                            <h3>Welcome Signs</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Personal/Palm_Coasters.webp" class="lightbox-trigger">
-                                <img src="images/stock/Personal/Palm_Coasters.webp" alt="Palm Coasters">
-                            </a>
-                            <h3>Palm Coasters</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Personal/Mom_Sign.webp" class="lightbox-trigger">
-                                <img src="images/stock/Personal/Mom_Sign.webp" alt="Mom Sign">
-                            </a>
-                            <h3>Mom Signs</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Personal/Room_Sign_Palm.webp" class="lightbox-trigger">
-                                <img src="images/stock/Personal/Room_Sign_Palm.webp" alt="Room Sign">
-                            </a>
-                            <h3>Room Signs</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Personal/Custom_Cutting_Board.webp" class="lightbox-trigger">
-                                <img src="images/stock/Personal/Custom_Cutting_Board.webp" alt="Custom Cutting Board">
-                            </a>
-                            <h3>Custom Cutting Boards</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Industrial/Industrial_Signage.webp" class="lightbox-trigger">
-                                <img src="images/stock/Industrial/Industrial_Signage.webp" alt="Industrial Signage">
-                            </a>
-                            <h3>Industrial Signage</h3>
-                        </div>
-                        <div class="product-slide">
-                            <a href="images/stock/Industrial/Custom_Acrylic_Cutting.webp" class="lightbox-trigger">
-                                <img src="images/stock/Industrial/Custom_Acrylic_Cutting.webp" alt="Custom Acrylic Cutting">
-                            </a>
-                            <h3>Custom Acrylic Cutting</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="gallery">
-            <h2>Our Work & Examples</h2>
-            <p>Explore examples of our past work below, categorized for inspiration. While we showcase popular items, <strong>every project is custom!</strong> We love bringing unique ideas to life. If you don't see exactly what you want, don't worry – use the quote form below to describe your vision.</p>
-
-            <div class="gallery-category">
-                <h3>Wedding Items</h3>
-                <div class="image-grid">
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Valentine_Signs.webp" class="lightbox-trigger"><img src="images/stock/Weddings/Valentine_Signs.webp" alt="Valentine Signs" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Valentine_Signs</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Valentine_Signs">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Table_Numbers.webp" class="lightbox-trigger"><img src="images/stock/Weddings/Table_Numbers.webp" alt="Table Numbers" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Table_Numbers</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Table_Numbers">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Cake_Toppers.webp" class="lightbox-trigger"><img src="images/stock/Weddings/Cake_Toppers.webp" alt="Cake Toppers" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Cake_Toppers</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Cake_Toppers">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Name_Tags.webp" class="lightbox-trigger"><img src="images/stock/Weddings/Name_Tags.webp" alt="Name Tags" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Name_Tags</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Name_Tags">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Place_Tags.webp" class="lightbox-trigger"><img src="images/stock/Weddings/Place_Tags.webp" alt="Place Tags" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Place_Tags</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Place_Tags">Add to Quote</a>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <a href="images/stock/Weddings/Custom_Fridge_Magnets.webp" class="lightbox-trigger"><img src="images/stock/Weddings/Custom_Fridge_Magnets.webp" alt="Custom Fridge Magnets" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Custom_Fridge_Magnets</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Fridge_Magnets">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Champaign_Glass_Tags.webp" class="lightbox-trigger"><img src="images/stock/Weddings/Champaign_Glass_Tags.webp" alt="Champagne Glass Tags" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Champaign_Glass_Tags</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Champaign_Glass_Tags">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Weddings/Save_The_Date.webp" class="lightbox-trigger"><img src="images/stock/Weddings/Save_The_Date.webp" alt="Save The Date" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Save_The_Date</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Save_The_Date">Add to Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-category">
-                <h3>Corporate Items</h3>
-                <div class="image-grid">
-                     <div class="gallery-item">
-                        <a href="images/stock/Corperate/Business_Card_Holder.webp" class="lightbox-trigger"><img src="images/stock/Corperate/Business_Card_Holder.webp" alt="Business Card Holder" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Business_Card_Holder</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Business_Card_Holder">Add to Quote</a>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <a href="images/stock/Corperate/Cap_With_Logo.webp" class="lightbox-trigger"><img src="images/stock/Corperate/Cap_With_Logo.webp" alt="Cap With Logo" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Cap_With_Logo</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Cap_With_Logo">Add to Quote</a>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <a href="images/stock/Corperate/Corperate_Pens.webp" class="lightbox-trigger"><img src="images/stock/Corperate/Corperate_Pens.webp" alt="Corporate Pens" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Corperate_Pens</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Corperate_Pens">Add to Quote</a>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <a href="images/stock/Corperate/Slate_Coasters.webp" class="lightbox-trigger"><img src="images/stock/Corperate/Slate_Coasters.webp" alt="Slate Coasters" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Slate_Coasters</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Slate_Coasters">Add to Quote</a>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <a href="images/stock/Corperate/Wood_Coasters.webp" class="lightbox-trigger"><img src="images/stock/Corperate/Wood_Coasters.webp" alt="Wood Coasters" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Wood_Coasters</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Wood_Coasters">Add to Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-category">
-                <h3>Personal Items & Gifts</h3>
-                <div class="image-grid">
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Welcome_Signs.webp" class="lightbox-trigger"><img src="images/stock/Personal/Welcome_Signs.webp" alt="Welcome Signs" loading="lazy"></a>
-                         <div class="ref-container">
-                            <p>Welcome_Signs</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Welcome_Signs">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Welcome_Signs_2.webp" class="lightbox-trigger"><img src="images/stock/Personal/Welcome_Signs_2.webp" alt="Welcome Signs 2" loading="lazy"></a>
-                         <div class="ref-container">
-                            <p>Welcome_Signs_2</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Welcome_Signs_2">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Welcome_Door_Sign.webp" class="lightbox-trigger"><img src="images/stock/Personal/Welcome_Door_Sign.webp" alt="Welcome Door Sign" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Welcome_Door_Sign</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Welcome_Door_Sign">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Fern_Coasters.webp" class="lightbox-trigger"><img src="images/stock/Personal/Fern_Coasters.webp" alt="Fern Coasters" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Fern_Coasters</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Fern_Coasters">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Palm_Coasters.webp" class="lightbox-trigger"><img src="images/stock/Personal/Palm_Coasters.webp" alt="Palm Coasters" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Palm_Coasters</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Palm_Coasters">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Mom_Sign.webp" class="lightbox-trigger"><img src="images/stock/Personal/Mom_Sign.webp" alt="Mom Sign" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Mom_Sign</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Mom_Sign">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Room_Sign_Dino.webp" class="lightbox-trigger"><img src="images/stock/Personal/Room_Sign_Dino.webp" alt="Room Sign Dino" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Room_Sign_Dino</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Room_Sign_Dino">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Room_Sign_Palm.webp" class="lightbox-trigger"><img src="images/stock/Personal/Room_Sign_Palm.webp" alt="Room Sign Palm" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Room_Sign_Palm</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Room_Sign_Palm">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Custom_Cutting_Board.webp" class="lightbox-trigger"><img src="images/stock/Personal/Custom_Cutting_Board.webp" alt="Custom Cutting Board" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Custom_Cutting_Board</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Cutting_Board">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Custom_Pencils.webp" class="lightbox-trigger"><img src="images/stock/Personal/Custom_Pencils.webp" alt="Custom Pencils" loading="lazy"></a>
-                         <div class="ref-container">
-                            <p>Custom_Pencils</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Pencils">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Custom_Pens.webp" class="lightbox-trigger"><img src="images/stock/Personal/Custom_Pens.webp" alt="Custom Pens" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Custom_Pens</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Pens">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Key_Chains.webp" class="lightbox-trigger"><img src="images/stock/Personal/Key_Chains.webp" alt="Key Chains" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Key_Chains</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Key_Chains">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Personal/Name_Sign.webp" class="lightbox-trigger"><img src="images/stock/Personal/Name_Sign.webp" alt="Name Sign" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Name_Sign</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Name_Sign">Add to Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-             <div class="gallery-category">
-                <h3>Industrial Signage & Lamacoids</h3>
-                <div class="image-grid">
-                    <div class="gallery-item">
-                        <a href="images/stock/Industrial/Industrial_Signage.webp" class="lightbox-trigger"><img src="images/stock/Industrial/Industrial_Signage.webp" alt="Industrial Signage" loading="lazy"></a>
-                         <div class="ref-container">
-                            <p>Industrial_Signage</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Industrial_Signage">Add to Quote</a>
-                        </div>
-                    </div>
-                     <div class="gallery-item">
-                        <a href="images/stock/Industrial/Small_Lamacoids.webp" class="lightbox-trigger"><img src="images/stock/Industrial/Small_Lamacoids.webp" alt="Small Lamacoids" loading="lazy"></a>
-                         <div class="ref-container">
-                            <p>Small_Lamacoids</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Small_Lamacoids">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Industrial/Small_Lamacoids_2.webp" class="lightbox-trigger"><img src="images/stock/Industrial/Small_Lamacoids_2.webp" alt="Small Lamacoids 2" loading="lazy"></a>
-                         <div class="ref-container">
-                            <p>Small_Lamacoids_2</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Small_Lamacoids_2">Add to Quote</a>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="images/stock/Industrial/Custom_Acrylic_Cutting.webp" class="lightbox-trigger"><img src="images/stock/Industrial/Custom_Acrylic_Cutting.webp" alt="Custom Acrylic Cutting" loading="lazy"></a>
-                        <div class="ref-container">
-                            <p>Custom_Acrylic_Cutting</p>
-                            <a href="#quote" class="add-to-quote-btn" data-ref="Custom_Acrylic_Cutting">Add to Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Our Process Section -->
-        <section id="process">
-            <h2>Our Simple Process</h2>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-icon">Step 1</div> <!-- Placeholder Icon -->
-                    <h4>Browse & Inquire</h4>
-                    <p>Explore our portfolio for inspiration or bring your unique idea. Use the quote form to tell us about your project.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-icon">Step 2</div> <!-- Placeholder Icon -->
-                    <h4>Collaborate & Design</h4>
-                    <p>We'll discuss the details with you. For custom work, you'll receive a digital CAD design proof for approval.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-icon">Step 3</div> <!-- Placeholder Icon -->
-                    <h4>Invoice & Payment</h4>
-                    <p>Once the design is approved, we'll send you an invoice with final pricing. Payment is required before production begins to secure your order.</p>
-                </div>
-                <div class="process-step">
-                     <div class="step-icon">Step 4</div> <!-- Placeholder Icon -->
-                    <h4>Production</h4>
-                    <p>Our precision lasers get to work, crafting your items with care based on the approved design.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-icon">Step 5</div> <!-- Placeholder Icon -->
-                    <h4>Completion & Delivery</h4>
-                    <p>We'll notify you when your order is ready for shipping or local collection from the Riverbend area.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="quote">
-            <h2>Request a Custom Quote</h2>
-            <p>Ready to start your custom project? Please provide as much detail as possible below. For items inspired by our gallery, use the "Add to Quote" buttons above to reference them easily. We'll review your request and get back to you with pricing and details.</p>
-            <p class="design-proof-info"><strong>Please note:</strong> For most custom orders, we provide a digital CAD proof for your approval before finalizing the quote and beginning production.</p>
-            <!-- IMPORTANT: Replace 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree URL -->
-            <form id="quote-form" action="https://formspree.io/f/mjkwkleo" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="_replyto" required> <!-- Use _replyto for Formspree -->
-
-                <label for="phone">Phone Number (Optional):</label>
-                <input type="tel" id="phone" name="phone">
-
-                <label for="address">Address (Optional, for shipping estimates):</label>
-                <input type="text" id="address" name="address">
-
-                <label for="material">Material Type:</label>
-                <select id="material" name="material">
-                    <option value="" disabled selected>Select a material (Optional)...</option>
-                    <option value="Wood">Wood (Specify type in description if known)</option>
-                    <option value="Acrylic">Acrylic (Specify color in description)</option>
-                    <option value="Leather">Leather</option>
-                    <option value="Lamicoid">Lamicoid</option>
-                    <option value="Other">Other (Please specify in description)</option>
-                </select>
-
-                <label for="dimensions">Approximate Dimensions (e.g., 4x6 inches, 10cm diameter):</label>
-                <input type="text" id="dimensions" name="dimensions">
-
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
-
-                <label for="personalization">Personalization Text (If applicable):</label>
-                <textarea id="personalization" name="personalization" rows="2"></textarea>
-
-                <label for="description">Project Description / Specific Instructions:</label>
-                <textarea id="description" name="description" rows="5" required></textarea>
-
-                <label for="image-reference">Stock Image Reference (If applicable):</label>
-                <input type="text" id="image-reference" name="image-reference">
-
-                <div class="form-group">
-                    <label for="details">Additional Details:</label>
-                    <textarea id="details" name="details" rows="4" placeholder="Please provide any additional information about your project..."></textarea>
-                </div>
-
-                <!-- Coupon Code Section -->
-                <div class="form-group">
-                    <label for="coupon">Coupon Code (Optional):</label>
-                    <input type="text" id="coupon" name="coupon" placeholder="Enter your coupon code here">
-                </div>
-
-                <button type="submit" class="submit-btn">Get Quote</button>
-            </form>
-        </section>
-
-        <section id="about">
-            <h2>About Forest City Laser</h2>
-            <p>Forest City Laser was born from the creative partnership between an engineer and an interior designer who wanted to combine technical precision with beautiful design. Together, we discovered our passion for bringing people's visions to life using cutting-edge laser technology.</p>
-            <p>What started as our shared love for creating custom pieces has grown into a business dedicated to transforming ideas into tangible, personalized works of art. We blend engineering expertise with design sensibility to deliver exceptional results for every project.</p>
-            <p>We specialize in custom wood engravings, offering fast turnaround times for wood, leather, and acrylic engraving and cutting. Our primary market includes weddings, events, corporate items, personalized gifts, and signage. We also create industrial lamicoids and signs for businesses throughout the region.</p>
-            <p>Proudly Canadian and based in London, Ontario, we've been serving the greater Forest City community since 2021 with the perfect marriage of technical innovation and creative design.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>Have questions or a project in mind? We'd love to hear from you!</p>
-            <p>Ready to get started? Use our quote form above, reach out directly using the contact information in the footer below, or start a live chat with us!</p>
-            
-            <!-- Live Chat Notice -->
-            <div class="live-chat-container">
-                <div class="chat-notice" id="chat-status-notice">
-                    <h3 id="chat-status-title">💬 Live Chat Available</h3>
-                    <p id="chat-status-message">Look for the chat widget in the bottom right corner to start an instant conversation with us during business hours!</p>
-                </div>
-            </div>
-        </section>
-
-
-
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>-- Forest City Laser --</h4>
-                <img src="images/logo/Full_Logo.webp" alt="Forest City Laser Full Logo" class="footer-logo">
-                <p>Specializing in custom laser cutting and engraving for wood, acrylic, and leather. Based in London, Ontario.</p>
-            </div>
-            <div class="footer-column">
-                <h4>-- Contact Us --</h4>
-                <p>Email: <a href="mailto:info@forestcitylaser.com">info@forestcitylaser.com</a></p>
-                <p>Location: Riverbend, London, ON</p>
-                <p>(Please contact for specific address/appointments)</p>
-            </div>
-            <div class="footer-column">
-                <h4>-- Quick Links --</h4>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#gallery">Portfolio</a></li>
-                    <li><a href="#quote">Request Quote</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#payments">Payment Portal</a></li>
-                </ul>
-            </div>
-            <div class="footer-column" id="payments">
-                <h4>-- Make a Payment --</h4>
-                <div class="payment-methods-label">We accept</div>
-                <div class="payment-methods" aria-label="Accepted payment methods">
-                    <img src="images/misc/apple-pay.png" alt="Apple Pay" class="payment-method-icon">
-                    <img src="images/misc/google-pay.png" alt="Google Pay" class="payment-method-icon">
-                    <img src="images/misc/visa.png" alt="Visa" class="payment-method-icon">
-                    <img src="images/misc/Mastercard.png" alt="Mastercard" class="payment-method-icon" onerror="this.outerHTML='\x3cspan class=\'payment-method-badge\'\x3eMastercard\x3c/span\x3e'">
-                    <img src="images/misc/amex.png" alt="American Express" class="payment-method-icon">
-                </div>
-                <div style="margin-top: 10px;">
-                    <div style="
-                        overflow: hidden;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-end;
-                        align-items: center;
-                        width: 180px;
-                        background: #FFFFFF;
-                        border: 1px solid rgba(0, 0, 0, 0.1);
-                        box-shadow: -2px 10px 5px rgba(0, 0, 0, 0);
-                        border-radius: 8px;
-                        font-family: Rubik, SQ Market, Helvetica, Arial, sans-serif;
-                    ">
-                        <img src="https://items-images-production.s3.us-west-2.amazonaws.com/files/2543ccabf7a67309926221279dec1bc5d157961b/original.png" alt="Forest City Laser Payment" onerror="this.style.display='none'" style="width: 100%;">
-                        <div style="padding: 12px;">
-                            <a target="_blank" 
-                               id="embedded-checkout-modal-checkout-button"
-                               data-url="https://square.link/u/xrE4uABv?src=embed" 
-                               href="https://square.link/u/xrE4uABv?src=embed" 
-                               style="
-                                   display: inline-block;
-                                   font-size: 14px;
-                                   line-height: 36px;
-                                   height: 36px;
-                                   color: #000000;
-                                   min-width: 150px;
-                                   background-color: #d9d9d9;
-                                   text-align: center;
-                                   box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
-                                   border-radius: 6px;
-                                   text-decoration: none;
-                               ">Payment Portal</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Forest City Laser. All rights reserved.</p>
-            <div class="footer-canadian-icons">
-                 <span class="proudly-canadian-text">Proudly Canadian</span>
-                 <img src="images/misc/Canadian_Flag.png" alt="Canadian Flag" title="Made in Canada">
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js" defer></script>
-
-    <!-- Square Payment Popup Script -->
-    <script>
-        function showCheckoutWindow(e) {
-            e.preventDefault();
-
-            const url = document.getElementById('embedded-checkout-modal-checkout-button').getAttribute('data-url');
-            const title = 'Square Payment Links';
-
-            // Some platforms embed in an iframe, so we want to top window to calculate sizes correctly
-            const topWindow = window.top ? window.top : window;
-
-            // Get full screen dimensions
-            const width = topWindow.screen.availWidth;
-            const height = topWindow.screen.availHeight;
-
-            // Open in full screen
-            const newWindow = window.open(url, title, `scrollbars=yes, width=${width}, height=${height}, top=0, left=0, resizable=yes, menubar=no, toolbar=no, location=no, status=no`);
-
-            if (window.focus) newWindow.focus();
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}    
+      (function(){
+        var search = location.search || '';
+        try {
+          if (search.indexOf('ga_debug=1') !== -1) localStorage.setItem('ga_debug', '1');
+          if (search.indexOf('ga_debug=0') !== -1) localStorage.removeItem('ga_debug');
+        } catch(e) {}
+        const isDebug = (search.indexOf('ga_debug=1') !== -1)
+          || (document.cookie && document.cookie.indexOf('ar_debug=1') !== -1)
+          || (function(){ try { return localStorage.getItem('ga_debug') === '1'; } catch(e) { return false; } })();
+        gtag('js', new Date());
+        if (isDebug) {
+          gtag('config', 'G-J7QH9VR6J4', { debug_mode: true });
+        } else {
+          gtag('config', 'G-J7QH9VR6J4');
         }
-
-        // Initialize Square payment button when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const payButton = document.getElementById('embedded-checkout-modal-checkout-button');
-            if (payButton) {
-                payButton.addEventListener('click', function(e) {
-                    showCheckoutWindow(e);
-                });
-            }
-        });
-    </script>
-
-    <!-- Lightbox Structure -->
-    <div id="lightbox-overlay" class="lightbox-hidden">
-        <span id="lightbox-close">&times;</span>
-        <img id="lightbox-image" src="" alt="Lightbox Image">
-    </div>
-
-    <!-- Tawk.to Live Chat Script -->
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6839b7b7679e18190a361283/1isgnb9ha';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
-
-    <!-- Dynamic Chat Status Script -->
-    <script type="text/javascript">
-        // Chat status functionality
-        function updateChatStatus() {
-            const titleElement = document.getElementById('chat-status-title');
-            const messageElement = document.getElementById('chat-status-message');
-            const noticeElement = document.getElementById('chat-status-notice');
-            
-            if (!titleElement || !messageElement || !noticeElement) return;
-            
-            // Check if Tawk.to is loaded and get status
-            if (typeof Tawk_API !== 'undefined' && Tawk_API.getStatus) {
-                const status = Tawk_API.getStatus();
-                
-                if (status === 'online') {
-                    // Online - show available message
-                    titleElement.innerHTML = '💬 Live Chat Available';
-                    messageElement.innerHTML = 'Look for the chat widget in the bottom right corner to start an instant conversation with us right now!';
-                    noticeElement.style.borderColor = '#28a745';
-                    noticeElement.style.background = 'linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%)';
-                } else {
-                    // Offline - show unavailable message
-                    titleElement.innerHTML = '💤 Live Chat Currently Offline';
-                    messageElement.innerHTML = 'We\'re currently outside of our chat hours. Please use the quote form above or email us directly for assistance!';
-                    noticeElement.style.borderColor = '#ffc107';
-                    noticeElement.style.background = 'linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%)';
-                }
-            } else {
-                // Fallback if status can't be determined
-                titleElement.innerHTML = '💬 Live Chat';
-                messageElement.innerHTML = 'Look for the chat widget in the bottom right corner during business hours, or use our quote form above!';
-                noticeElement.style.borderColor = '#e9ecef';
-                noticeElement.style.background = 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)';
-            }
-        }
-        
-        // Monitor Tawk.to status changes (only if Tawk_API exists)
-        setTimeout(function() {
-            if (typeof Tawk_API !== 'undefined') {
-                Tawk_API.onStatusChange = function(status) {
-                    updateChatStatus();
-                };
-                
-                Tawk_API.onLoad = function() {
-                    updateChatStatus();
-                };
-            }
-            updateChatStatus();
-        }, 2000);
-        
-        // Also check when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(updateChatStatus, 3000);
-        });
+      })();
     </script>
 
     <style>
-        /* Coupon Code Styles */
-        .form-group input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e9ecef;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input[type="text"]:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-        }
-
-        /* Popular Products Styles */
-        .popular-products {
-            padding: 60px 0;
-            background: #f8f9fa;
-        }
-
-        .popular-products h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #333;
-            font-size: 2.5rem;
-        }
-
-        .product-carousel {
-            position: relative;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-
-        /* Default auto-scroll state */
-        .product-track {
-            display: flex;
-            animation: scroll 40s linear infinite;
-            width: calc(250px * 28); /* 14 original + 14 clones = 28 total */
-        }
-
-        /* Manual scroll state - disable auto-scroll and enable overflow */
-        .product-carousel.manual-scroll {
-            overflow-x: auto;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
-            scroll-behavior: smooth;
-        }
-
-        .product-carousel.manual-scroll .product-track {
-            animation: none;
-        }
-
-        /* Hide scrollbar but keep functionality */
-        .product-carousel.manual-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .product-carousel.manual-scroll {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .product-slide {
-            flex: 0 0 250px;
-            margin: 0 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .product-slide:hover {
-            transform: translateY(-10px);
-        }
-
-        .product-slide img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .product-slide:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-slide h3 {
-            margin-top: 15px;
-            font-size: 1.1rem;
-            color: #333;
-        }
-
-        /* Lightbox links in product carousel */
-        .product-slide .lightbox-trigger {
-            display: block;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .product-slide .lightbox-trigger:hover {
-            text-decoration: none;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-250px * 14)); /* Scroll through original set */
-            }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .product-slide {
-                flex: 0 0 200px;
-            }
-            
-            .product-track {
-                width: calc(200px * 28); /* 14 original + 14 clones = 28 total */
-                /* Auto-scroll by default on mobile too */
-                animation: scroll 40s linear infinite;
-            }
-
-            /* Manual scroll mode on mobile */
-            .product-carousel.manual-scroll {
-                overflow-x: auto;
-                overflow-y: hidden;
-                -webkit-overflow-scrolling: touch;
-                scroll-behavior: smooth;
-            }
-
-            .product-carousel.manual-scroll .product-track {
-                animation: none;
-            }
-
-            /* Hide scrollbar in manual mode */
-            .product-carousel.manual-scroll::-webkit-scrollbar {
-                display: none;
-            }
-
-            .product-carousel.manual-scroll {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(calc(-200px * 14)); /* Scroll through original set */
-                }
-            }
-        }
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s cubic-bezier(0.39, 0.575, 0.565, 1), transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
+      }
+      .fade-in-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // --- Coupon Code Logic ---
-            const couponInput = document.getElementById('coupon');
-            const applyButton = document.getElementById('apply-coupon');
-            const messageDiv = document.getElementById('coupon-message');
-
-            if (applyButton) {
-                applyButton.addEventListener('click', function() {
-                    const code = couponInput.value.trim().toUpperCase();
-                    if (!code) {
-                        showMessage('Please enter a coupon code.', 'error');
-                        return;
-                    }
-                    showMessage(`Coupon code "${code}" will be applied if valid.`, 'success');
-                    setTimeout(() => { if(messageDiv) messageDiv.style.display = 'none'; }, 5000);
-                });
-            }
-            if (couponInput) {
-                couponInput.addEventListener('input', function() {
-                    if(messageDiv) {
-                        messageDiv.textContent = '';
-                        messageDiv.style.display = 'none';
-                    }
-                });
-            }
-            function showMessage(text, type) {
-                if(messageDiv) {
-                    messageDiv.textContent = text;
-                    messageDiv.className = 'coupon-message ' + type;
-                    messageDiv.style.display = 'block';
-                }
-            }
-
-            // --- Fixed Popular Products Carousel Logic ---
-            const carousel = document.querySelector('.product-carousel');
-            if (!carousel) return;
-
-            const track = carousel.querySelector('.product-track');
-            const slides = Array.from(track.children);
-            
-            // Clone slides for infinite loop
-            slides.forEach(slide => {
-                const clone = slide.cloneNode(true);
-                track.appendChild(clone);
-            });
-
-            let isScrolling = false;
-            let startX = 0;
-            let scrollLeft = 0;
-            let isAutoScrolling = true;
-            let resumeTimeout;
-            let autoScrollSpeed = 0.5; // pixels per frame
-            let animationFrame;
-
-            // Smooth auto-scroll using requestAnimationFrame instead of CSS animation
-            function autoScroll() {
-                if (!isAutoScrolling || isScrolling) {
-                    return;
-                }
-
-                carousel.scrollLeft += autoScrollSpeed;
-                
-                // Handle infinite loop
-                const maxScroll = track.scrollWidth / 2;
-                if (carousel.scrollLeft >= maxScroll) {
-                    carousel.scrollLeft = 0;
-                }
-                
-                animationFrame = requestAnimationFrame(autoScroll);
-            }
-
-            function startAutoScroll() {
-                isAutoScrolling = true;
-                if (animationFrame) {
-                    cancelAnimationFrame(animationFrame);
-                }
-                animationFrame = requestAnimationFrame(autoScroll);
-            }
-
-            function stopAutoScroll() {
-                isAutoScrolling = false;
-                if (animationFrame) {
-                    cancelAnimationFrame(animationFrame);
-                }
-                clearTimeout(resumeTimeout);
-                
-                // Resume after 3 seconds of no interaction
-                resumeTimeout = setTimeout(() => {
-                    startAutoScroll();
-                }, 3000);
-            }
-
-            // Mouse events
-            carousel.addEventListener('mousedown', (e) => {
-                if (e.target.tagName === 'IMG') {
-                    e.preventDefault();
-                }
-                
-                isScrolling = true;
-                startX = e.pageX - carousel.offsetLeft;
-                scrollLeft = carousel.scrollLeft;
-                stopAutoScroll();
-                
-                carousel.style.cursor = 'grabbing';
-                carousel.style.userSelect = 'none';
-            });
-
-            carousel.addEventListener('mouseleave', () => {
-                isScrolling = false;
-                carousel.style.cursor = 'grab';
-                carousel.style.userSelect = 'auto';
-            });
-
-            carousel.addEventListener('mouseup', () => {
-                isScrolling = false;
-                carousel.style.cursor = 'grab';
-                carousel.style.userSelect = 'auto';
-            });
-
-            carousel.addEventListener('mousemove', (e) => {
-                if (!isScrolling) return;
-                e.preventDefault();
-                
-                const x = e.pageX - carousel.offsetLeft;
-                const walk = (x - startX) * 2;
-                carousel.scrollLeft = scrollLeft - walk;
-            });
-
-            // Touch events for mobile
-            let touchStartX = 0;
-            let touchScrollLeft = 0;
-            let isTouching = false;
-
-            carousel.addEventListener('touchstart', (e) => {
-                isTouching = true;
-                touchStartX = e.touches[0].clientX;
-                touchScrollLeft = carousel.scrollLeft;
-                stopAutoScroll();
-            }, { passive: true });
-
-            carousel.addEventListener('touchmove', (e) => {
-                if (!isTouching) return;
-                
-                const touchX = e.touches[0].clientX;
-                const walk = (touchStartX - touchX) * 1.5;
-                carousel.scrollLeft = touchScrollLeft + walk;
-            }, { passive: true });
-
-            carousel.addEventListener('touchend', () => {
-                isTouching = false;
-                // Don't immediately restart auto-scroll, let the timeout handle it
-            }, { passive: true });
-
-            // Prevent click events when dragging
-            let clickStartX = 0;
-            carousel.addEventListener('mousedown', (e) => {
-                clickStartX = e.pageX;
-            });
-
-            carousel.addEventListener('click', (e) => {
-                if (Math.abs(e.pageX - clickStartX) > 5) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-            }, true);
-
-            // Handle infinite scroll (remove the problematic scroll event listener)
-            // This will be handled in the autoScroll function instead
-
-            // Set initial cursor
-            carousel.style.cursor = 'grab';
-            
-            // Start auto-scroll
-            startAutoScroll();
-
-            // Hover pause (simplified - no immediate restart)
-            carousel.addEventListener('mouseenter', () => {
-                stopAutoScroll();
-            });
-
-            carousel.addEventListener('mouseleave', () => {
-                if (!isScrolling && !isTouching) {
-                    // Only restart if not currently dragging
-                    clearTimeout(resumeTimeout);
-                    resumeTimeout = setTimeout(() => {
-                        startAutoScroll();
-                    }, 1000);
-                }
-            });
-        });
+<!-- SEO: Schema.org for Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Forest City Laser",
+  "description": "Expert custom laser cutting and engraving for personalized gifts, wedding decor, corporate branding, and industrial parts.",
+  "url": "https://forestcitylaser.com",
+  "email": "info@forestcitylaser.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "42.9849",
+    "longitude": "-81.2453"
+  },
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "priceRange": "$$",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "42.9849",
+      "longitude": "-81.2453"
+    },
+    "geoRadius": "100000"
+  },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laser Cutting" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laser Engraving" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Wedding Decor" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Branding" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Industrial Signage" }},
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Personalized Gifts" }}
+  ]
+}
+</script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-Da73A2Cq.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CqdJNRcS.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/6839b7b7679e18190a361283/1isgnb9ha';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+      })();
     </script>
-</body>
-</html> 
+    <!--End of Tawk.to Script-->
+  </body>
+</html>
