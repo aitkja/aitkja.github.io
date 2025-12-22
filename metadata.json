@@ -1,0 +1,5 @@
+{
+  "name": "Forest City Laser Modernized",
+  "description": "A modern, interactive website for Forest City Laser, specializing in custom laser cutting and engraving. Built with React and Tailwind CSS, featuring a dynamic portfolio, product carousel, and a streamlined quote request system.",
+  "requestFramePermissions": []
+}
