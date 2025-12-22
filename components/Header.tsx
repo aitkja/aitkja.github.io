@@ -52,13 +52,17 @@ const Header: React.FC<HeaderProps> = ({ sectionRefs }) => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {NAV_LINKS.map((link) => (
-                <button
+                <a
                   key={link.name}
-                  onClick={() => scrollToSection(link.refKey)}
+                  href={`#${link.refKey}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.refKey);
+                  }}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${textClasses}`}
                 >
                   {link.name}
-                </button>
+                </a>
               ))}
             </div>
           </div>
@@ -79,13 +83,17 @@ const Header: React.FC<HeaderProps> = ({ sectionRefs }) => {
         <div className="md:hidden bg-white/95 backdrop-blur-sm shadow-lg block">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {NAV_LINKS.map((link) => (
-              <button
+              <a
                 key={link.name}
-                onClick={() => scrollToSection(link.refKey)}
+                href={`#${link.refKey}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.refKey);
+                }}
                 className="text-slate-600 hover:text-slate-900 hover:bg-slate-100 block w-full text-left px-3 py-2 rounded-md text-base font-medium"
               >
                 {link.name}
-              </button>
+              </a>
             ))}
           </div>
         </div>

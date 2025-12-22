@@ -37,7 +37,16 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ sectionRefs }, ref) => {
             <ul className="space-y-2">
               {NAV_LINKS.map(link => (
                  <li key={link.refKey}>
-                    <button onClick={() => scrollToSection(link.refKey)} className="text-sm hover:text-slate-900 transition-colors">{link.name}</button>
+                    <a 
+                      href={`#${link.refKey}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(link.refKey);
+                      }}
+                      className="text-sm hover:text-slate-900 transition-colors"
+                    >
+                      {link.name}
+                    </a>
                  </li>
               ))}
             </ul>
