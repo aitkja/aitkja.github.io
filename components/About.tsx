@@ -19,7 +19,7 @@ const About = forwardRef<HTMLElement>((props, ref) => {
             What started as our shared love for creating custom pieces has grown into a business dedicated to transforming ideas into tangible, personalized works of art. We blend engineering expertise with design sensibility to deliver exceptional results for every project.
           </p>
           <p>
-            Proudly Canadian and based in Riverbend, West London, Ontario, we've been serving the greater Forest City community since 2021. We specialize in working with a variety of materials including custom wood, acrylic, leather, and industrial metals, providing the perfect marriage of technical innovation and creative design.
+            Proudly Canadian and based in <strong>Riverbend, West London, Ontario</strong>, we've been serving the greater Forest City community since 2021. We specialize in precision <strong>laser engraving and cutting</strong> for a variety of materials including custom wood, acrylic, leather, and industrial metals. Whether you are in <strong>Byron, Oakridge, Hyde Park, or Downtown London</strong>, we provide the perfect marriage of technical innovation and creative design for all your custom needs.
           </p>
         </div>
       </div>
