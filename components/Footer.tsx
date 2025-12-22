@@ -56,7 +56,16 @@ const Footer = forwardRef<HTMLElement, FooterProps>(({ sectionRefs }, ref) => {
             <h4 className="font-semibold text-slate-800 mb-4">Contact Us</h4>
             <ul className="space-y-2 text-sm">
               <li>Email: <a href="mailto:info@forestcitylaser.com" className="hover:text-slate-900 transition-colors">info@forestcitylaser.com</a></li>
-              <li>Location: Riverbend, London, ON</li>
+              <li>
+                Location: <a 
+                  href="https://maps.app.goo.gl/ZbxY5A2rgm2Le6Dq6" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-slate-900 transition-colors underline decoration-slate-300"
+                >
+                  Riverbend, London, ON
+                </a>
+              </li>
               <li className="text-xs text-slate-500">(Contact for appointments)</li>
             </ul>
           </div>
