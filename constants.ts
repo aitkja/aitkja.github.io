@@ -182,6 +182,26 @@ export const SEO_METADATA: SeoMetadata = {
   payments: {
     title: 'Payment Portal | Forest City Laser',
     description: 'Securely make a payment for your custom laser engraving or cutting order through our online payment portal.'
+  },
+  'laser-engraving': {
+    title: 'Custom Laser Engraving London Ontario | Forest City Laser',
+    description: 'Premier laser engraving services in London, Ontario. We offer precision engraving on wood, leather, glass, and mirrors. Perfect for custom gifts and branding.'
+  },
+  'acrylic-cutting': {
+    title: 'Custom Acrylic Cutting & Engraving | Forest City Laser',
+    description: 'Expert acrylic laser cutting and engraving in London, Ontario. High-quality custom signage, desk signs, and industrial parts with precision edges.'
+  },
+  'leather-engraving': {
+    title: 'Custom Leather Engraving Service | Forest City Laser',
+    description: 'Professional leather engraving in London, Ontario. Personalize wallets, journals, patches, and corporate gifts with high-detail laser etching.'
+  },
+  'custom-signage': {
+    title: 'Custom Signage & Business Signs London Ontario | Forest City Laser',
+    description: 'High-quality custom signage for businesses and homes in London, Ontario. We create stunning laser-cut signs in wood, acrylic, and metal for any space.'
+  },
+  'wedding-events': {
+    title: 'Wedding Decor & Event Signage London Ontario | Forest City Laser',
+    description: 'Exquisite custom wedding decor and event signage in London, Ontario. From personalized place cards to large welcome signs, we bring your celebration to life.'
   }
 };
 

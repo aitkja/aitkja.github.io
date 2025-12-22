@@ -18,6 +18,7 @@ import { SEO_METADATA } from './constants';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'flyer'>('home');
+  const [keywordSlug, setKeywordSlug] = useState<string | null>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [quoteReference, setQuoteReference] = useState<string>('');
 
@@ -42,9 +43,18 @@ const App: React.FC = () => {
   // Handle navigation based on URL and hide Tawk on flyer page
   useEffect(() => {
     const handleNavigate = () => {
-      const path = window.location.pathname;
-      const isFlyer = path === '/flyer' || path === '/flyer/';
+      const path = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+      
+      const isFlyer = path === '/flyer';
       setCurrentPage(isFlyer ? 'flyer' : 'home');
+
+      // Check for keyword-rich power URLs
+      if (path === '/laser-engraving-london-ontario') setKeywordSlug('laser-engraving');
+      else if (path === '/custom-acrylic-cutting') setKeywordSlug('acrylic-cutting');
+      else if (path === '/leather-engraving-service') setKeywordSlug('leather-engraving');
+      else if (path === '/custom-signage-london-ontario') setKeywordSlug('custom-signage');
+      else if (path === '/wedding-decor-event-signage-london-ontario') setKeywordSlug('wedding-events');
+      else setKeywordSlug(null);
       
       // Hide/show Tawk widget based on page
       const tawkElement = document.querySelector('iframe[src*="tawk.to"]');
@@ -64,7 +74,12 @@ const App: React.FC = () => {
     };
   }, []);
 
-  useDynamicSeo(sectionRefs, SEO_METADATA);
+  // Merge the keyword-specific metadata into the standard SEO metadata if a slug is active
+  const dynamicMetadata = keywordSlug && SEO_METADATA[keywordSlug] 
+    ? { ...SEO_METADATA, hero: SEO_METADATA[keywordSlug] } 
+    : SEO_METADATA;
+
+  useDynamicSeo(sectionRefs, dynamicMetadata);
 
   const openLightbox = (imageUrl: string) => {
     setLightboxImage(imageUrl);
@@ -104,7 +119,12 @@ const App: React.FC = () => {
       <ScrollProgressBar />
       <Header sectionRefs={sectionRefs} />
       <main>
-        <Hero ref={heroRef} galleryRef={galleryRef} quoteRef={quoteRef} />
+        <Hero 
+          ref={heroRef} 
+          galleryRef={galleryRef} 
+          quoteRef={quoteRef} 
+          forcedHeadline={keywordSlug ? dynamicMetadata.hero.title.split('|')[0].trim() : undefined}
+        />
         <section className="py-6 bg-slate-100/80 backdrop-blur-sm border-b border-slate-200/70">
           <GoogleReviews />
         </section>
