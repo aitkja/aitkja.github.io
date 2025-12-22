@@ -11,6 +11,8 @@ const Custom_Fridge_Magnets = new URL('./images/stock/Weddings/Custom_Fridge_Mag
 const Champagne_Glass_Tags = new URL('./images/stock/Weddings/Champagne_Glass_Tags.webp', import.meta.url).href;
 
 // Corporate gallery images
+const Acrylic_Desk_Sign = new URL('./images/stock/Corporate/Acrylic Desk Sign.webp', import.meta.url).href;
+const Custom_Etch_to_Cutting_Board = new URL('./images/stock/Corporate/Custom_Etch_to_Cutting_Board.webp', import.meta.url).href;
 const Business_Card_Holder = new URL('./images/stock/Corporate/Business_Card_Holder.webp', import.meta.url).href;
 const Business_bar_sign = new URL('./images/stock/Corporate/Business_bar_sign.webp', import.meta.url).href;
 const Corporate_Pens = new URL('./images/stock/Corporate/Corporate_Pens.webp', import.meta.url).href;
@@ -37,11 +39,13 @@ const Custom_Pencils = new URL('./images/stock/Personal/Custom_Pencils.webp', im
 const Custom_Pens = new URL('./images/stock/Personal/Custom_Pens.webp', import.meta.url).href;
 const Key_Chains = new URL('./images/stock/Personal/Key_Chains.webp', import.meta.url).href;
 const Name_Sign = new URL('./images/stock/Personal/Name_Sign.webp', import.meta.url).href;
+const Van_Morrison_Mirror = new URL('./images/stock/Personal/Custom Mirror Etching.webp', import.meta.url).href;
 const Wooden_Custom_Sign = new URL('./images/stock/Corporate/wooden_Custom_Sign.webp', import.meta.url).href;
 
 // Industrial gallery images
 const Industrial_Signage = new URL('./images/stock/Industrial/Industrial_Signage.webp', import.meta.url).href;
 const Custom_Acrylic_Cutting = new URL('./images/stock/Industrial/Custom_Acrylic_Cutting.webp', import.meta.url).href;
+const Custom_Acrylic_Cutting_2 = new URL('./images/stock/Industrial/Custom_Acrylic_Cutting_2.webp', import.meta.url).href;
 const Small_Lamacoids = new URL('./images/stock/Industrial/Small_Lamacoids.webp', import.meta.url).href;
 const Small_Lamacoids_2 = new URL('./images/stock/Industrial/Small_Lamacoids_2.webp', import.meta.url).href;
 const Etched_anodized_locks = new URL('./images/stock/Industrial/Etched_anodized_locks.webp', import.meta.url).href;
@@ -57,6 +61,10 @@ export const NAV_LINKS = [
 ];
 
 export const POPULAR_PRODUCTS = [
+  { src: Van_Morrison_Mirror, name: 'Custom Etched Mirror', alt: 'Van Morrison Etched Mirror' },
+  { src: Custom_Etch_to_Cutting_Board, name: 'Custom Corporate Boards', alt: 'Corporate logo etched on cutting board' },
+  { src: Custom_Acrylic_Cutting_2, name: 'Precision Acrylic Cutting', alt: 'Precision industrial acrylic cutting' },
+  { src: Acrylic_Desk_Sign, name: 'Acrylic Desk Signs', alt: 'Custom Acrylic Desk Sign' },
   { src: Valentine_Signs, name: 'Valentine Signs', alt: 'Valentine Signs' },
   { src: Cake_Toppers, name: 'Cake Toppers', alt: 'Cake Toppers' },
   { src: Place_Tags, name: 'Place Tags', alt: 'Place Tags' },
@@ -98,6 +106,8 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
   {
     title: 'Corporate Items',
     items: [
+      { src: Custom_Etch_to_Cutting_Board, name: 'Corporate Cutting Boards', alt: 'Custom corporate logo etched on wood' },
+      { src: Acrylic_Desk_Sign, name: 'Acrylic Desk Signs', alt: 'Custom acrylic desk signage' },
       { src: Business_bar_sign, name: 'Business_bar_sign', alt: 'Business bar sign' },
       { src: Business_Card_Holder, name: 'Business_Card_Holder', alt: 'Business Card Holder' },
       { src: Cap_With_Logo, name: 'Cap_With_Logo', alt: 'Cap With Logo' },
@@ -110,6 +120,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
   {
     title: 'Personal Items & Gifts',
     items: [
+      { src: Van_Morrison_Mirror, name: 'Custom Etched Mirror', alt: 'Custom etched mirror with artwork' },
       { src: Ocean_charcuterie_boards, name: 'Ocean_charcuterie_boards', alt: 'Ocean charcuterie boards' },
       { src: Crib_Sign, name: 'Crib_Sign', alt: 'Crib sign' },
       { src: Diaper_Pong_board, name: 'Diaper_Pong_board', alt: 'Diaper pong board' },
@@ -133,6 +144,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
   {
     title: 'Industrial Signage & Lamacoids',
     items: [
+      { src: Custom_Acrylic_Cutting_2, name: 'Industrial Acrylic Cutting', alt: 'Precision acrylic cutting' },
       { src: Etched_anodized_locks, name: 'Etched_anodized_locks', alt: 'Etched anodized locks' },
       { src: Industrial_Signage, name: 'Industrial_Signage', alt: 'Industrial Signage' },
       { src: Small_Lamacoids, name: 'Small_Lamacoids', alt: 'Small Lamacoids' },

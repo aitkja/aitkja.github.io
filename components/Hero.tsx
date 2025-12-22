@@ -48,12 +48,12 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ galleryRef, quoteRef }, ref) 
     >
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
       <div className="relative z-20 p-8 max-w-4xl mx-auto">
-        <h1 className="relative text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 h-32 md:h-36 flex items-center justify-center overflow-hidden leading-tight px-2">
+        <h1 className="relative text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 min-h-[20rem] md:min-h-[24rem] flex items-center justify-center leading-tight px-2">
           {HEADLINES.map((headline, idx) => (
             <span
               key={headline}
               className={[
-                'absolute inset-0 flex items-center justify-center text-center transition-opacity duration-500 select-none pointer-events-none',
+                'absolute inset-x-0 top-1/2 -translate-y-1/2 transition-opacity duration-500 select-none pointer-events-none px-4',
                 idx === headlineIndex ? (isFading ? 'opacity-0' : 'opacity-100') : 'opacity-0',
               ].join(' ')}
               aria-hidden={idx === headlineIndex ? undefined : true}
