@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Home Page -->
   <url>
     <loc>https://forestcitylaser.com/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Power SEO URLs - Money Pages -->
+  <url>
+    <loc>https://forestcitylaser.com/laser-engraving-london-ontario</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/laser-cutting-london-ontario</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/engraving-london-ontario</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Material Pages -->
+  <url>
+    <loc>https://forestcitylaser.com/leather-engraving-london-on</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/wood-laser-engraving-london-on</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/acrylic-cutting-london-on</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Industry/Event Pages -->
+  <url>
+    <loc>https://forestcitylaser.com/custom-signage-london-ontario</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/wedding-decor-event-signage-london-ontario</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Legacy Power URLs (Redirected in App.tsx) -->
+  <url>
+    <loc>https://forestcitylaser.com/custom-acrylic-cutting</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/leather-engraving-service</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <!-- Other Pages -->
+  <url>
+    <loc>https://forestcitylaser.com/flyer</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://forestcitylaser.com/thank-you.html</loc>
@@ -11,4 +77,3 @@
     <changefreq>yearly</changefreq>
   </url>
 </urlset>
-
