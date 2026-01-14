@@ -17,11 +17,11 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             <div className="bg-slate-50 border border-slate-200 rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-              <div className="flex justify-center mb-4">
-                  <div className="bg-indigo-100 text-indigo-600 rounded-full p-3">
-                    <ChatAlt2Icon />
-                  </div>
-              </div>
+            <div className="flex justify-center mb-4">
+                <div className="bg-indigo-100 text-indigo-600 rounded-full p-3">
+                  <ChatAlt2Icon />
+                </div>
+            </div>
               <h3 className="text-xl font-semibold text-slate-800 mb-2">Live Chat</h3>
               <p className="text-slate-600">
                 Look for the chat widget in the bottom right corner to start an instant conversation during business hours!
@@ -43,9 +43,9 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                   </div>
               </div>
               <h3 className="text-xl font-semibold text-slate-800 mb-2">Find Us</h3>
-              <p className="text-slate-600">
+            <p className="text-slate-600">
                 We are based in Riverbend, West London. Click here to view our location on Google Maps.
-              </p>
+            </p>
             </a>
           </div>
         </div>

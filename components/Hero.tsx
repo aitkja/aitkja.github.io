@@ -68,7 +68,7 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ galleryRef, quoteRef, forcedH
                 aria-hidden={idx === headlineIndex ? undefined : true}
               >
                 {headline}
-              </span>
+          </span>
             ))
           )}
         </h1>
