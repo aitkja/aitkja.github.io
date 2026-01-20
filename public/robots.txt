@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /thank-you.html
+Disallow: /flyer
 
 Sitemap: https://forestcitylaser.com/sitemap.xml
 

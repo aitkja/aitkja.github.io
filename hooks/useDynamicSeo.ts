@@ -40,6 +40,13 @@ const useDynamicSeo = (sectionRefs: SectionRefs, metadata: SeoMetadata): void =>
           updateMetaTag('og:description', meta.description, 'property');
           updateMetaTag('twitter:title', meta.title, 'property');
           updateMetaTag('twitter:description', meta.description, 'property');
+
+          // Update canonical tag
+          const canonicalTag = document.querySelector('link[rel="canonical"]');
+          if (canonicalTag) {
+            const currentPath = window.location.pathname.replace(/\/$/, '');
+            canonicalTag.setAttribute('href', `https://forestcitylaser.com${currentPath || '/'}`);
+          }
         }
       } else if (window.scrollY < window.innerHeight / 2 && activeSectionRef.current !== 'hero') {
         // Fallback to hero section if scrolled to the top

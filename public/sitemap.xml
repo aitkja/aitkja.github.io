@@ -53,27 +53,4 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Legacy Power URLs (Redirected in App.tsx) -->
-  <url>
-    <loc>https://forestcitylaser.com/custom-acrylic-cutting</loc>
-    <priority>0.5</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-  <url>
-    <loc>https://forestcitylaser.com/leather-engraving-service</loc>
-    <priority>0.5</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-
-  <!-- Other Pages -->
-  <url>
-    <loc>https://forestcitylaser.com/flyer</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://forestcitylaser.com/thank-you.html</loc>
-    <priority>0.3</priority>
-    <changefreq>yearly</changefreq>
-  </url>
 </urlset>

@@ -34,8 +34,17 @@ PAGES.forEach(page => {
   
   // Create an index.html in each subdirectory
   // This ensures GitHub Pages serves it with a 200 OK status
-  fs.writeFileSync(path.join(pageDir, 'index.html'), indexContent);
-  console.log(`Generated: ${page}/index.html`);
+  let pageContent = indexContent;
+  
+  // Update the canonical tag for this specific page
+  const pageUrl = `https://forestcitylaser.com/${page}`;
+  pageContent = pageContent.replace(
+    /<link rel="canonical" href="https:\/\/forestcitylaser\.com\/" \/>/,
+    `<link rel="canonical" href="${pageUrl}" />`
+  );
+
+  fs.writeFileSync(path.join(pageDir, 'index.html'), pageContent);
+  console.log(`Generated: ${page}/index.html with unique canonical: ${pageUrl}`);
 });
 
 console.log('Successfully generated physical paths for SEO.');
