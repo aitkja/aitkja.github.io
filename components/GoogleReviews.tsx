@@ -24,10 +24,9 @@ const StarRow: React.FC<{ rating: number; className?: string }> = ({ rating, cla
 const ReviewCard: React.FC<{
   author: string;
   rating: number;
-  dateLabel: string;
   text: string;
   url: string;
-}> = ({ author, rating, dateLabel, text, url }) => (
+}> = ({ author, rating, text, url }) => (
   <a
     href={url}
     target="_blank"
@@ -37,10 +36,7 @@ const ReviewCard: React.FC<{
   >
     <div className="flex items-center justify-between gap-3">
       <div className="min-w-0">
-        <div className="flex items-baseline gap-2">
-          <p className="text-sm font-semibold text-slate-900 truncate">{author}</p>
-          <p className="text-[11px] text-slate-500 whitespace-nowrap">{dateLabel}</p>
-        </div>
+        <p className="text-sm font-semibold text-slate-900 truncate">{author}</p>
         <StarRow rating={rating} className="mt-0.5" />
       </div>
       <svg
@@ -105,7 +101,6 @@ const GoogleReviews: React.FC = () => {
               key={`${r.author}-${r.text.slice(0, 24)}`}
               author={r.author}
               rating={r.rating}
-              dateLabel={r.dateLabel}
               text={r.text}
               url={r.url}
             />
