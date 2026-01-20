@@ -107,25 +107,23 @@ const GoogleReviews: React.FC = () => {
 
         {/* Mobile: Carousel view */}
         <div className="sm:hidden">
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden rounded-lg">
             <div
-              className="transition-all duration-500 ease-in-out"
+              className="flex transition-transform duration-700 ease-in-out"
               style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
+                transform: `translateX(calc(-${currentIndex} * (100% + 10px)))`,
               }}
             >
-              <div className="flex">
-                {reviews.map((r) => (
-                  <div key={`${r.author}-${r.text.slice(0, 24)}`} className="w-full flex-shrink-0">
-                    <ReviewCard
-                      author={r.author}
-                      rating={r.rating}
-                      text={r.text}
-                      url={r.url}
-                    />
-                  </div>
-                ))}
-              </div>
+              {reviews.map((r) => (
+                <div key={`${r.author}-${r.text.slice(0, 24)}`} className="w-full flex-shrink-0 pr-2.5">
+                  <ReviewCard
+                    author={r.author}
+                    rating={r.rating}
+                    text={r.text}
+                    url={r.url}
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
