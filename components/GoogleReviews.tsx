@@ -70,7 +70,7 @@ const ReviewCard: React.FC<{
 );
 
 const GoogleReviews: React.FC = () => {
-  const reviews = GOOGLE_REVIEWS.slice(0, 4);
+  const reviews = GOOGLE_REVIEWS;
 
   return (
     <div className="w-full">
@@ -99,7 +99,7 @@ const GoogleReviews: React.FC = () => {
           </a>
         </div>
 
-        <div className="flex gap-2.5 overflow-x-auto pb-1 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
+        <div className="flex gap-2.5 overflow-x-auto pb-1 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-5 sm:overflow-visible">
           {reviews.map((r) => (
             <ReviewCard
               key={`${r.author}-${r.text.slice(0, 24)}`}

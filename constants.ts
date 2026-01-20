@@ -260,4 +260,13 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     // Share link (Google → review → Share → copy link)
     url: 'https://maps.app.goo.gl/6MDqZy44mSUB1czK7',
   },
+  {
+    author: 'Jason Van Meer',
+    rating: 5,
+    dateLabel: 'a week ago',
+    text:
+      '“Forest City Laser was great to deal with. They were very fast and the product was exactly what I wanted. I would highly recommend them for any laser cutting or engraving needs.”',
+    // Share link (Google → review → Share → copy link)
+    url: 'https://www.google.com/search?q=Forest+City+Laser+reviews',
+  },
 ];
