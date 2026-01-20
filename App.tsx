@@ -80,15 +80,21 @@ const App: React.FC = () => {
           // @ts-ignore
           window.Tawk_API.showWidget();
         }
-      } else {
-        // Fallback for when Tawk is still loading its iframe
-        const tawkSelector = 'iframe[src*="tawk.to"], .tawk-min-container, [id^="tawk"]';
-        const tawkElement = document.querySelector(tawkSelector);
-        if (tawkElement) {
-          const tawkContainer = (tawkElement.closest('div') || tawkElement) as HTMLElement;
-          if (tawkContainer) {
-            tawkContainer.style.display = currentPage === 'flyer' ? 'none' : 'block';
-          }
+      } 
+      
+      // Also handle the physical container for the new Embed widget
+      const embedContainer = document.getElementById('tawk_6839b7b7679e18190a361283');
+      if (embedContainer) {
+        embedContainer.style.display = currentPage === 'flyer' ? 'none' : 'block';
+      }
+
+      // Fallback for when Tawk is still loading its iframe
+      const tawkSelector = 'iframe[src*="tawk.to"], .tawk-min-container, [id^="tawk"]';
+      const tawkElement = document.querySelector(tawkSelector);
+      if (tawkElement) {
+        const tawkContainer = (tawkElement.closest('div') || tawkElement) as HTMLElement;
+        if (tawkContainer) {
+          tawkContainer.style.display = currentPage === 'flyer' ? 'none' : 'block';
         }
       }
     };

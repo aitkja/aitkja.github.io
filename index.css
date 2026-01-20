@@ -14,3 +14,13 @@ body {
     overflow-x: hidden;
   }
 }
+
+/* Position the Tawk.to Embedded widget like a floating bubble */
+#tawk_6839b7b7679e18190a361283 {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+  width: auto !important;
+  height: auto !important;
+}
