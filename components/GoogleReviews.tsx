@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { GOOGLE_REVIEWS, GOOGLE_REVIEWS_PROFILE_URL } from '../constants';
 
 const StarRow: React.FC<{ rating: number; className?: string }> = ({ rating, className }) => (
@@ -26,13 +26,15 @@ const ReviewCard: React.FC<{
   rating: number;
   text: string;
   url: string;
-}> = ({ author, rating, text, url }) => (
+  'aria-hidden'?: string;
+}> = ({ author, rating, text, url, 'aria-hidden': ariaHidden }) => (
   <a
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group block min-w-[220px] sm:min-w-0 snap-start rounded-lg border border-slate-200 bg-white/90 p-2.5 shadow-sm transition hover:bg-white hover:shadow-md"
+    className="group block flex-none w-[250px] sm:min-w-0 snap-start rounded-lg border border-slate-200 bg-white/90 p-2.5 shadow-sm transition hover:bg-white hover:shadow-md"
     aria-label={`Open Google review by ${author} (${rating} stars)`}
+    aria-hidden={ariaHidden}
   >
     <div className="flex items-center justify-between gap-3">
       <div className="min-w-0">
@@ -67,16 +69,13 @@ const ReviewCard: React.FC<{
 
 const GoogleReviews: React.FC = () => {
   const reviews = GOOGLE_REVIEWS;
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Auto-rotate carousel on mobile every 3.5 seconds
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % reviews.length);
-    }, 3500);
-
-    return () => clearInterval(interval);
-  }, [reviews.length]);
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    scroller.setAttribute('data-animated', 'true');
+  }, []);
 
   return (
     <div className="w-full">
@@ -105,40 +104,49 @@ const GoogleReviews: React.FC = () => {
           </a>
         </div>
 
-        {/* Mobile: Carousel view */}
-        <div className="sm:hidden">
-          <div className="relative overflow-hidden rounded-lg">
-            <div
-              className="flex transition-transform duration-700 ease-in-out"
-              style={{
-                transform: `translateX(calc(-${currentIndex} * (100% + 10px)))`,
-              }}
-            >
+        {/* Mobile: Continuous carousel view */}
+        <style>{`
+          .reviews-scroller {
+            -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+            mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+          }
+          .reviews-scroller__inner {
+            width: max-content;
+            flex-wrap: nowrap;
+          }
+          .reviews-scroller[data-animated="true"] .reviews-scroller__inner {
+            animation: scrollReviews 35s linear infinite;
+          }
+          @keyframes scrollReviews {
+            to {
+              transform: translate(calc(-50%));
+            }
+          }
+        `}</style>
+
+        <div className="sm:hidden overflow-hidden">
+          <div className="reviews-scroller overflow-hidden" ref={scrollerRef} data-animated="true">
+            <div className="reviews-scroller__inner flex gap-2.5">
               {reviews.map((r) => (
-                <div key={`${r.author}-${r.text.slice(0, 24)}`} className="w-full flex-shrink-0 pr-2.5">
-                  <ReviewCard
-                    author={r.author}
-                    rating={r.rating}
-                    text={r.text}
-                    url={r.url}
-                  />
-                </div>
+                <ReviewCard
+                  key={`${r.author}-${r.text.slice(0, 24)}`}
+                  author={r.author}
+                  rating={r.rating}
+                  text={r.text}
+                  url={r.url}
+                />
+              ))}
+              {reviews.map((r) => (
+                <ReviewCard
+                  key={`${r.author}-${r.text.slice(0, 24)}-dup`}
+                  author={r.author}
+                  rating={r.rating}
+                  text={r.text}
+                  url={r.url}
+                  aria-hidden="true"
+                />
               ))}
             </div>
-          </div>
-
-          {/* Carousel indicators */}
-          <div className="flex items-center justify-center gap-1.5 mt-3">
-            {reviews.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`h-2 w-2 rounded-full transition-all ${
-                  idx === currentIndex ? 'bg-slate-700 w-6' : 'bg-slate-300 hover:bg-slate-400'
-                }`}
-                aria-label={`Go to review ${idx + 1}`}
-              />
-            ))}
           </div>
         </div>
 
