@@ -56,7 +56,7 @@ Error generating stack: `+l.message+`
             flex-wrap: nowrap;
           }
           .reviews-scroller[data-animated="true"] .reviews-scroller__inner {
-            animation: scrollReviews 35s linear infinite;
+            animation: scrollReviews 18s linear infinite;
           }
           @keyframes scrollReviews {
             to {
