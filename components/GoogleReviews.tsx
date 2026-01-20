@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { GOOGLE_REVIEWS, GOOGLE_REVIEWS_PROFILE_URL } from '../constants';
 
 const StarRow: React.FC<{ rating: number; className?: string }> = ({ rating, className }) => (
@@ -67,6 +67,16 @@ const ReviewCard: React.FC<{
 
 const GoogleReviews: React.FC = () => {
   const reviews = GOOGLE_REVIEWS;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Auto-rotate carousel on mobile every 3.5 seconds
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [reviews.length]);
 
   return (
     <div className="w-full">
@@ -95,7 +105,47 @@ const GoogleReviews: React.FC = () => {
           </a>
         </div>
 
-        <div className="flex gap-2.5 overflow-x-auto pb-1 snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-5 sm:overflow-visible">
+        {/* Mobile: Carousel view */}
+        <div className="sm:hidden">
+          <div className="relative overflow-hidden">
+            <div
+              className="transition-all duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${currentIndex * 100}%)`,
+              }}
+            >
+              <div className="flex">
+                {reviews.map((r) => (
+                  <div key={`${r.author}-${r.text.slice(0, 24)}`} className="w-full flex-shrink-0">
+                    <ReviewCard
+                      author={r.author}
+                      rating={r.rating}
+                      text={r.text}
+                      url={r.url}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Carousel indicators */}
+          <div className="flex items-center justify-center gap-1.5 mt-3">
+            {reviews.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-2 w-2 rounded-full transition-all ${
+                  idx === currentIndex ? 'bg-slate-700 w-6' : 'bg-slate-300 hover:bg-slate-400'
+                }`}
+                aria-label={`Go to review ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: Grid view */}
+        <div className="hidden sm:grid gap-2.5 sm:grid-cols-2 lg:grid-cols-5">
           {reviews.map((r) => (
             <ReviewCard
               key={`${r.author}-${r.text.slice(0, 24)}`}
