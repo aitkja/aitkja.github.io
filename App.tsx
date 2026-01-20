@@ -82,12 +82,6 @@ const App: React.FC = () => {
         }
       } 
       
-      // Also handle the physical container for the Embed widget
-      const embedContainer = document.getElementById('tawk_6839b7b7679e18190a361283');
-      if (embedContainer) {
-        embedContainer.style.display = currentPage === 'flyer' ? 'none' : 'block';
-      }
-
       // Fallback for when Tawk is still loading its iframe
       const tawkSelector = 'iframe[src*="tawk.to"], .tawk-min-container, [id^="tawk"]';
       const tawkElement = document.querySelector(tawkSelector);
