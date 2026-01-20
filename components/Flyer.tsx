@@ -276,13 +276,6 @@ const Flyer: React.FC = () => {
 
       {/* Print Styles */}
       <style>{`
-        /* Hide Tawk.to Chat Widget on Flyer Page */
-        div[class*="tawk"],
-        iframe[src*="tawk.to"],
-        .widget-visible {
-          display: none !important;
-        }
-
         @media print {
           @page {
             size: letter portrait;

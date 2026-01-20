@@ -40,7 +40,7 @@ const App: React.FC = () => {
     payments: paymentsRef,
   };
 
-  // Handle navigation based on URL and hide Tawk on flyer page
+  // Handle navigation based on URL
   useEffect(() => {
     const handleNavigate = () => {
       const path = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
@@ -58,15 +58,6 @@ const App: React.FC = () => {
       else if (path === '/custom-signage-london-ontario') setKeywordSlug('custom-signage');
       else if (path === '/wedding-decor-event-signage-london-ontario') setKeywordSlug('wedding-events');
       else setKeywordSlug(null);
-      
-      // Hide/show Tawk widget based on page
-      const tawkElement = document.querySelector('iframe[src*="tawk.to"]');
-      if (tawkElement) {
-        const tawkContainer = tawkElement.closest('div') as HTMLElement;
-        if (tawkContainer) {
-          tawkContainer.style.display = isFlyer ? 'none' : 'block';
-        }
-      }
     };
 
     handleNavigate();
@@ -76,6 +67,54 @@ const App: React.FC = () => {
       window.removeEventListener('popstate', handleNavigate);
     };
   }, []);
+
+  // Handle Tawk.to visibility - official API is more robust than DOM manipulation
+  useEffect(() => {
+    const updateTawkVisibility = () => {
+      // @ts-ignore - Tawk_API is added via script tag
+      if (window.Tawk_API && window.Tawk_API.hideWidget && window.Tawk_API.showWidget) {
+        if (currentPage === 'flyer') {
+          // @ts-ignore
+          window.Tawk_API.hideWidget();
+        } else {
+          // @ts-ignore
+          window.Tawk_API.showWidget();
+        }
+      } else {
+        // Fallback for when Tawk is still loading its iframe
+        const tawkSelector = 'iframe[src*="tawk.to"], .tawk-min-container, [id^="tawk"]';
+        const tawkElement = document.querySelector(tawkSelector);
+        if (tawkElement) {
+          const tawkContainer = (tawkElement.closest('div') || tawkElement) as HTMLElement;
+          if (tawkContainer) {
+            tawkContainer.style.display = currentPage === 'flyer' ? 'none' : 'block';
+          }
+        }
+      }
+    };
+
+    // Run immediately
+    updateTawkVisibility();
+
+    // Tawk.to often loads after a delay, so we poll for it a few times
+    const intervals = [500, 1500, 3000, 6000];
+    const timeoutIds = intervals.map(ms => setTimeout(updateTawkVisibility, ms));
+
+    // Also register the official Tawk_API.onLoad if it's not already set
+    // @ts-ignore
+    window.Tawk_API = window.Tawk_API || {};
+    // @ts-ignore
+    const oldOnLoad = window.Tawk_API.onLoad;
+    // @ts-ignore
+    window.Tawk_API.onLoad = function() {
+      if (oldOnLoad) oldOnLoad();
+      updateTawkVisibility();
+    };
+
+    return () => {
+      timeoutIds.forEach(id => clearTimeout(id));
+    };
+  }, [currentPage]);
 
   // Merge the keyword-specific metadata into the standard SEO metadata if a slug is active
   const dynamicMetadata = keywordSlug && SEO_METADATA[keywordSlug] 
