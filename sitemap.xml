@@ -53,4 +53,16 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://forestcitylaser.com/blog/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/blog/custom-laser-cut-wedding-decor-trends-2025-2026/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
 </urlset>
