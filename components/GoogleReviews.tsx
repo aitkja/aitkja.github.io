@@ -32,7 +32,7 @@ const ReviewCard: React.FC<{
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group block flex-none w-[250px] sm:w-full snap-start rounded-lg border border-slate-200 bg-white/90 p-2.5 shadow-sm transition hover:bg-white hover:shadow-md"
+    className="group block flex-none w-[250px] sm:w-[350px] snap-start rounded-lg border border-slate-200 bg-white/90 p-2.5 shadow-sm transition hover:bg-white hover:shadow-md"
     aria-label={`Open Google review by ${author} (${rating} stars)`}
     aria-hidden={ariaHidden}
   >
@@ -115,18 +115,18 @@ const GoogleReviews: React.FC = () => {
             flex-wrap: nowrap;
           }
           .reviews-scroller[data-animated="true"] .reviews-scroller__inner {
-            animation: scrollReviews 12s linear infinite;
+            animation: scrollReviews 20s linear infinite;
           }
           @keyframes scrollReviews {
             to {
-              transform: translate(calc(-50%));
+              transform: translate(-50%);
             }
           }
         `}</style>
 
-        <div className="sm:hidden overflow-hidden">
+        <div className="overflow-hidden">
           <div className="reviews-scroller overflow-hidden" ref={scrollerRef} data-animated="true">
-            <div className="reviews-scroller__inner flex gap-2.5">
+            <div className="reviews-scroller__inner flex gap-5">
               {reviews.map((r) => (
                 <ReviewCard
                   key={`${r.author}-${r.text.slice(0, 24)}`}
@@ -148,19 +148,6 @@ const GoogleReviews: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Desktop: Grid view */}
-        <div className="hidden sm:grid gap-2.5 sm:grid-cols-2 lg:grid-cols-5">
-          {reviews.map((r) => (
-            <ReviewCard
-              key={`${r.author}-${r.text.slice(0, 24)}`}
-              author={r.author}
-              rating={r.rating}
-              text={r.text}
-              url={r.url}
-            />
-          ))}
         </div>
       </div>
     </div>
