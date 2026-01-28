@@ -229,7 +229,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     dateLabel: '3 days ago',
     text:
-      '“Jamie is so easy to work with. The project I presented was difficult. I was vague and gave him terrible illustrations and instructions and yet he was patient, kind and generous. He provided recommendations for materials. He has made my project possible. I am so pleased. I highly recommend Forest City Laser.”',
+      '“Jamie is so easy to work with... patient, kind and generous. He made my project possible and I am so pleased. I highly recommend Forest City Laser.”',
     url: 'https://maps.app.goo.gl/MNYBM86rtfMM9nqD7',
   },
   {
@@ -237,7 +237,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     dateLabel: 'a month ago',
     text:
-      '“We recently had a custom business sign done by Forest City Laser, and we are absolutely thrilled with the result. The craftsmanship, attention to detail, and overall quality exceeded our expectations… Highly recommend Forest City Laser for anyone looking for beautiful, high-quality signage.”',
+      '“Absolutely thrilled with the result. The craftsmanship and overall quality exceeded our expectations… Highly recommend Forest City Laser for beautiful signage.”',
     // Share link (Google → review → Share → copy link)
     url: 'https://maps.app.goo.gl/PojmRf7F1YKnQqep6',
   },
@@ -246,7 +246,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     dateLabel: '2 weeks ago',
     text:
-      '“Placed an order for a custom acrylic piece and it was ready within two days. One side was glossy and the other matte, as seen in the photos. The cut edge also had a good finish to it. Overall, I am happy with my piece.”',
+      '“Custom acrylic piece was ready within two days. The cut edge had a good finish... Overall, I am happy with my piece.”',
     // Share link (Google → review → Share → copy link)
     url: 'https://maps.app.goo.gl/yiy38Mvjcq2Uke117',
   },
@@ -264,7 +264,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     dateLabel: '3 days ago',
     text:
-      '“Very efficient and responds right away with updates. Very friendly to work with. I will certainly be calling them for service again in the future. They did exactly what I needed, so happy with their service!”',
+      '“Very efficient and responds right away with updates. They did exactly what I needed, so happy with their service! I will certainly be calling them again.”',
     // Share link (Google → review → Share → copy link)
     url: 'https://maps.app.goo.gl/6MDqZy44mSUB1czK7',
   },
@@ -273,7 +273,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     dateLabel: 'a week ago',
     text:
-      '“A small acrylic template was recently ordered over the holidays and notwithstanding the company was closed, I received great service and a perfect product at a reasonable price. Thank you Forest City Laser.”',
+      '“I received great service and a perfect product at a reasonable price. Thank you Forest City Laser.”',
     // Share link (Google → review → Share → copy link)
     url: 'https://share.google/zKgxq2vH0JkrzpZnm',
   },
