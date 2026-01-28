@@ -32,7 +32,7 @@ const ReviewCard: React.FC<{
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group block flex-none w-[250px] sm:min-w-0 snap-start rounded-lg border border-slate-200 bg-white/90 p-2.5 shadow-sm transition hover:bg-white hover:shadow-md"
+    className="group block flex-none w-[250px] sm:w-full snap-start rounded-lg border border-slate-200 bg-white/90 p-2.5 shadow-sm transition hover:bg-white hover:shadow-md"
     aria-label={`Open Google review by ${author} (${rating} stars)`}
     aria-hidden={ariaHidden}
   >
@@ -115,7 +115,7 @@ const GoogleReviews: React.FC = () => {
             flex-wrap: nowrap;
           }
           .reviews-scroller[data-animated="true"] .reviews-scroller__inner {
-            animation: scrollReviews 18s linear infinite;
+            animation: scrollReviews 12s linear infinite;
           }
           @keyframes scrollReviews {
             to {
