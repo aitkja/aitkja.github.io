@@ -51,8 +51,8 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ galleryRef, quoteRef, forcedH
       style={{ backgroundImage: `url(${Wallpaper})` }}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-      <div className="relative z-20 px-6 py-12 md:p-8 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-full">
-        <h1 className="relative text-3xl sm:text-5xl md:text-7xl font-extrabold mb-4 min-h-[12rem] sm:min-h-[20rem] md:min-h-[24rem] flex items-center justify-center leading-tight px-2">
+      <div className="relative z-20 px-6 py-12 md:p-8 max-w-4xl mx-auto">
+        <h1 className="relative w-full text-3xl sm:text-5xl md:text-7xl font-extrabold mb-4 min-h-[12rem] sm:min-h-[20rem] md:min-h-[24rem] flex items-center justify-center leading-tight px-2">
           {forcedHeadline ? (
             <span className="opacity-100 px-4">
               {forcedHeadline}
@@ -72,7 +72,7 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ galleryRef, quoteRef, forcedH
             ))
           )}
         </h1>
-        <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6 sm:mb-8 text-slate-200">
+        <p className="w-full text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6 sm:mb-8 text-slate-200">
           Precision laser engraving and cutting in London, Ontario. We specialize in custom wood gifts, acrylic cutting, leather engraving, and industrial parts. Quality craftsmanship for your unique vision.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
