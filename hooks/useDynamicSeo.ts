@@ -44,8 +44,10 @@ const useDynamicSeo = (sectionRefs: SectionRefs, metadata: SeoMetadata): void =>
           // Update canonical tag
           const canonicalTag = document.querySelector('link[rel="canonical"]');
           if (canonicalTag) {
-            const currentPath = window.location.pathname.replace(/\/$/, '');
-            canonicalTag.setAttribute('href', `https://forestcitylaser.com${currentPath || '/'}`);
+            const rawPath = window.location.pathname || '/';
+            const canonicalPath =
+              rawPath === '/' ? '/' : (rawPath.endsWith('/') ? rawPath : `${rawPath}/`);
+            canonicalTag.setAttribute('href', `https://forestcitylaser.com${canonicalPath}`);
           }
         }
       } else if (window.scrollY < window.innerHeight / 2 && activeSectionRef.current !== 'hero') {

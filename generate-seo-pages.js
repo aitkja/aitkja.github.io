@@ -37,7 +37,7 @@ PAGES.forEach(page => {
   let pageContent = indexContent;
   
   // Update the canonical tag for this specific page
-  const pageUrl = `https://forestcitylaser.com/${page}`;
+  const pageUrl = `https://forestcitylaser.com/${page}/`;
   pageContent = pageContent.replace(
     /<link rel="canonical" href="https:\/\/forestcitylaser\.com\/" \/>/,
     `<link rel="canonical" href="${pageUrl}" />`
