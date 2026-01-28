@@ -13,12 +13,15 @@ import Footer from './components/Footer';
 import Lightbox from './components/Lightbox';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import Flyer from './components/Flyer';
+import Blog from './components/Blog';
+import BlogPostView from './components/BlogPostView';
 import useDynamicSeo from './hooks/useDynamicSeo';
-import { SEO_METADATA } from './constants';
+import { SEO_METADATA, BLOG_POSTS } from './constants';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<'home' | 'flyer'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'flyer' | 'blog' | 'blog-post'>('home');
   const [keywordSlug, setKeywordSlug] = useState<string | null>(null);
+  const [selectedPostSlug, setSelectedPostSlug] = useState<string | null>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
   const [quoteReference, setQuoteReference] = useState<string>('');
 
@@ -46,7 +49,20 @@ const App: React.FC = () => {
       const path = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
       
       const isFlyer = path === '/flyer';
-      setCurrentPage(isFlyer ? 'flyer' : 'home');
+      const isBlogList = path === '/blog';
+      const isBlogPost = path.startsWith('/blog/') && path.length > 6;
+
+      if (isFlyer) {
+        setCurrentPage('flyer');
+      } else if (isBlogList) {
+        setCurrentPage('blog');
+      } else if (isBlogPost) {
+        const slug = path.replace('/blog/', '');
+        setSelectedPostSlug(slug);
+        setCurrentPage('blog-post');
+      } else {
+        setCurrentPage('home');
+      }
 
       // Check for keyword-rich power URLs
       if (path === '/laser-engraving-london-ontario') setKeywordSlug('laser-engraving-london-ontario');
@@ -117,9 +133,14 @@ const App: React.FC = () => {
   }, [currentPage]);
 
   // Merge the keyword-specific metadata into the standard SEO metadata if a slug is active
-  const dynamicMetadata = keywordSlug && SEO_METADATA[keywordSlug] 
-    ? { ...SEO_METADATA, hero: SEO_METADATA[keywordSlug] } 
-    : SEO_METADATA;
+  const dynamicMetadata = { ...SEO_METADATA };
+  if (keywordSlug && SEO_METADATA[keywordSlug]) {
+    dynamicMetadata.hero = SEO_METADATA[keywordSlug];
+  } else if (currentPage === 'blog') {
+    dynamicMetadata.hero = SEO_METADATA['blog'];
+  } else if (currentPage === 'blog-post' && selectedPostSlug && SEO_METADATA[selectedPostSlug]) {
+    dynamicMetadata.hero = SEO_METADATA[selectedPostSlug];
+  }
 
   useDynamicSeo(sectionRefs, dynamicMetadata);
 
@@ -144,10 +165,57 @@ const App: React.FC = () => {
     quoteRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const navigateToBlog = (slug?: string) => {
+    const newPath = slug ? `/blog/${slug}/` : '/blog/';
+    window.history.pushState({}, '', newPath);
+    // Trigger the navigate handler
+    const navEvent = new PopStateEvent('popstate');
+    window.dispatchEvent(navEvent);
+  };
+
+  const navigateToHome = () => {
+    window.history.pushState({}, '', '/');
+    const navEvent = new PopStateEvent('popstate');
+    window.dispatchEvent(navEvent);
+  };
+
   const FOREST_BG_URL = "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop";
 
   if (currentPage === 'flyer') {
     return <Flyer />;
+  }
+
+  if (currentPage === 'blog') {
+    return (
+      <div className="text-slate-800 font-sans isolate">
+        <div 
+          className="fixed inset-0 -z-10 bg-cover bg-center opacity-30"
+          style={{ backgroundImage: `url(${FOREST_BG_URL})` }}
+        />
+        <ScrollProgressBar />
+        <Header sectionRefs={sectionRefs} />
+        <main>
+          <Blog onSelectPost={navigateToBlog} />
+        </main>
+        <Footer ref={paymentsRef} sectionRefs={sectionRefs} />
+      </div>
+    );
+  }
+
+  if (currentPage === 'blog-post' && selectedPostSlug) {
+    const post = BLOG_POSTS.find(p => p.slug === selectedPostSlug);
+    if (post) {
+      return (
+        <div className="text-slate-800 font-sans isolate">
+          <ScrollProgressBar />
+          <Header sectionRefs={sectionRefs} />
+          <main>
+            <BlogPostView post={post} onBack={() => navigateToBlog()} />
+          </main>
+          <Footer ref={paymentsRef} sectionRefs={sectionRefs} />
+        </div>
+      );
+    }
   }
 
   return (

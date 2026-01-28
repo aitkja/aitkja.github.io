@@ -12,7 +12,9 @@ const PAGES = [
   'custom-acrylic-cutting',
   'custom-signage-london-ontario',
   'wedding-decor-event-signage-london-ontario',
-  'flyer'
+  'flyer',
+  'blog',
+  'blog/custom-laser-cut-wedding-decor-trends-2025-2026'
 ];
 
 const distPath = path.resolve('dist');

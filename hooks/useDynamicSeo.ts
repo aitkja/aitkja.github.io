@@ -78,6 +78,24 @@ const useDynamicSeo = (sectionRefs: SectionRefs, metadata: SeoMetadata): void =>
     const initialMeta = metadata.hero;
     if (initialMeta) {
       document.title = initialMeta.title;
+      
+      const updateMetaTag = (selector: string, content: string, attr: 'name' | 'property' = 'name') => {
+        const tag = document.querySelector(`meta[${attr}="${selector}"]`);
+        if (tag) tag.setAttribute('content', content);
+      };
+
+      updateMetaTag('description', initialMeta.description);
+      updateMetaTag('og:title', initialMeta.title, 'property');
+      updateMetaTag('og:description', initialMeta.description, 'property');
+      updateMetaTag('twitter:title', initialMeta.title, 'property');
+      updateMetaTag('twitter:description', initialMeta.description, 'property');
+
+      const rawPath = window.location.pathname || '/';
+      const canonicalPath = rawPath === '/' ? '/' : (rawPath.endsWith('/') ? rawPath : `${rawPath}/`);
+      const canonicalTag = document.querySelector('link[rel="canonical"]');
+      if (canonicalTag) {
+        canonicalTag.setAttribute('href', `https://forestcitylaser.com${canonicalPath}`);
+      }
     }
 
     return () => {

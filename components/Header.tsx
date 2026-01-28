@@ -24,7 +24,14 @@ const Header: React.FC<HeaderProps> = ({ sectionRefs }) => {
   }, []);
 
   const scrollToSection = (refKey: string) => {
-    sectionRefs[refKey]?.current?.scrollIntoView({ behavior: 'smooth' });
+    if (sectionRefs[refKey]?.current) {
+      sectionRefs[refKey].current.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Handle navigation to other pages
+      const path = refKey === 'hero' ? '/' : `/${refKey}/`;
+      window.history.pushState({}, '', path);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
     setIsOpen(false);
   };
 

@@ -1,4 +1,4 @@
-import type { GalleryCategory, GoogleReview, SeoMetadata } from './types';
+import type { GalleryCategory, GoogleReview, SeoMetadata, BlogPost } from './types';
 
 // Wedding gallery images
 const Valentine_Signs = new URL('./images/stock/Weddings/Valentine_Signs.webp', import.meta.url).href;
@@ -55,6 +55,7 @@ export const NAV_LINKS = [
   { name: 'Portfolio', refKey: 'gallery' },
   { name: 'Our Process', refKey: 'process' },
   { name: 'Request Quote', refKey: 'quote' },
+  { name: 'Blog', refKey: 'blog' },
   { name: 'About', refKey: 'about' },
   { name: 'Contact', refKey: 'contact' },
   { name: 'Payment Portal', refKey: 'payments' },
@@ -214,8 +215,214 @@ export const SEO_METADATA: SeoMetadata = {
   'wedding-events': {
     title: 'Wedding Decor & Event Signage London Ontario | Forest City Laser',
     description: 'Exquisite custom wedding decor and event signage in London, Ontario. Personalized place cards, welcome signs, and more. Fast local service.'
+  },
+  'blog': {
+    title: 'Blog | Forest City Laser',
+    description: 'Insights and trends in custom laser cutting and engraving. Discover inspiration for your next project, from weddings to corporate branding.'
+  },
+  'custom-laser-cut-wedding-decor-trends-2025-2026': {
+    title: 'Custom Laser Cut Wedding Decor Trends 2025-2026 | Forest City Laser',
+    description: 'Explore trending laser-cut wedding table numbers, place cards, and personalized details for 2025-2026 weddings in London, Ontario.'
   }
 };
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: 'custom-laser-cut-wedding-decor-trends-2025-2026',
+    title: 'Custom Laser Cut Wedding Decor Trends for 2025-2026: Table Numbers, Place Cards & Personalized Details',
+    publishDate: 'January 2026',
+    category: 'Weddings',
+    image: Valentine_Signs, // Using a wedding related image as placeholder/main image
+    excerpt: 'Planning a wedding involves countless decisions, but it\'s often the small, personalized details that guests remember most. Here\'s what we\'re seeing trending for 2025-2026 weddings.',
+    content: `
+Planning a wedding involves countless decisions, but it's often the small, personalized details that guests remember most. While choosing your venue and flowers captures the big picture, custom table decor—from elegant table numbers to personalized place cards—creates those memorable touches that tie everything together.
+
+If you're planning a wedding in London, Ontario or surrounding areas, laser-cut wedding details have become increasingly popular for creating cohesive, professional-looking decor. Here's what we're seeing trending for 2025-2026 weddings.
+
+## Why Personalized Table Details Matter
+
+According to recent wedding industry data, **71% of couples now expect fully personalized wedding experiences**. Modern weddings have shifted away from generic decor toward customized elements that reflect each couple's unique style and story.
+
+The beauty of laser-cut pieces? Every item in a set matches perfectly—imagine 150 place cards with identical elegant script, or 20 table numbers cut with the same intricate border pattern. This level of consistency creates a polished, intentional look throughout your reception.
+
+## Popular Laser-Cut Wedding Items for 2025
+
+### Wedding Table Numbers
+Perhaps the most essential piece of wedding table decor, table numbers guide guests to their seats while adding decorative flair.
+
+**What's trending:**
+- Clean, modern acrylic numbers (clear or frosted)
+- Natural wood with engraved script for rustic venues
+- Layered designs combining acrylic and wood
+- Table names instead of numbers (cities, songs, meaningful locations)
+- Freestanding designs or flat pieces for table display
+
+**Typical needs:** Sets of 10-25 matching pieces
+
+### Place Cards & Escort Cards
+These personalized pieces help guests find their specific seats and create a welcoming first impression at the reception.
+
+**What's trending:**
+- Individual wood pieces with engraved guest names
+- Modern acrylic cards with clean typography
+- Custom shapes (circles, hexagons, or classic rectangles)
+- Cards that double as favors guests can take home
+
+**Typical needs:** One per guest (often 50-200+ pieces)
+
+### Personalized Coasters
+One of the most practical wedding favors—guests actually use them long after the celebration.
+
+**What's trending:**
+- Natural wood with couple's names and wedding date
+- Cork-backed designs for functionality
+- Simple, elegant monograms
+- "Thank you" messages engraved
+
+**Why they're popular:** Affordable to produce in bulk, and guests appreciate useful keepsakes.
+
+### Menu Cards
+Individual menu displays at each place setting add an upscale touch to your reception tables.
+
+**What's trending:**
+- Engraved wood menu cards
+- Acrylic overlays with printed inserts
+- Standing menu displays (typically 5" x 7")
+
+### Wedding Favors & Keepsakes
+Personalized items that serve a purpose tend to be kept rather than left behind.
+
+**Popular options:**
+- Engraved bottle openers
+- Custom keychains with wedding dates
+- Bookmarks with meaningful quotes
+- Ornaments (especially popular for winter weddings)
+- Small wooden serving pieces
+
+## 2025-2026 Wedding Decor Trends
+
+### Trend 1: Complete Matching Sets
+Rather than mixing various styles and materials, couples are creating cohesive looks with matching pieces. For example, if you choose natural wood table numbers, your place cards and favors follow the same aesthetic.
+
+This creates a "designed" feeling that photographs beautifully and looks intentional rather than assembled from various sources.
+
+### Trend 2: Material Choices that Reflect Your Venue
+The right material choice can enhance your venue's existing aesthetic:
+
+- **Modern venues** pair well with clear or frosted acrylic
+- **Rustic barns and outdoor settings** complement natural wood beautifully  
+- **Classic ballrooms** work with either, depending on your color palette
+- **Garden settings** look elegant with natural wood elements
+
+### Trend 3: Dual-Purpose Place Cards
+Smart couples are choosing place cards that guests will want to keep, turning a functional item into a favor. Think coasters with guest names, ornaments showing table assignments, or wooden pieces guests can use as bookmarks.
+
+### Trend 4: Precision and Clean Design
+There's a growing appreciation for the precision laser cutting offers—intricate patterns cut with exact detail, crisp clean edges, and perfect consistency across dozens or hundreds of pieces. This level of quality creates a professional, high-end look.
+
+### Trend 5: Sustainable Choices
+Eco-conscious couples are drawn to:
+- Natural wood from sustainable sources
+- Items guests will actually use (rather than disposable decor)
+- Pieces that can be repurposed after the wedding
+
+## Acrylic vs. Wood: Understanding Your Options
+
+### Acrylic (Modern & Elegant)
+Clear or frosted acrylic offers a sleek, contemporary look that photographs beautifully. It's weather-resistant (great for outdoor receptions) and works particularly well for modern, minimalist, or elegant wedding themes.
+
+**Best suited for:** Modern venues, contemporary aesthetics, couples wanting a clean and sophisticated look
+
+### Wood (Timeless & Versatile)
+Natural wood brings warmth and texture to your table settings. It can be left natural to showcase the grain or stained for deeper tones. Wood is incredibly versatile and works with virtually any wedding theme.
+
+**Best suited for:** Rustic venues, barn weddings, boho celebrations, classic or vintage themes
+
+### Combination Pieces
+Layering materials—like acrylic text on wood backing—creates dimensional pieces that stand out on tables and add visual interest.
+
+## The Laser Cutting Advantage for Volume Orders
+
+When you need multiples of the same item, laser cutting offers distinct advantages:
+
+- **Consistency** - Every piece is identical in quality and detail
+- **Precision** - Intricate designs that would be impossible to hand-cut  
+- **Efficiency** - Producing 100 identical coasters takes the same precision as creating one
+- **Customization at scale** - Different names on 150 place cards? Easily accomplished
+- **Professional finish** - Clean edges and flawless engraving across every piece
+
+This is particularly valuable for items like place cards, where you need each piece perfect but personalized with different names.
+
+## Real Wedding Examples: What Complete Sets Look Like
+
+**Intimate Wedding (50-75 guests):**
+- 10 table numbers in matching style
+- 60 personalized place cards
+- 75 coasters as favors
+- Welcome sign at entrance
+
+**Classic Wedding (100-150 guests):**
+- 15 table numbers
+- 125 place cards with guest names
+- 150 favors (coasters or bottle openers)
+- Individual menu cards
+- Coordinating signage
+
+**Large Celebration (150-200+ guests):**
+- 20 table numbers
+- 200 custom place cards
+- 200 personalized favors
+- Menu cards for each guest
+- Welcome sign and directional signage
+
+## Planning Your Wedding Decor Timeline
+
+For large volume orders (100+ pieces), most couples find it helpful to start planning 6-8 weeks before their wedding date. This allows time for:
+- Reviewing material samples and design options
+- Creating mockups and making revisions
+- Finalizing your guest list
+- Production time
+- Accommodating any last-minute guest list changes
+
+## Beyond the Wedding Day: Pieces with Lasting Value
+
+Many couples repurpose their wedding table decor after the celebration:
+
+- **Table numbers** can become house numbers or gallery wall art  
+- **Place cards** become cherished keepsakes for guests  
+- **Coasters** provide functional home decor for years  
+- **Personalized items** serve as anniversary reminders
+
+This "second life" for wedding decor makes sustainable material choices even more appealing.
+
+## Local Wedding Venues & Decor Trends
+
+Throughout London, Ontario and surrounding areas (Byron, Oakridge, Hyde Park, St. Thomas, and Woodstock), we're seeing couples embrace personalized details at venues ranging from classic ballrooms to rustic barns to intimate backyard celebrations.
+
+Popular local venues like The Bellamere, Windermere Manor, Riverside Golf & Country Club, SpringBank Manor, and Storybook Gardens each have their own aesthetic, and custom laser-cut details can be tailored to complement any setting.
+
+## Creating a Cohesive Look
+
+The key to professional-looking wedding decor is consistency. When all your personalized pieces—table numbers, place cards, favors, menu cards—share the same material, font style, and design aesthetic, it creates a pulled-together look that elevates your entire reception.
+
+Think of it like your wedding invitation suite: just as your invitations, RSVP cards, and envelopes coordinate, your table decor should feel like a matching set designed specifically for your celebration.
+
+---
+
+## About Forest City Laser
+
+Forest City Laser specializes in custom laser cutting and engraving services in London, Ontario, including wedding table numbers, place cards, personalized favors, and custom signage. Working with wood, acrylic, and leather, we create precision-cut details for weddings throughout Southwestern Ontario.
+
+**Learn more:**
+- [www.forestcitylaser.com](https://forestcitylaser.com)
+- [www.facebook.com/forestcitylaser](https://www.facebook.com/profile.php?id=61580529627577)
+
+---
+
+*Planning your wedding decor? Browse our portfolio online to see examples of custom laser-cut wedding details for London area celebrations.*
+`
+  }
+];
 
 // --- Google Reviews (Homepage) ---
 // Tip: For each review, open it on Google and use "Share" → copy link.

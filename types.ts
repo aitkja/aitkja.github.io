@@ -34,3 +34,13 @@ export interface SeoMetadata {
     description: string;
   };
 }
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  publishDate: string;
+  excerpt: string;
+  content: string; // Markdown or HTML string
+  image?: string;
+  category: string;
+}
