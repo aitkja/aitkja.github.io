@@ -225,6 +225,14 @@ export const GOOGLE_REVIEWS_PROFILE_URL =
 
 export const GOOGLE_REVIEWS: GoogleReview[] = [
   {
+    author: 'Maria Calleja',
+    rating: 5,
+    dateLabel: '3 days ago',
+    text:
+      '“Jamie is so easy to work with. The project I presented was difficult. I was vague and gave him terrible illustrations and instructions and yet he was patient, kind and generous. He provided recommendations for materials. He has made my project possible. I am so pleased. I highly recommend Forest City Laser.”',
+    url: 'https://maps.app.goo.gl/MNYBM86rtfMM9nqD7',
+  },
+  {
     author: 'Karen Stephens',
     rating: 5,
     dateLabel: 'a month ago',
