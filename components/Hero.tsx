@@ -51,8 +51,8 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ galleryRef, quoteRef, forcedH
       style={{ backgroundImage: `url(${Wallpaper})` }}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-      <div className="relative z-20 px-6 py-12 md:p-8 max-w-4xl mx-auto">
-        <h1 className="relative w-full text-3xl sm:text-5xl md:text-7xl font-extrabold mb-4 min-h-[12rem] sm:min-h-[20rem] md:min-h-[24rem] flex items-center justify-center leading-tight px-2">
+      <div className="relative z-20 px-6 py-12 md:p-8 max-w-4xl mx-auto transform -translate-y-10 sm:-translate-y-16">
+        <h1 className="relative w-full text-3xl sm:text-5xl md:text-7xl font-extrabold mb-4 min-h-[10rem] sm:min-h-[20rem] md:min-h-[24rem] flex items-center justify-center leading-tight px-2">
           {forcedHeadline ? (
             <span className="opacity-100 px-4">
               {forcedHeadline}
