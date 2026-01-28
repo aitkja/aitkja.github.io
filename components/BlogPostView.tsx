@@ -14,57 +14,110 @@ const BlogPostView: React.FC<BlogPostViewProps> = ({ post, onBack }) => {
 
   // Simple formatting helper
   const renderContent = (content: string) => {
-    return content.split('\n').map((line, index) => {
+    const lines = content.split('\n');
+    const elements: React.ReactNode[] = [];
+    let currentList: React.ReactNode[] = [];
+
+    const flushList = (key: number) => {
+      if (currentList.length > 0) {
+        elements.push(<ul key={`list-${key}`} className="list-disc ml-6 mb-6 space-y-2">{currentList}</ul>);
+        currentList = [];
+      }
+    };
+
+    lines.forEach((line, index) => {
       const trimmed = line.trim();
-      if (!trimmed) return <br key={index} />;
       
+      if (!trimmed) {
+        flushList(index);
+        return;
+      }
+
       if (trimmed.startsWith('## ')) {
-        return (
-          <h2 key={index} className="text-2xl font-bold text-slate-900 mt-10 mb-4 leading-tight">
+        flushList(index);
+        elements.push(
+          <h2 key={index} className="text-2xl font-bold text-slate-900 mt-10 mb-4 leading-tight border-b border-slate-100 pb-2">
             {trimmed.replace('## ', '')}
           </h2>
         );
+        return;
       }
       
       if (trimmed.startsWith('### ')) {
-        return (
+        flushList(index);
+        elements.push(
           <h3 key={index} className="text-xl font-bold text-slate-900 mt-8 mb-3 leading-tight">
             {trimmed.replace('### ', '')}
           </h3>
         );
-      }
-
-      if (trimmed.startsWith('**') && trimmed.endsWith('**')) {
-        return (
-          <p key={index} className="text-slate-700 font-bold mb-4">
-            {trimmed.replace(/\*\*/g, '')}
-          </p>
-        );
+        return;
       }
 
       if (trimmed.startsWith('- ')) {
-        return (
-          <li key={index} className="text-slate-700 mb-2 ml-4 list-disc pl-2">
-            {trimmed.replace('- ', '')}
-          </li>
-        );
+        const parts = trimmed.replace('- ', '').split(/(\*\*.*?\*\*|\[.*?\]\(.*?\))/g);
+        const formattedItem = parts.map((part, i) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={i} className="font-bold text-slate-900">{part.replace(/\*\*/g, '')}</strong>;
+          }
+          if (part.startsWith('[') && part.includes('](')) {
+            const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+            if (linkMatch) {
+              const [_, linkText, linkUrl] = linkMatch;
+              return (
+                <a key={i} href={linkUrl} className="text-indigo-600 font-semibold hover:underline" target="_blank" rel="noopener noreferrer">
+                  {linkText}
+                </a>
+              );
+            }
+          }
+          return part;
+        });
+        currentList.push(<li key={index} className="text-slate-700 pl-1">{formattedItem}</li>);
+        return;
       }
 
-      // Handle bold markers within text
-      const parts = trimmed.split(/(\*\*.*?\*\*)/g);
+      if (trimmed === '---') {
+        flushList(index);
+        elements.push(<hr key={index} className="my-10 border-slate-100" />);
+        return;
+      }
+
+      // Default paragraph handling
+      flushList(index);
+      const parts = trimmed.split(/(\*\*.*?\*\*|\[.*?\]\(.*?\))/g);
       const formattedLine = parts.map((part, i) => {
         if (part.startsWith('**') && part.endsWith('**')) {
           return <strong key={i} className="font-bold text-slate-900">{part.replace(/\*\*/g, '')}</strong>;
         }
+        if (part.startsWith('[') && part.includes('](')) {
+          const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+          if (linkMatch) {
+            const [_, linkText, linkUrl] = linkMatch;
+            return (
+              <a 
+                key={i} 
+                href={linkUrl} 
+                className="text-indigo-600 font-semibold hover:text-indigo-800 underline decoration-indigo-200 hover:decoration-indigo-500 transition-all"
+                target={linkUrl.startsWith('http') ? '_blank' : undefined}
+                rel={linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
+              >
+                {linkText}
+              </a>
+            );
+          }
+        }
         return part;
       });
 
-      return (
+      elements.push(
         <p key={index} className="text-slate-700 leading-relaxed mb-4 text-lg">
           {formattedLine}
         </p>
       );
     });
+
+    flushList(lines.length);
+    return elements;
   };
 
   return (
@@ -99,14 +152,14 @@ const BlogPostView: React.FC<BlogPostViewProps> = ({ post, onBack }) => {
       </header>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
-        <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-xl border border-slate-100 prose prose-indigo prose-lg max-w-none">
+        <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-xl border border-slate-100 max-w-none">
           {renderContent(post.content)}
         </div>
         
         {/* Footer info */}
         <div className="mt-12 p-8 bg-slate-50 rounded-2xl border border-slate-100 text-center">
-          <h4 className="text-xl font-bold text-slate-900 mb-4">Interested in custom wedding decor?</h4>
-          <p className="text-slate-600 mb-8">
+          <h4 className="text-xl font-bold text-slate-900 mb-2">Interested in custom wedding decor?</h4>
+          <p className="text-slate-600 mb-6">
             Let's create something unique for your special day.
           </p>
           <a 
