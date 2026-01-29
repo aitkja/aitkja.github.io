@@ -216,6 +216,10 @@ export const SEO_METADATA: SeoMetadata = {
     title: 'Wedding Decor & Event Signage London Ontario | Forest City Laser',
     description: 'Exquisite custom wedding decor and event signage in London, Ontario. Personalized place cards, welcome signs, and more. Fast local service.'
   },
+  'custom-gifts-london-ontario': {
+    title: 'Custom Gifts London Ontario | Personalized Laser Engraved Gifts',
+    description: 'High-quality custom gifts in London, Ontario. Personalized laser engraved wood, acrylic, and leather gifts for any occasion. Local London ON service.'
+  },
   'blog': {
     title: 'Blog | Forest City Laser',
     description: 'Insights and trends in custom laser cutting and engraving. Discover inspiration for your next project, from weddings to corporate branding.'

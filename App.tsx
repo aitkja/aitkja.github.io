@@ -73,6 +73,7 @@ const App: React.FC = () => {
       else if (path === '/acrylic-cutting-london-on' || path === '/custom-acrylic-cutting') setKeywordSlug('acrylic-cutting-london-on');
       else if (path === '/custom-signage-london-ontario') setKeywordSlug('custom-signage');
       else if (path === '/wedding-decor-event-signage-london-ontario') setKeywordSlug('wedding-events');
+      else if (path === '/custom-gifts-london-ontario') setKeywordSlug('custom-gifts-london-ontario');
       else setKeywordSlug(null);
     };
 
