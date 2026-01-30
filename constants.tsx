@@ -9,6 +9,7 @@ const Table_Numbers = new URL('./images/stock/Weddings/Table_Numbers.webp', impo
 const Name_Tags = new URL('./images/stock/Weddings/Name_Tags.webp', import.meta.url).href;
 const Custom_Fridge_Magnets = new URL('./images/stock/Weddings/Custom_Fridge_Magnets.webp', import.meta.url).href;
 const Champagne_Glass_Tags = new URL('./images/stock/Weddings/Champagne_Glass_Tags.webp', import.meta.url).href;
+const Perfume_Bottle_Etch = new URL('./images/stock/Weddings/Perfume_Bottle_Etch.webp', import.meta.url).href;
 
 // Corporate gallery images
 const Acrylic_Desk_Sign = new URL('./images/stock/Corporate/Acrylic Desk Sign.webp', import.meta.url).href;
@@ -19,6 +20,7 @@ const Corporate_Pens = new URL('./images/stock/Corporate/Corporate_Pens.webp', i
 const Cap_With_Logo = new URL('./images/stock/Corporate/Cap_With_Logo.webp', import.meta.url).href;
 const Slate_Coasters = new URL('./images/stock/Corporate/Slate_Coasters.webp', import.meta.url).href;
 const Wood_Coasters = new URL('./images/stock/Corporate/Wood_Coasters.webp', import.meta.url).href;
+const Layered_Custom_Sign = new URL('./images/stock/Corporate/Layered_Custom_Sign.webp', import.meta.url).href;
 
 // Personal gallery images
 const Welcome_Signs = new URL('./images/stock/Personal/Welcome_Signs.webp', import.meta.url).href;
@@ -40,6 +42,7 @@ const Custom_Pens = new URL('./images/stock/Personal/Custom_Pens.webp', import.m
 const Key_Chains = new URL('./images/stock/Personal/Key_Chains.webp', import.meta.url).href;
 const Name_Sign = new URL('./images/stock/Personal/Name_Sign.webp', import.meta.url).href;
 const Van_Morrison_Mirror = new URL('./images/stock/Personal/Custom Mirror Etching.webp', import.meta.url).href;
+const Bible_Leather_Etch = new URL('./images/stock/Personal/Bible_Leather_Etch.webp', import.meta.url).href;
 const Wooden_Custom_Sign = new URL('./images/stock/Corporate/wooden_Custom_Sign.webp', import.meta.url).href;
 
 // Industrial gallery images
@@ -63,6 +66,9 @@ export const NAV_LINKS = [
 
 export const POPULAR_PRODUCTS = [
   { src: Van_Morrison_Mirror, name: 'Custom Etched Mirror', alt: 'Custom laser etched mirror artwork in London Ontario' },
+  { src: Perfume_Bottle_Etch, name: 'Etched Perfume Bottles', alt: 'Custom laser engraved perfume bottles for weddings and gifts' },
+  { src: Bible_Leather_Etch, name: 'Leather Bible Etching', alt: 'Custom laser engraved leather Bible or journal' },
+  { src: Layered_Custom_Sign, name: 'Layered Custom Sign', alt: 'Multi-layer laser cut custom business signage London Ontario' },
   { src: Custom_Etch_to_Cutting_Board, name: 'Custom Corporate Boards', alt: 'Corporate logo laser engraving on wood cutting board London Ontario' },
   { src: Custom_Acrylic_Cutting_2, name: 'Precision Acrylic Cutting', alt: 'Precision industrial acrylic laser cutting London Ontario' },
   { src: Acrylic_Desk_Sign, name: 'Acrylic Desk Signs', alt: 'Custom acrylic laser cutting and engraving for desk signs' },
@@ -102,6 +108,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
       { src: Custom_Fridge_Magnets, name: 'Custom_Fridge_Magnets', alt: 'Laser engraved wood magnets for wedding favors' },
       { src: Champagne_Glass_Tags, name: 'Champagne_Glass_Tags', alt: 'Acrylic laser cut champagne glass name tags' },
       { src: Save_The_Date, name: 'Save_The_Date', alt: 'Custom laser engraved save the date magnets' },
+      { src: Perfume_Bottle_Etch, name: 'Perfume_Bottle_Etch', alt: 'Custom laser engraved perfume bottle wedding gift' },
     ],
   },
   {
@@ -116,6 +123,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
       { src: Slate_Coasters, name: 'Slate_Coasters', alt: 'Custom laser engraved slate coasters' },
       { src: Wood_Coasters, name: 'Wood_Coasters', alt: 'Laser engraved wood coasters with logo' },
       { src: Wooden_Custom_Sign, name: 'wooden_Custom_Sign', alt: 'Custom laser engraved wood business signage' },
+      { src: Layered_Custom_Sign, name: 'Layered_Custom_Sign', alt: 'Custom multi-layer business logo sign' },
     ],
   },
   {
@@ -140,6 +148,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
       { src: Key_Chains, name: 'Key_Chains', alt: 'Custom laser cut wood and acrylic keychains' },
       { src: Name_Sign, name: 'Name_Sign', alt: 'Custom laser cut name signs London Ontario' },
       { src: Three_Layer_Ski_Sign, name: '3_Layer_Ski_Sign', alt: 'Layered laser cut wood artwork sign' },
+      { src: Bible_Leather_Etch, name: 'Bible_Leather_Etch', alt: 'Custom laser engraved leather Bible' },
     ],
   },
   {
