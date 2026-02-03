@@ -209,12 +209,20 @@ export const SEO_METADATA: SeoMetadata = {
     title: 'Leather Engraving London ON | Custom Patches & Gifts | Forest City Laser',
     description: 'Professional leather engraving in London, Ontario. Personalize wallets, journals, and patches with custom logos. Fast turnaround on all leather etching.'
   },
+  'leather-engraving-service': {
+    title: 'Leather Engraving Service | Custom Patches & Gifts | Forest City Laser',
+    description: 'Professional leather engraving in London, Ontario. Personalize wallets, journals, and patches with custom logos. Fast turnaround on all leather etching.'
+  },
   'wood-laser-engraving-london-on': {
     title: 'Wood Laser Engraving London ON | Custom Wood Gifts | Forest City Laser',
     description: 'High-quality wood laser engraving in London, Ontario. Custom cutting boards, signs, and personalized wood gifts. Local service, fast turnaround.'
   },
   'acrylic-cutting-london-on': {
     title: 'Acrylic Cutting London ON | Custom Signs & Parts | Forest City Laser',
+    description: 'Precision acrylic laser cutting in London, Ontario. Custom desk signs, business signage, and industrial parts. High-quality finish and fast delivery.'
+  },
+  'custom-acrylic-cutting': {
+    title: 'Custom Acrylic Cutting | Precision Laser Cut Parts | Forest City Laser',
     description: 'Precision acrylic laser cutting in London, Ontario. Custom desk signs, business signage, and industrial parts. High-quality finish and fast delivery.'
   },
   'custom-signage': {

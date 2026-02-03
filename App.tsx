@@ -68,9 +68,11 @@ const App: React.FC = () => {
       if (path === '/laser-engraving-london-ontario') setKeywordSlug('laser-engraving-london-ontario');
       else if (path === '/laser-cutting-london-ontario') setKeywordSlug('laser-cutting-london-ontario');
       else if (path === '/engraving-london-ontario') setKeywordSlug('engraving-london-ontario');
-      else if (path === '/leather-engraving-london-on' || path === '/leather-engraving-service') setKeywordSlug('leather-engraving-london-on');
+      else if (path === '/leather-engraving-london-on') setKeywordSlug('leather-engraving-london-on');
+      else if (path === '/leather-engraving-service') setKeywordSlug('leather-engraving-service');
       else if (path === '/wood-laser-engraving-london-on') setKeywordSlug('wood-laser-engraving-london-on');
-      else if (path === '/acrylic-cutting-london-on' || path === '/custom-acrylic-cutting') setKeywordSlug('acrylic-cutting-london-on');
+      else if (path === '/acrylic-cutting-london-on') setKeywordSlug('acrylic-cutting-london-on');
+      else if (path === '/custom-acrylic-cutting') setKeywordSlug('custom-acrylic-cutting');
       else if (path === '/custom-signage-london-ontario') setKeywordSlug('custom-signage');
       else if (path === '/wedding-decor-event-signage-london-ontario') setKeywordSlug('wedding-events');
       else if (path === '/custom-gifts-london-ontario') setKeywordSlug('custom-gifts-london-ontario');
