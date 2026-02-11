@@ -303,7 +303,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     dateLabel: '1 day ago',
     text:
-      '“Ordered two custom trophies for a yearly event I run and Forest City Laser was able to provide exactly what was needed quite quickly. Definitely recommend!”',
+      '“Forest City Laser was able to provide exactly what was needed quite quickly for my custom trophies. Definitely recommend!”',
     url: 'https://maps.app.goo.gl/ni2beaSYtCiUMkcWA',
   },
   {
@@ -311,7 +311,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     dateLabel: '3 days ago',
     text:
-      '“Jamie is so easy to work with... patient, kind and generous. He made my project possible and I am so pleased. I highly recommend Forest City Laser.”',
+      '“Jamie is so easy to work with... patient, kind and generous. He made my project possible and I am so pleased. Highly recommend.”',
     url: 'https://maps.app.goo.gl/MNYBM86rtfMM9nqD7',
   },
   {
@@ -319,7 +319,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     dateLabel: 'a month ago',
     text:
-      '“Absolutely thrilled with the result. The craftsmanship and overall quality exceeded our expectations… Highly recommend Forest City Laser for beautiful signage.”',
+      '“Absolutely thrilled with the result. The craftsmanship and overall quality exceeded our expectations… Highly recommend for beautiful signage.”',
     // Share link (Google → review → Share → copy link)
     url: 'https://maps.app.goo.gl/PojmRf7F1YKnQqep6',
   },
@@ -346,7 +346,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     dateLabel: '3 days ago',
     text:
-      '“Very efficient and responds right away with updates. They did exactly what I needed, so happy with their service! I will certainly be calling them again.”',
+      '“Very efficient and responds right away with updates. They did exactly what I needed, so happy with their service!”',
     // Share link (Google → review → Share → copy link)
     url: 'https://maps.app.goo.gl/6MDqZy44mSUB1czK7',
   },
