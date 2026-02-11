@@ -21,6 +21,8 @@ const Cap_With_Logo = new URL('./images/stock/Corporate/Cap_With_Logo.webp', imp
 const Slate_Coasters = new URL('./images/stock/Corporate/Slate_Coasters.webp', import.meta.url).href;
 const Wood_Coasters = new URL('./images/stock/Corporate/Wood_Coasters.webp', import.meta.url).href;
 const Layered_Custom_Sign = new URL('./images/stock/Corporate/Layered_Custom_Sign.webp', import.meta.url).href;
+const Alluminum_Business_Cards = new URL('./images/stock/Corporate/Alluminum_Business_Cards.webp', import.meta.url).href;
+const Art_Awards = new URL('./images/stock/Corporate/Art_Awards.webp', import.meta.url).href;
 
 // Personal gallery images
 const Welcome_Signs = new URL('./images/stock/Personal/Welcome_Signs.webp', import.meta.url).href;
@@ -42,6 +44,7 @@ const Custom_Pens = new URL('./images/stock/Personal/Custom_Pens.webp', import.m
 const Key_Chains = new URL('./images/stock/Personal/Key_Chains.webp', import.meta.url).href;
 const Name_Sign = new URL('./images/stock/Personal/Name_Sign.webp', import.meta.url).href;
 const Van_Morrison_Mirror = new URL('./images/stock/Personal/Custom Mirror Etching.webp', import.meta.url).href;
+const Art_Sign = new URL('./images/stock/Personal/Art_Sign.webp', import.meta.url).href;
 const Bible_Leather_Etch = new URL('./images/stock/Personal/Bible_Leather_Etch.webp', import.meta.url).href;
 const Wooden_Custom_Sign = new URL('./images/stock/Corporate/wooden_Custom_Sign.webp', import.meta.url).href;
 
@@ -66,6 +69,9 @@ export const NAV_LINKS = [
 
 export const POPULAR_PRODUCTS = [
   { src: Van_Morrison_Mirror, name: 'Custom Etched Mirror', alt: 'Custom laser etched mirror artwork in London Ontario' },
+  { src: Alluminum_Business_Cards, name: 'Aluminum Business Cards', alt: 'Laser engraved black aluminum business cards London Ontario' },
+  { src: Art_Awards, name: 'Custom Art Awards', alt: 'Custom laser cut and engraved awards and trophies London Ontario' },
+  { src: Art_Sign, name: 'Custom Art Signage', alt: 'Precision laser cut artistic wood signage London Ontario' },
   { src: Perfume_Bottle_Etch, name: 'Etched Perfume Bottles', alt: 'Custom laser engraved perfume bottles for weddings and gifts' },
   { src: Bible_Leather_Etch, name: 'Leather Bible Etching', alt: 'Custom laser engraved leather Bible or journal' },
   { src: Layered_Custom_Sign, name: 'Layered Custom Sign', alt: 'Multi-layer laser cut custom business signage London Ontario' },
@@ -124,6 +130,8 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
       { src: Wood_Coasters, name: 'Wood_Coasters', alt: 'Laser engraved wood coasters with logo' },
       { src: Wooden_Custom_Sign, name: 'wooden_Custom_Sign', alt: 'Custom laser engraved wood business signage' },
       { src: Layered_Custom_Sign, name: 'Layered_Custom_Sign', alt: 'Custom multi-layer business logo sign' },
+      { src: Alluminum_Business_Cards, name: 'Alluminum_Business_Cards', alt: 'Laser engraved aluminum business cards' },
+      { src: Art_Awards, name: 'Art_Awards', alt: 'Custom laser engraved trophies and awards' },
     ],
   },
   {
@@ -149,6 +157,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
       { src: Name_Sign, name: 'Name_Sign', alt: 'Custom laser cut name signs London Ontario' },
       { src: Three_Layer_Ski_Sign, name: '3_Layer_Ski_Sign', alt: 'Layered laser cut wood artwork sign' },
       { src: Bible_Leather_Etch, name: 'Bible_Leather_Etch', alt: 'Custom laser engraved leather Bible' },
+      { src: Art_Sign, name: 'Art_Sign', alt: 'Artistic laser cut wood sign' },
     ],
   },
   {
