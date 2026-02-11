@@ -299,6 +299,14 @@ export const GOOGLE_REVIEWS_PROFILE_URL =
 
 export const GOOGLE_REVIEWS: GoogleReview[] = [
   {
+    author: 'Eric Walton',
+    rating: 5,
+    dateLabel: '1 day ago',
+    text:
+      '“Ordered two custom trophies for a yearly event I run and Forest City Laser was able to provide exactly what was needed quite quickly. Definitely recommend!”',
+    url: 'https://maps.app.goo.gl/ni2beaSYtCiUMkcWA',
+  },
+  {
     author: 'Maria Calleja',
     rating: 5,
     dateLabel: '3 days ago',
