@@ -46,6 +46,9 @@ const Name_Sign = new URL('./images/stock/Personal/Name_Sign.webp', import.meta.
 const Van_Morrison_Mirror = new URL('./images/stock/Personal/Custom Mirror Etching.webp', import.meta.url).href;
 const Art_Sign = new URL('./images/stock/Personal/Art_Sign.webp', import.meta.url).href;
 const Bible_Leather_Etch = new URL('./images/stock/Personal/Bible_Leather_Etch.webp', import.meta.url).href;
+const Palm_Clock = new URL('./images/stock/Personal/Palm_Clock.webp', import.meta.url).href;
+const Pink_Name_Sign = new URL('./images/stock/Personal/Pink_Name_Sign.webp', import.meta.url).href;
+const White_Floral_Clock = new URL('./images/stock/Personal/White_Floral_Clock.webp', import.meta.url).href;
 const Wooden_Custom_Sign = new URL('./images/stock/Corporate/wooden_Custom_Sign.webp', import.meta.url).href;
 
 // Industrial gallery images
@@ -72,6 +75,9 @@ export const POPULAR_PRODUCTS = [
   { src: Alluminum_Business_Cards, name: 'Aluminum Business Cards', alt: 'Laser engraved black aluminum business cards London Ontario' },
   { src: Art_Awards, name: 'Custom Art Awards', alt: 'Custom laser cut and engraved awards and trophies London Ontario' },
   { src: Art_Sign, name: 'Custom Art Signage', alt: 'Precision laser cut artistic wood signage London Ontario' },
+  { src: Palm_Clock, name: 'Palm Leaf Clock', alt: 'Custom laser cut palm leaf wood clock personalized gift' },
+  { src: Pink_Name_Sign, name: 'Custom Name Sign', alt: 'Custom laser cut personalized pink name sign gift London Ontario' },
+  { src: White_Floral_Clock, name: 'Floral Clock', alt: 'Custom laser cut white floral wood clock personalized gift' },
   { src: Perfume_Bottle_Etch, name: 'Etched Perfume Bottles', alt: 'Custom laser engraved perfume bottles for weddings and gifts' },
   { src: Bible_Leather_Etch, name: 'Leather Bible Etching', alt: 'Custom laser engraved leather Bible or journal' },
   { src: Layered_Custom_Sign, name: 'Layered Custom Sign', alt: 'Multi-layer laser cut custom business signage London Ontario' },
@@ -158,6 +164,9 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
       { src: Three_Layer_Ski_Sign, name: '3_Layer_Ski_Sign', alt: 'Layered laser cut wood artwork sign' },
       { src: Bible_Leather_Etch, name: 'Bible_Leather_Etch', alt: 'Custom laser engraved leather Bible' },
       { src: Art_Sign, name: 'Art_Sign', alt: 'Artistic laser cut wood sign' },
+      { src: Palm_Clock, name: 'Palm_Clock', alt: 'Custom laser cut palm leaf wood clock' },
+      { src: Pink_Name_Sign, name: 'Pink_Name_Sign', alt: 'Custom laser cut personalized name sign' },
+      { src: White_Floral_Clock, name: 'White_Floral_Clock', alt: 'Custom laser cut floral wood clock' },
     ],
   },
   {
