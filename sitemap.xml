@@ -43,6 +43,11 @@
 
   <!-- Industry/Event Pages -->
   <url>
+    <loc>https://forestcitylaser.com/industrial-laser-engraving-london-ontario/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://forestcitylaser.com/custom-signage-london-ontario/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
