@@ -78,7 +78,7 @@ When ordering for volume (50-200+ pieces), laser cutting offers:
 ---
 
 *Planning your wedding decor in London, Ontario? [Browse our portfolio](/#gallery) to see examples of our recent custom work.*
-`},{slug:"industrial-laser-engraving-for-safety-locks-tags-and-repeat-orders",title:"Industrial Laser Engraving for Safety Locks, Tags, and Repeat Orders",publishDate:"April 2026",category:"Industrial",image:$d,excerpt:"Industrial laser engraving jobs like safety locks, tags, and repeat-order parts are one of the strongest business fits for Forest City Laser.",content:`One of the strongest directions for Forest City Laser is industrial laser engraving, especially when the work is practical, repeatable, and tied to real business use. Jobs like safety lock engraving, equipment tags, serialized parts, and branded hardware are usually a better long-term fit than purely one-off novelty work.
+`},{slug:"industrial-laser-engraving-for-safety-locks-tags-and-repeat-orders",title:"Industrial Laser Engraving for Safety Locks, Tags, and Repeat Orders",publishDate:"April 2026",category:"Industrial",image:Id,excerpt:"Industrial laser engraving jobs like safety locks, tags, and repeat-order parts are one of the strongest business fits for Forest City Laser.",content:`One of the strongest directions for Forest City Laser is industrial laser engraving, especially when the work is practical, repeatable, and tied to real business use. Jobs like safety lock engraving, equipment tags, serialized parts, and branded hardware are usually a better long-term fit than purely one-off novelty work.
 
 ## Why This Kind of Work Matters
 - It is often more profitable than low-ticket gift jobs
