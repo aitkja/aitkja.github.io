@@ -8,8 +8,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-lm2re_SW.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512x512.png" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laser Cutting London Ontario | Precision Custom Parts | Forest City Laser</title>
 
@@ -92,140 +90,17 @@
       })();
     </script>
 
-    
     <style>
-      :root {
-        --fcl-green: #2A4B3A;
-        --fcl-green-dark: #1f382c;
-        --fcl-tan: #C4A484;
-        --fcl-tan-dark: #a88464;
-        --fcl-slate: #1e293b;
-        --fcl-muted: #64748b;
-        --fcl-bg: #f1f5f9;
-        --fcl-card: #ffffff;
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s cubic-bezier(0.39, 0.575, 0.565, 1), transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
       }
-      * { box-sizing: border-box; }
-      body.fcl-static {
-        margin: 0;
-        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-        color: var(--fcl-slate);
-        background: var(--fcl-bg);
-        line-height: 1.65;
-      }
-      a { color: var(--fcl-green); }
-      a:hover { color: var(--fcl-green-dark); }
-      .fcl-top {
-        position: sticky; top: 0; z-index: 40;
-        background: rgba(255,255,255,.92);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid #e2e8f0;
-      }
-      .fcl-top-inner {
-        max-width: 1100px; margin: 0 auto;
-        padding: 12px 20px;
-        display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      }
-      .fcl-logo img { height: 48px; width: auto; display: block; }
-      .fcl-nav {
-        display: flex; flex-wrap: wrap; gap: 8px 14px; justify-content: flex-end;
-        font-size: .9rem; font-weight: 600;
-      }
-      .fcl-nav a {
-        text-decoration: none; color: var(--fcl-slate);
-      }
-      .fcl-nav a:hover { color: var(--fcl-green); }
-      .fcl-nav a.fcl-nav-cta {
-        background: var(--fcl-green); color: #fff !important;
-        padding: 8px 14px; border-radius: 999px;
-      }
-      .fcl-nav a.fcl-nav-cta:hover { background: var(--fcl-green-dark); }
-      .fcl-hero {
-        background:
-          linear-gradient(135deg, rgba(42,75,58,.94), rgba(42,75,58,.78)),
-          url("/assets/Full_Logo_JPG-DoRNr7u7.jpg") center/cover;
-        color: #fff;
-        padding: 56px 20px 48px;
-      }
-      .fcl-hero-inner { max-width: 1100px; margin: 0 auto; }
-      .fcl-kicker {
-        display: inline-block; font-size: .8rem; font-weight: 700;
-        letter-spacing: .08em; text-transform: uppercase;
-        color: var(--fcl-tan); margin-bottom: 10px;
-      }
-      .fcl-hero h1 {
-        margin: 0 0 12px; font-size: clamp(1.85rem, 4vw, 2.6rem);
-        line-height: 1.15; font-weight: 800; max-width: 18ch;
-      }
-      .fcl-hero-lead {
-        max-width: 54ch; margin: 0 0 22px; color: rgba(255,255,255,.92); font-size: 1.05rem;
-      }
-      .fcl-btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
-      .fcl-btn {
-        display: inline-block; text-decoration: none; font-weight: 700;
-        padding: 12px 18px; border-radius: 10px;
-      }
-      .fcl-btn-primary { background: var(--fcl-tan); color: #1f2937 !important; }
-      .fcl-btn-primary:hover { background: var(--fcl-tan-dark); color: #111 !important; }
-      .fcl-btn-ghost {
-        background: transparent; color: #fff !important;
-        border: 1px solid rgba(255,255,255,.45);
-      }
-      .fcl-btn-ghost:hover { background: rgba(255,255,255,.1); }
-      .fcl-main {
-        max-width: 1100px; margin: -28px auto 0; padding: 0 20px 48px;
-      }
-      .fcl-card {
-        background: var(--fcl-card);
-        border: 1px solid #e2e8f0;
-        border-radius: 18px;
-        box-shadow: 0 10px 30px rgba(15, 23, 42, .06);
-        padding: 28px 26px;
-      }
-      .fcl-card h2 {
-        margin: 1.6rem 0 .7rem; font-size: 1.2rem; color: var(--fcl-green);
-      }
-      .fcl-card h2:first-child { margin-top: 0; }
-      .fcl-card ul, .fcl-card ol { padding-left: 1.2rem; }
-      .fcl-card li { margin: .35rem 0; }
-      .fcl-related {
-        display: grid; gap: 10px;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        margin-top: 10px;
-      }
-      .fcl-related a {
-        display: block; text-decoration: none;
-        border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px;
-        color: var(--fcl-slate); background: #f8fafc; font-weight: 600; font-size: .92rem;
-      }
-      .fcl-related a:hover { border-color: var(--fcl-tan); background: #fff; }
-      .fcl-note { color: var(--fcl-muted); font-size: .95rem; margin-top: 1.2rem; }
-      .fcl-footer {
-        background: #e2e8f0f2; color: #334155; margin-top: 24px;
-        border-top: 1px solid #cbd5e1;
-      }
-      .fcl-footer-inner {
-        max-width: 1100px; margin: 0 auto; padding: 36px 20px 28px;
-        display: grid; gap: 28px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
-      .fcl-footer h4 { margin: 0 0 12px; color: #0f172a; font-size: .95rem; }
-      .fcl-footer ul { list-style: none; padding: 0; margin: 0; }
-      .fcl-footer li { margin: 0 0 8px; font-size: .9rem; }
-      .fcl-footer a { color: #334155; text-decoration: none; }
-      .fcl-footer a:hover { color: #0f172a; }
-      .fcl-footer-brand { text-align: center; }
-      .fcl-footer-brand img { height: 72px; width: auto; margin: 0 auto 12px; display: block; }
-      .fcl-footer-brand p { font-size: .88rem; margin: 0; color: #475569; }
-      .fcl-copy {
-        max-width: 1100px; margin: 0 auto; padding: 0 20px 24px;
-        font-size: .8rem; color: #64748b;
-      }
-      @media (max-width: 720px) {
-        .fcl-nav { display: none; }
-        .fcl-top-inner { justify-content: center; }
+      .fade-in-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
-
 
 <!-- SEO: Schema.org for Local Business -->
 <script type="application/ld+json">
@@ -272,63 +147,24 @@
   ]
 }
 </script>
-<style>
-      body.fcl-static {
-        margin: 0;
-        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-        color: #0f172a;
-        background: #f8fafc;
-        line-height: 1.6;
-      }
-      .fcl-wrap { max-width: 880px; margin: 0 auto; padding: 28px 20px 64px; }
-      .fcl-brand { font-weight: 800; font-size: 0.95rem; letter-spacing: .02em; color: #0ea5e9; text-decoration: none; }
-      .fcl-static h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; margin: 18px 0 12px; }
-      .fcl-static h2 { font-size: 1.25rem; margin-top: 1.8rem; }
-      .fcl-static a { color: #0369a1; }
-      .fcl-cta {
-        display: inline-block; margin: 12px 0 8px; padding: 12px 18px; border-radius: 10px;
-        background: #0284c7; color: #fff !important; text-decoration: none; font-weight: 700;
-      }
-      .fcl-cta:hover { background: #0369a1; }
-      .fcl-nav { display: flex; flex-wrap: wrap; gap: 12px 16px; margin-top: 28px; padding-top: 18px; border-top: 1px solid #e2e8f0; }
-      .fcl-nav a { text-decoration: none; font-weight: 600; }
-      .fcl-note { color: #475569; font-size: .95rem; }
-    </style>
-
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-BtwjCOdl.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-yTKWdhA_.css">
 </head>
-<body class="fcl-static">
-
-    <header class="fcl-top">
-      <div class="fcl-top-inner">
-        <a class="fcl-logo" href="/" aria-label="Forest City Laser home">
-          <img src="/assets/Full_Logo-BhyC_fr_.webp" alt="Forest City Laser" />
-        </a>
-        <nav class="fcl-nav" aria-label="Primary">
-          <a href="/">Home</a>
-          <a href="/industrial-laser-engraving-london-ontario/">Industrial</a>
-          <a href="/lamacoid-labels-london-ontario/">Lamacoids</a>
-          <a href="/safety-lock-engraving-london-ontario/">Safety Locks</a>
-          <a href="/laser-engraving-london-ontario/">Engraving</a>
-          <a href="/#gallery">Gallery</a>
-          <a class="fcl-nav-cta" href="/#quote">Get a Quote</a>
-        </nav>
-      </div>
-    </header>
-
-    <section class="fcl-hero">
-      <div class="fcl-hero-inner">
-        <div class="fcl-kicker">Laser Cutting</div>
-        <h1>Laser Cutting in London, Ontario</h1>
-        <p class="fcl-hero-lead">Short-run and commercial cutting for acrylic, wood, and other materials suited to local production needs.</p>
-        <div class="fcl-btn-row">
-          <a class="fcl-btn fcl-btn-primary" href="/#quote">Request a quantity quote</a>
-          <a class="fcl-btn fcl-btn-ghost" href="/">Back to home</a>
-        </div>
-      </div>
-    </section>
-    <div class="fcl-main">
-      <article class="fcl-card" id="static-seo">
-<p>Forest City Laser offers precision laser cutting for acrylic, wood, signage materials, fixtures, templates, and custom parts in London, Ontario. We are especially interested in commercial and repeatable work where accurate cuts, clean edges, and dependable turnaround matter.</p>
+  <body>
+    <div id="root">
+      <!-- Static SEO Fallback: This content is visible to bots and users before JS loads -->
+      <section style="display:none">
+        <h1>Laser Cutting Services in London, Ontario</h1>
+        <p>Forest City Laser offers precision laser cutting for acrylic, wood, signage materials, fixtures, templates, and custom parts in London, Ontario. We are especially interested in commercial and repeatable work where accurate cuts, clean edges, and dependable turnaround matter.</p>
         
         <h2>Best Fit Laser Cutting Projects</h2>
         <ul>
@@ -341,7 +177,7 @@
         </ul>
 
         <h2>Commercial & Batch Cutting CTAs</h2>
-        <p><strong><a class="fcl-btn fcl-btn-primary" href="/#quote">Request a commercial or batch cutting quote</a></strong> — include material, piece count, and whether you expect to reorder. Pair cutting with marking via <a href="/industrial-laser-engraving-london-ontario/">industrial laser engraving</a> when tags or locks need engraving too.</p>
+        <p><strong><a href="/#quote">Request a commercial or batch cutting quote</a></strong> — include material, piece count, and whether you expect to reorder. Pair cutting with marking via <a href="/industrial-laser-engraving-london-ontario/">industrial laser engraving</a> when tags or locks need engraving too.</p>
 
         <h2>Why Local Businesses Use Us</h2>
         <p>We are a local option for companies, venues, event planners, and creative businesses that need custom pieces without dealing with a distant large-volume supplier. If the job may repeat, we want to hear about it.</p>
@@ -353,40 +189,20 @@
           <li><a href="/blog/industrial-laser-engraving-for-safety-locks-tags-and-repeat-orders/">Safety locks, tags, and repeat-order engraving</a></li>
           <li><a href="/blog/what-lamacoid-labels-and-control-panel-tags-are-used-for/">Lamacoid labels and control panel tags</a></li>
         </ul>
-        <p class="fcl-note">Need the live quote form with file uploads? <a href="/#quote">Open the quantity quote form</a> on the home page.</p>
-      </article>
+        
+        <nav>
+          <a href="/">Home</a>
+          <a href="#gallery">Portfolio</a>
+          <a href="#process">Our Process</a>
+          <a href="#quote">Batch Quote</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+          <a href="/industrial-laser-engraving-london-ontario/">Industrial</a>
+          <a href="/flyer">Special Offers</a>
+        </nav>
+      </section>
     </div>
-
-    <footer class="fcl-footer">
-      <div class="fcl-footer-inner">
-        <div class="fcl-footer-brand">
-          <img src="/assets/Full_Logo-BhyC_fr_.webp" alt="Forest City Laser Full Logo" />
-          <p>Custom laser engraving and cutting for wood, acrylic, and leather in London, Ontario. Based in Riverbend, serving all of South-Western Ontario.</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/#gallery">Gallery</a></li>
-            <li><a href="/#quote">Request Quote</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/industrial-laser-engraving-london-ontario/">Industrial Engraving</a></li>
-            <li><a href="/lamacoid-labels-london-ontario/">Lamacoid Labels</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact Us</h4>
-          <ul>
-            <li>Email: <a href="mailto:info@forestcitylaser.com">info@forestcitylaser.com</a></li>
-            <li>Location: <a href="https://maps.app.goo.gl/ZbxY5A2rgm2Le6Dq6" target="_blank" rel="noopener noreferrer">London, ON (Riverbend)</a></li>
-            <li><a href="https://www.instagram.com/forestcitylaser/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=61580529627577" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-          </ul>
-        </div>
-      </div>
-      <p class="fcl-copy">&copy; 2026 Forest City Laser. All rights reserved.</p>
-    </footer>
-
+    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
       var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
       (function(){
