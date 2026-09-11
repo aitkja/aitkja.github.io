@@ -8,7 +8,7 @@
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- Power SEO URLs - Money Pages (raised industrial + laser-engraving) -->
+  <!-- Money Pages -->
   <url>
     <loc>https://forestcitylaser.com/industrial-laser-engraving-london-ontario/</loc>
     <lastmod>2026-09-11</lastmod>
@@ -22,6 +22,18 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://forestcitylaser.com/lamacoid-labels-london-ontario/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <priority>0.92</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/safety-lock-engraving-london-ontario/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <priority>0.92</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://forestcitylaser.com/laser-cutting-london-ontario/</loc>
     <lastmod>2026-09-11</lastmod>
     <priority>0.9</priority>
@@ -29,28 +41,29 @@
   </url>
   <url>
     <loc>https://forestcitylaser.com/engraving-london-ontario/</loc>
-    <priority>0.9</priority>
+    <lastmod>2026-09-11</lastmod>
+    <priority>0.85</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <!-- Material Pages -->
   <url>
     <loc>https://forestcitylaser.com/leather-engraving-london-on/</loc>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://forestcitylaser.com/wood-laser-engraving-london-on/</loc>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://forestcitylaser.com/acrylic-cutting-london-on/</loc>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Industry/Event Pages -->
+  <!-- Commercial / Event Pages -->
   <url>
     <loc>https://forestcitylaser.com/custom-signage-london-ontario/</loc>
     <lastmod>2026-09-11</lastmod>
@@ -59,12 +72,17 @@
   </url>
   <url>
     <loc>https://forestcitylaser.com/wedding-decor-event-signage-london-ontario/</loc>
-    <priority>0.8</priority>
+    <priority>0.55</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://forestcitylaser.com/real-estate-closing-gifts-signage-london-ontario/</loc>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/custom-gifts-london-ontario/</loc>
+    <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
 
@@ -75,23 +93,25 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://forestcitylaser.com/blog/custom-laser-cut-wedding-decor-trends-2025-2026/</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://forestcitylaser.com/blog/industrial-laser-engraving-for-safety-locks-tags-and-repeat-orders/</loc>
-    <priority>0.65</priority>
+    <lastmod>2026-09-11</lastmod>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://forestcitylaser.com/blog/what-lamacoid-labels-and-control-panel-tags-are-used-for/</loc>
-    <priority>0.65</priority>
+    <lastmod>2026-09-11</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://forestcitylaser.com/blog/custom-laser-cut-wedding-decor-trends-2025-2026/</loc>
+    <priority>0.45</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://forestcitylaser.com/blog/real-estate-closing-gift-ideas-that-feel-premium-and-repeatable/</loc>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
 
