@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <script>
+      /* Canonical: strip /index.html so clean trailing-slash URL is the only indexed path */
+      (function () {
+        var p = location.pathname;
+        if (/\/index\.html$/i.test(p)) {
+          var clean = p.replace(/\/index\.html$/i, "/");
+          if (!clean) clean = "/";
+          location.replace(clean + location.search + location.hash);
+        }
+      })();
+    </script>
+
     <meta charset="UTF-8" />
     
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-B9YQ_3j1.png" />

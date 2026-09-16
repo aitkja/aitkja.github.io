@@ -2,7 +2,10 @@ User-agent: *
 Allow: /
 Disallow: /thank-you.html
 Disallow: /flyer
+Disallow: /flyer/
+Disallow: /index.html
+Disallow: /*/index.html
 
 Sitemap: https://forestcitylaser.com/sitemap.xml
 
-# Last deploy ping: 01/22/2026
+# Last deploy ping: 09/16/2026
