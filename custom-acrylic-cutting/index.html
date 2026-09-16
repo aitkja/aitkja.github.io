@@ -1,207 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-B9YQ_3j1.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-B2R8P28S.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-lm2re_SW.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512x512.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Custom Acrylic Cutting | Precision Laser Cut Parts | Forest City Laser</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Custom acrylic cutting for signs, branded displays, wedding pieces, office branding, fixtures, and repeatable custom parts in London, Ontario." />
-    <meta name="keywords" content="custom acrylic cutting, acrylic cutting London Ontario, acrylic signs, branded displays, acrylic event signage, repeatable custom parts" />
-    <meta name="robots" content="noindex, follow" />
-    <link rel="canonical" href="https://forestcitylaser.com/custom-acrylic-cutting/" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://forestcitylaser.com/custom-acrylic-cutting/" />
-    <meta property="og:title" content="Custom Acrylic Cutting | Precision Laser Cut Parts | Forest City Laser" />
-    <meta property="og:description" content="Precision acrylic laser cutting in London, Ontario. Custom desk signs, business signage, and industrial parts. High-quality finish and fast delivery." />
-    <meta property="og:image" content="https://forestcitylaser.com/images/logo/Full_Logo_JPG.jpg" />
-    <meta property="og:site_name" content="Forest City Laser" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://forestcitylaser.com/custom-acrylic-cutting/" />
-    <meta property="twitter:title" content="Custom Acrylic Cutting | Precision Laser Cut Parts | Forest City Laser" />
-    <meta property="twitter:description" content="Precision acrylic laser cutting in London, Ontario. Custom desk signs, business signage, and industrial parts. High-quality finish and fast delivery." />
-    <meta property="twitter:image" content="https://forestcitylaser.com/images/logo/Full_Logo_JPG.jpg" />
-
-    <meta name="application-name" content="Forest City Laser" />
-    
-    <!-- Site Name for Google (WebSite schema) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://forestcitylaser.com/#website",
-      "name": "Forest City Laser",
-      "alternateName": "FCL",
-      "url": "https://forestcitylaser.com/",
-      "publisher": { "@id": "https://forestcitylaser.com/#organization" }
-    }
-    </script>
-
-    <!-- Organization schema with logo for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://forestcitylaser.com/#organization",
-      "name": "Forest City Laser",
-      "url": "https://forestcitylaser.com/",
-      "logo": "https://forestcitylaser.com/images/icons/icon-512x512.png",
-      "sameAs": [
-        "https://www.instagram.com/forestcitylaser/",
-        "https://www.facebook.com/profile.php?id=61580529627577"
-      ]
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7QH9VR6J4"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}    
-      (function(){
-        var search = location.search || '';
-        try {
-          if (search.indexOf('ga_debug=1') !== -1) localStorage.setItem('ga_debug', '1');
-          if (search.indexOf('ga_debug=0') !== -1) localStorage.removeItem('ga_debug');
-        } catch(e) {}
-        const isDebug = (search.indexOf('ga_debug=1') !== -1)
-          || (document.cookie && document.cookie.indexOf('ar_debug=1') !== -1)
-          || (function(){ try { return localStorage.getItem('ga_debug') === '1'; } catch(e) { return false; } })();
-        gtag('js', new Date());
-        if (isDebug) {
-          gtag('config', 'G-J7QH9VR6J4', { debug_mode: true });
-        } else {
-          gtag('config', 'G-J7QH9VR6J4');
+      /* Canonical: strip /index.html so clean trailing-slash URL is the only indexed path */
+      (function () {
+        var p = location.pathname;
+        if (/\/index\.html$/i.test(p)) {
+          var clean = p.replace(/\/index\.html$/i, "/");
+          if (!clean) clean = "/";
+          location.replace(clean + location.search + location.hash);
         }
       })();
     </script>
-
-    <style>
-      .fade-in-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s cubic-bezier(0.39, 0.575, 0.565, 1), transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
-      }
-      .fade-in-up.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
-
-<!-- SEO: Schema.org for Local Business -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Forest City Laser",
-  "description": "Expert custom laser cutting and engraving for personalized gifts, wedding decor, corporate branding, and industrial parts.",
-  "url": "https://forestcitylaser.com",
-  "email": "info@forestcitylaser.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "London",
-    "addressRegion": "ON",
-    "addressCountry": "CA"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "42.9849",
-    "longitude": "-81.2453"
-  },
-  "openingHours": "Mo-Fr 09:00-17:00",
-  "priceRange": "$$",
-  "sameAs": [
-    "https://www.instagram.com/forestcitylaser/",
-    "https://www.facebook.com/profile.php?id=61580529627577"
-  ],
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": "42.9849",
-      "longitude": "-81.2453"
-    },
-    "geoRadius": "100000"
-  },
-  "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laser Cutting" }},
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laser Engraving" }},
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Wedding Decor" }},
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Branding" }},
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Industrial Signage" }},
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Personalized Gifts" }}
-  ]
-}
-</script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/assets/index-fcl-20260911.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-yTKWdhA_.css">
-</head>
-  <body>
-    <div id="root">
-      <!-- Static SEO Fallback: This content is visible to bots and users before JS loads -->
-      <section style="display:none">
-        <h1>Custom Acrylic Cutting for Signs, Displays, and Repeat Orders</h1>
-        <p>Forest City Laser handles custom acrylic cutting for businesses, events, real estate branding, displays, and coordinated multi-piece jobs in London, Ontario. This page supports the more commercial side of acrylic work, especially projects that need to look clean and repeat well.</p>
-        
-        <h2>Strong Fits for Acrylic Cutting</h2>
-        <ul>
-          <li>Branded signs and office displays</li>
-          <li>Wedding and event signage sets</li>
-          <li>Real estate office branding and gift pieces</li>
-          <li>Display parts, inserts, and fixtures</li>
-          <li>Short-run custom acrylic parts</li>
-          <li><a href="/acrylic-cutting-london-on/">Acrylic cutting in London, Ontario</a></li>
-        </ul>
-
-        <h2>Why Keep This Separate</h2>
-        <p>This page gives us another acrylic-focused entry point, but with clearer commercial intent than a generic material page. That helps support signage, display, and repeat-order search intent without relying on one broad page to do everything.</p>
-        
-        <nav>
-          <a href="/">Home</a>
-          <a href="#gallery">Portfolio</a>
-          <a href="#process">Our Process</a>
-          <a href="#quote">Request Quote</a>
-          <a href="#about">About Us</a>
-          <a href="#contact">Contact</a>
-          <a href="/flyer">Special Offers</a>
-        </nav>
-      </section>
-    </div>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-      (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/6839b7b7679e18190a361283/1jfe9q8a4';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-      })();
+    <meta http-equiv="refresh" content="0; url=https://forestcitylaser.com/acrylic-cutting-london-on/" />
+    <link rel="canonical" href="https://forestcitylaser.com/acrylic-cutting-london-on/" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting to Acrylic Cutting London ON | Forest City Laser</title>
+    <script>
+      location.replace("https://forestcitylaser.com/acrylic-cutting-london-on/" + location.search + location.hash);
     </script>
-    <!--End of Tawk.to Script-->
+  </head>
+  <body>
+    <p>This page has moved to <a href="https://forestcitylaser.com/acrylic-cutting-london-on/">Acrylic Cutting in London, Ontario</a>.</p>
   </body>
 </html>
