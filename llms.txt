@@ -1,0 +1,62 @@
+# Forest City Laser
+
+> Forest City Laser is a London, Ontario laser shop specializing in batch and
+> industrial laser engraving and cutting. Based in the Riverbend area of London,
+> serving South-Western Ontario. Quotes by email — no published price list.
+> Contact: info@forestcitylaser.com
+
+Website: https://forestcitylaser.com/
+Entity: Forest City Laser
+Location: London, Ontario (Riverbend area)
+Offer: batch & industrial laser engraving and cutting
+Laser bed: 20×28 inches
+Hours: Monday–Friday 09:00–17:00
+Email: info@forestcitylaser.com
+Social:
+- Instagram: https://www.instagram.com/forestcitylaser/
+- Facebook: https://www.facebook.com/profile.php?id=61580529627577
+
+## What it is
+
+A local laser engraving and cutting shop for industrial and commercial batch
+work — nameplates, labels, safety locks, equipment tags, and related marked
+parts — plus custom engraving and cutting for wood, acrylic, leather, and
+similar materials. Work is quoted to order rather than sold from a fixed
+catalog price list.
+
+## How quoting works
+
+There is no published price list. To get a quote, email
+info@forestcitylaser.com or use the quote form on the site with:
+
+- Quantity (batch size / how many units)
+- Material (what the part is made of)
+- Reorder info when applicable (prior job details, part numbers, or past artwork)
+
+Quotes are handled by email. Repeat / reorder work is a core workflow for
+industrial and safety-marking customers.
+
+## Capacity and hours
+
+- Laser bed: 20×28 inches
+- Hours: Monday–Friday 09:00–17:00 (Eastern)
+
+## Key pages (money / service URLs)
+
+Live:
+
+- [Home](https://forestcitylaser.com/): overview of laser engraving and cutting services
+- [Industrial laser engraving — London Ontario](https://forestcitylaser.com/industrial-laser-engraving-london-ontario/): batch industrial marking, equipment/asset tags
+- [Laser engraving — London Ontario](https://forestcitylaser.com/laser-engraving-london-ontario/): general laser engraving services
+- [Lamacoid labels — London Ontario](https://forestcitylaser.com/lamacoid-labels-london-ontario/): lamacoid / legend-plate and control-panel labels
+- [Safety lock engraving — London Ontario](https://forestcitylaser.com/safety-lock-engraving-london-ontario/): numbered lockout / safety lock engraving
+
+Shipping when related PRs merge (URLs will 404 until then):
+
+- [Phenolic nameplates — London Ontario](https://forestcitylaser.com/phenolic-nameplates-london-ontario/) — planned (PR #12)
+- [Quantity quotes & reorders — London Ontario](https://forestcitylaser.com/quantity-quotes-reorders-london-ontario/) — planned (PR #14)
+
+## How to contact
+
+Email info@forestcitylaser.com with quantity, material, and any reorder details,
+or use the quote form on https://forestcitylaser.com/.
