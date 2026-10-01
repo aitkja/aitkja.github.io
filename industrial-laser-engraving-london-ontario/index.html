@@ -250,6 +250,13 @@
     "addressRegion": "ON",
     "addressCountry": "CA"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "42.9849",
+    "longitude": "-81.2453"
+  },
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "priceRange": "$$",
   "sameAs": [
     "https://www.instagram.com/forestcitylaser/",
     "https://www.facebook.com/profile.php?id=61580529627577"
@@ -285,8 +292,67 @@
       .fcl-nav { display: flex; flex-wrap: wrap; gap: 12px 16px; margin-top: 28px; padding-top: 18px; border-top: 1px solid #e2e8f0; }
       .fcl-nav a { text-decoration: none; font-weight: 600; }
       .fcl-note { color: #475569; font-size: .95rem; }
-    </style>
+    
+      .fcl-faq details {
+        border: 1px solid #e2e8f0; border-radius: 12px;
+        padding: 12px 14px; margin: 10px 0; background: #f8fafc;
+      }
+      .fcl-faq summary {
+        cursor: pointer; font-weight: 700; color: var(--fcl-green);
+      }
+      .fcl-faq details p { margin: .6rem 0 0; }
 
+</style>
+
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you quote a batch industrial laser engraving job?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the quantity quote form and include piece count, material, artwork or text list, and whether this is a first run or a reorder. Quotes are based on material, quantity, and complexity—not a published catalogue price list."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What materials can you mark for industrial work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common industrial jobs use plastics (including lamacoid / multi-layer engraving stock), coated metals, anodized parts, and other durable markers suited to equipment tags, panel labels, and production marks. Send the material or a photo with the quote so we can confirm fit for your application."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do industrial reorders work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After a first run is approved, reorders reuse the same layout and setup so replacements match what is already in the field. Say it is a reorder on the quote form, note the new quantity, and flag any numbering that should continue from the last batch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the laser bed size?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The production bed is 20\" × 28\". That footprint guides how large a single piece can be and how multi-piece batches are nested for industrial tags, locks, and labels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you publish a price list for industrial engraving?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We do not publish catalogue prices or invent review counts on this page. Pricing follows quantity, material, and layout complexity—submit a quantity quote for a number you can plan around."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="fcl-static">
 
@@ -384,6 +450,31 @@
         <h2>Materials Commonly Used for Industrial Work</h2>
         <p>Jobs often involve anodized aluminum hardware, acrylic and lamacoid label stock, coated metals suited to laser marking, and other durable substrates used on equipment and panels. If you are unsure which stock to use for outdoor or high-touch environments, describe the use case in your quote and we will advise within what we can process locally.</p>
 
+<h2>Industrial Batch Engraving FAQ</h2>
+        <div class="fcl-faq">
+          <details open>
+            <summary>How do you quote a batch industrial laser engraving job?</summary>
+            <p>Open the <a href="/#quote">quantity quote form</a> and include piece count, material, artwork or text list, and whether this is a first run or a reorder. Quotes are based on material, quantity, and complexity—not a published catalogue price list. For how quantity quotes and reorders work in general, see the <a href="/quantity-quotes-reorders-london-ontario/">quantity quotes &amp; reorders</a> guide.</p>
+          </details>
+          <details>
+            <summary>What materials can you mark for industrial work?</summary>
+            <p>Common industrial jobs use plastics (including lamacoid / multi-layer engraving stock), coated metals, anodized parts, and other durable markers suited to equipment tags, panel labels, and production marks. Send the material or a photo with the quote so we can confirm fit for your application.</p>
+          </details>
+          <details>
+            <summary>How do industrial reorders work?</summary>
+            <p>After a first run is approved, reorders reuse the same layout and setup so replacements match what is already in the field. Say it is a reorder on the quote form, note the new quantity, and flag any numbering that should continue from the last batch.</p>
+          </details>
+          <details>
+            <summary>What is the laser bed size?</summary>
+            <p>The production bed is 20&quot; × 28&quot;. That footprint guides how large a single piece can be and how multi-piece batches are nested for industrial tags, locks, and labels.</p>
+          </details>
+          <details>
+            <summary>Do you publish a price list for industrial engraving?</summary>
+            <p>No. We do not publish catalogue prices or invent review counts on this page. Pricing follows quantity, material, and layout complexity—submit a quantity quote for a number you can plan around.</p>
+          </details>
+        </div>
+
+        
         <h2>Related Pages &amp; Support Articles</h2>
         <div class="fcl-related">
           <a href="/laser-engraving-london-ontario/">Laser Engraving London Ontario</a>
