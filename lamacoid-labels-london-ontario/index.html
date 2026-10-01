@@ -127,6 +127,13 @@
     "addressRegion": "ON",
     "addressCountry": "CA"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "42.9849",
+    "longitude": "-81.2453"
+  },
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "priceRange": "$$",
   "sameAs": [
     "https://www.instagram.com/forestcitylaser/",
     "https://www.facebook.com/profile.php?id=61580529627577"
@@ -160,8 +167,67 @@
       .fcl-nav { display: flex; flex-wrap: wrap; gap: 12px 16px; margin-top: 28px; padding-top: 18px; border-top: 1px solid #e2e8f0; }
       .fcl-nav a { text-decoration: none; font-weight: 600; }
       .fcl-note { color: #475569; font-size: .95rem; }
-    </style>
+    
+      .fcl-faq details {
+        border: 1px solid #e2e8f0; border-radius: 12px;
+        padding: 12px 14px; margin: 10px 0; background: #f8fafc;
+      }
+      .fcl-faq summary {
+        cursor: pointer; font-weight: 700; color: var(--fcl-green);
+      }
+      .fcl-faq details p { margin: .6rem 0 0; }
 
+</style>
+
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do quantity quotes work for lamacoid labels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the quantity quote form, set the full tag count, note stock/colour, and attach the panel schedule or text list. Quotes reflect material, piece count, and text complexity—no fabricated catalogue prices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What materials are used for lamacoid / panel labels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lamacoid (lamicoid) work typically uses multi-layer engraving plastic so the top colour is removed to expose contrasting lettering for legend plates, switch labels, and panel tags. Related machine ID / data plates may use phenolic stock when that is the job."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do lamacoid reorders and replacement sets work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Approved layouts stay available for reorders so replacement legend plates and panel tags match the installed set. Mark the quote as a reorder, include the new quantity, and note any schedule changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the laser bed size for label batches?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The production bed is 20\" × 28\", which supports nesting multi-piece lamacoid and panel-label runs efficiently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you publish a lamacoid price list?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Pricing is quote-based from quantity, material, and complexity. This page does not invent catalogue prices or review counts."
+      }
+    }
+  ]
+}
+</script>
 </head>
   <body class="fcl-static">
     
@@ -195,6 +261,31 @@
           <li>Reorders reuse the approved setup to cut back-and-forth.</li>
         </ol>
 
+<h2>Lamacoid &amp; Panel Label FAQ</h2>
+        <div class="fcl-faq">
+          <details open>
+            <summary>How do quantity quotes work for lamacoid labels?</summary>
+            <p>Open the <a href="/#quote">quantity quote form</a>, set the full tag count, note stock/colour, and attach the panel schedule or text list. Quotes reflect material, piece count, and text complexity—no fabricated catalogue prices. See also <a href="/quantity-quotes-reorders-london-ontario/">quantity quotes &amp; reorders</a>.</p>
+          </details>
+          <details>
+            <summary>What materials are used for lamacoid / panel labels?</summary>
+            <p>Lamacoid (lamicoid) work typically uses multi-layer engraving plastic so the top colour is removed to expose contrasting lettering for legend plates, switch labels, and panel tags. Related machine ID / data plates may use phenolic stock—see <a href="/phenolic-nameplates-london-ontario/">phenolic nameplates</a> when that is the job.</p>
+          </details>
+          <details>
+            <summary>How do lamacoid reorders and replacement sets work?</summary>
+            <p>Approved layouts stay available for reorders so replacement legend plates and panel tags match the installed set. Mark the quote as a reorder, include the new quantity, and note any schedule changes.</p>
+          </details>
+          <details>
+            <summary>What is the laser bed size for label batches?</summary>
+            <p>The production bed is 20&quot; × 28&quot;, which supports nesting multi-piece lamacoid and panel-label runs efficiently.</p>
+          </details>
+          <details>
+            <summary>Do you publish a lamacoid price list?</summary>
+            <p>No. Pricing is quote-based from quantity, material, and complexity. This page does not invent catalogue prices or review counts.</p>
+          </details>
+        </div>
+
+        
         <h2>Related Pages</h2>
         <ul>
           <li><a href="/industrial-laser-engraving-london-ontario/">Industrial laser engraving London Ontario</a> — broader batch and industrial marking</li>
