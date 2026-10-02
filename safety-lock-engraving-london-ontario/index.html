@@ -127,6 +127,13 @@
     "addressRegion": "ON",
     "addressCountry": "CA"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "42.9849",
+    "longitude": "-81.2453"
+  },
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "priceRange": "$$",
   "sameAs": [
     "https://www.instagram.com/forestcitylaser/",
     "https://www.facebook.com/profile.php?id=61580529627577"
@@ -160,8 +167,75 @@
       .fcl-nav { display: flex; flex-wrap: wrap; gap: 12px 16px; margin-top: 28px; padding-top: 18px; border-top: 1px solid #e2e8f0; }
       .fcl-nav a { text-decoration: none; font-weight: 600; }
       .fcl-note { color: #475569; font-size: .95rem; }
-    </style>
+    
+      .fcl-faq details {
+        border: 1px solid #e2e8f0; border-radius: 12px;
+        padding: 12px 14px; margin: 10px 0; background: #f8fafc;
+      }
+      .fcl-faq summary {
+        cursor: pointer; font-weight: 700; color: var(--fcl-green);
+      }
+      .fcl-faq details p { margin: .6rem 0 0; }
 
+</style>
+
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you quote a safety lock engraving job?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the quantity quote form and include piece count, numbering or naming rules, and whether this is a first run or a reorder. Photos of the lock body help confirm fit. Quotes depend on quantity, material, and layout—not a published price list."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What materials or surfaces can you engrave on locks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most jobs are anodized or coated lock bodies and related lockout tags. Send a photo of the lock if the shape is unusual so we can confirm readable placement across the batch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do matching lock reorders work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After a first run is approved, reorders reuse placement, numbering rules, and mark style so replacement locks match what crews already use. Say it is a reorder, note the new quantity, and flag whether numbering should continue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the laser bed size?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The production bed is 20\" × 28\". Photos of the lock body help confirm fit on small curved surfaces within that work area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after I submit a quantity quote?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We review piece count, material, and artwork or text rules, then reply with a quote you can plan around for batch and reorder work. Incomplete forms (missing quantity or material) slow that down—include those first so facilities, contractors, and OEMs get a usable number faster."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you publish a price list for safety lock engraving?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We do not publish catalogue prices or invent review counts. Submit a quantity quote with set size and numbering rules for a number you can plan around."
+      }
+    }
+  ]
+}
+</script>
 </head>
   <body class="fcl-static">
     
@@ -173,7 +247,7 @@
         <p>Forest City Laser does safety lock engraving and lockout identification marking in London, Ontario. Facilities, contractors, and maintenance teams use engraved locks and matching ID sets so lockout gear stays clear, consistent, and easy to reorder when a station grows.</p>
 
         <h2>Request a Safety Lock Engraving Quote</h2>
-        <p><strong><a class="fcl-cta" href="/#quote">Open the quantity quote form</a></strong>. Include how many locks or tags you need, the text or numbering pattern, and whether this is a first run or a reorder. Photos of the lock body help us confirm fit on the 20" × 28" bed.</p>
+        <p><strong><a class="fcl-cta" href="/#quote">Request a lockout-set quote</a></strong>. Include how many locks or tags you need, the text or numbering pattern, and whether this is a first run or a reorder. Photos of the lock body help us confirm fit on the 20" × 28" bed for facilities and contractor lockout programs.</p>
 
         <h2>Common Safety Lock Jobs</h2>
         <ul>
@@ -194,6 +268,35 @@
           <li>Later reorders reuse the same setup.</li>
         </ol>
 
+<h2>Safety Lock Engraving FAQ</h2>
+        <div class="fcl-faq">
+          <details open>
+            <summary>How do you quote a safety lock engraving job?</summary>
+            <p>Open the <a href="/#quote">quantity quote form</a> and include piece count, numbering or naming rules, and whether this is a first run or a reorder. Photos of the lock body help confirm fit. Quotes depend on quantity, material, and layout—not a published price list. Put set size and numbering rules in the <a href="/#quote">quantity quote form</a> so lockout batches quote without extra email loops.</p>
+          </details>
+          <details>
+            <summary>What materials or surfaces can you engrave on locks?</summary>
+            <p>Most jobs are anodized or coated lock bodies and related lockout tags. Send a photo of the lock if the shape is unusual so we can confirm readable placement across the batch.</p>
+          </details>
+          <details>
+            <summary>How do matching lock reorders work?</summary>
+            <p>After a first run is approved, reorders reuse placement, numbering rules, and mark style so replacement locks match what crews already use. Say it is a reorder, note the new quantity, and flag whether numbering should continue.</p>
+          </details>
+          <details>
+            <summary>What is the laser bed size?</summary>
+            <p>The production bed is 20&quot; × 28&quot;. Photos of the lock body help confirm fit on small curved surfaces within that work area.</p>
+          </details>
+          <details>
+            <summary>What happens after I submit a quantity quote?</summary>
+            <p>We review set size, numbering rules, and lock photos, then reply with a quote for the matching batch. Missing quantity or numbering slows that down—include those first. <a href="/#quote">Open the quantity quote form</a>.</p>
+          </details>
+          <details>
+            <summary>Do you publish a price list for safety lock engraving?</summary>
+            <p>No. We do not publish catalogue prices or invent review counts. Submit a quantity quote with set size and numbering rules for a number you can plan around.</p>
+          </details>
+        </div>
+
+        
         <h2>Related Pages</h2>
         <ul>
           <li><a href="/industrial-laser-engraving-london-ontario/">Industrial laser engraving London Ontario</a></li>
@@ -203,7 +306,7 @@
         </ul>
 
         <h2>Start a Quote</h2>
-        <p><a href="/#quote">Request a quantity quote</a> for safety lock engraving, or browse <a href="/industrial-laser-engraving-london-ontario/">industrial laser engraving</a>.</p>
+        <p><a href="/#quote">Request a batch lockout quote</a> for numbered safety locks and matching ID sets, or browse <a href="/industrial-laser-engraving-london-ontario/">industrial laser engraving</a>.</p>
 
         <nav>
           <a href="/">Home</a>
