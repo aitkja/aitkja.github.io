@@ -33,11 +33,20 @@
     <priority>0.92</priority>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
     <loc>https://forestcitylaser.com/phenolic-nameplates-london-ontario/</loc>
     <lastmod>2026-09-26</lastmod>
     <priority>0.92</priority>
     <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Support / AEO -->
+  <url>
+    <loc>https://forestcitylaser.com/quantity-quotes-reorders-london-ontario/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://forestcitylaser.com/laser-cutting-london-ontario/</loc>
