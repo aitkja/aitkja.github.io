@@ -27,18 +27,18 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://forestcitylaser.com/blog/real-estate-closing-gift-ideas-that-feel-premium-and-repeatable/" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
     <meta property="og:url" content="https://forestcitylaser.com/blog/real-estate-closing-gift-ideas-that-feel-premium-and-repeatable/" />
     <meta property="og:title" content="Real Estate Closing Gift Ideas That Feel Premium and Repeatable | Forest City Laser" />
     <meta property="og:description" content="A practical guide to closing gifts that feel polished, personal, and easy to reorder for real estate professionals." />
-    <meta property="og:image" content="https://forestcitylaser.com/assets/Full_Logo_JPG-DoRNr7u7.jpg" />
+    <meta property="og:image" content="https://forestcitylaser.com/assets/Custom_Cutting_Board-UaRrNgu4.webp" />
     <meta property="og:site_name" content="Forest City Laser" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://forestcitylaser.com/blog/real-estate-closing-gift-ideas-that-feel-premium-and-repeatable/" />
     <meta property="twitter:title" content="Real Estate Closing Gift Ideas That Feel Premium and Repeatable | Forest City Laser" />
     <meta property="twitter:description" content="Closing gift ideas that feel premium without being hard to repeat across multiple clients and deals." />
-    <meta property="twitter:image" content="https://forestcitylaser.com/assets/Full_Logo_JPG-DoRNr7u7.jpg" />
+    <meta property="twitter:image" content="https://forestcitylaser.com/assets/Custom_Cutting_Board-UaRrNgu4.webp" />
 
     <meta name="application-name" content="Forest City Laser" />
 
@@ -69,11 +69,14 @@
     }
     </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7QH9VR6J4"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}    
+      function gtag(){dataLayer.push(arguments);}
       (function(){
         var search = location.search || '';
         try {
@@ -93,73 +96,280 @@
     </script>
 
     <style>
-      .fade-in-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s cubic-bezier(0.39, 0.575, 0.565, 1), transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
+      :root {
+        --fcl-green: #2A4B3A;
+        --fcl-green-dark: #1f382c;
+        --fcl-tan: #C4A484;
+        --fcl-tan-dark: #a88464;
+        --fcl-slate: #1e293b;
+        --fcl-muted: #64748b;
+        --fcl-bg: #f1f5f9;
+        --fcl-card: #ffffff;
       }
-      .fade-in-up.is-visible {
-        opacity: 1;
-        transform: translateY(0);
+      * { box-sizing: border-box; }
+      body.fcl-static {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        color: var(--fcl-slate);
+        background: var(--fcl-bg);
+        line-height: 1.65;
+      }
+      a { color: var(--fcl-green); }
+      a:hover { color: var(--fcl-green-dark); }
+      .fcl-top {
+        position: sticky; top: 0; z-index: 40;
+        background: rgba(255,255,255,.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .fcl-top-inner {
+        max-width: 1100px; margin: 0 auto;
+        padding: 12px 20px;
+        display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      }
+      .fcl-logo img { height: 48px; width: auto; display: block; }
+      .fcl-nav {
+        display: flex; flex-wrap: wrap; gap: 8px 14px; justify-content: flex-end;
+        font-size: .9rem; font-weight: 600;
+      }
+      .fcl-nav a { text-decoration: none; color: var(--fcl-slate); }
+      .fcl-nav a:hover { color: var(--fcl-green); }
+      .fcl-nav a.fcl-nav-cta {
+        background: var(--fcl-green); color: #fff !important;
+        padding: 8px 14px; border-radius: 999px;
+      }
+      .fcl-nav a.fcl-nav-cta:hover { background: var(--fcl-green-dark); }
+      .fcl-hero {
+        background:
+          linear-gradient(125deg, rgba(42,75,58,.92), rgba(30,41,59,.78)),
+          url("/assets/Custom_Cutting_Board-UaRrNgu4.webp") center/cover;
+        color: #fff;
+        padding: 56px 20px 48px;
+      }
+      .fcl-hero-inner { max-width: 1100px; margin: 0 auto; }
+      .fcl-kicker {
+        display: inline-block; font-size: .8rem; font-weight: 700;
+        letter-spacing: .08em; text-transform: uppercase;
+        color: var(--fcl-tan); margin-bottom: 10px;
+      }
+      .fcl-hero h1 {
+        margin: 0 0 12px; font-size: clamp(1.7rem, 3.6vw, 2.35rem);
+        line-height: 1.2; font-weight: 800; max-width: 22ch;
+      }
+      .fcl-hero-lead {
+        max-width: 62ch; margin: 0 0 22px; color: rgba(255,255,255,.92); font-size: 1.05rem;
+      }
+      .fcl-btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+      .fcl-btn {
+        display: inline-block; text-decoration: none; font-weight: 700;
+        padding: 12px 18px; border-radius: 10px;
+      }
+      .fcl-btn-primary { background: var(--fcl-tan); color: #1f2937 !important; }
+      .fcl-btn-primary:hover { background: var(--fcl-tan-dark); color: #111 !important; }
+      .fcl-btn-ghost {
+        background: transparent; color: #fff !important;
+        border: 1px solid rgba(255,255,255,.45);
+      }
+      .fcl-btn-ghost:hover { background: rgba(255,255,255,.1); }
+      .fcl-main {
+        max-width: 1100px; margin: -28px auto 0; padding: 0 20px 48px;
+      }
+      .fcl-card {
+        background: var(--fcl-card);
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, .06);
+        padding: 28px 26px;
+      }
+      .fcl-card h2 {
+        margin: 1.6rem 0 .7rem; font-size: 1.2rem; color: var(--fcl-green);
+      }
+      .fcl-card h2:first-child { margin-top: 0; }
+      .fcl-card h3 {
+        margin: 1.2rem 0 .4rem; font-size: 1.05rem; color: var(--fcl-slate);
+      }
+      .fcl-card ul, .fcl-card ol { padding-left: 1.2rem; }
+      .fcl-card li { margin: .35rem 0; }
+      .fcl-figures {
+        display: grid; gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        margin: 14px 0 6px;
+      }
+      .fcl-figures figure { margin: 0; }
+      .fcl-figures img {
+        width: 100%; height: auto; display: block;
+        border-radius: 12px; border: 1px solid #e2e8f0;
+      }
+      .fcl-figures figcaption {
+        font-size: .85rem; color: var(--fcl-muted); margin-top: 6px;
+      }
+      .fcl-note { color: var(--fcl-muted); font-size: .95rem; margin-top: 1.2rem; }
+      .fcl-footer {
+        background: #e2e8f0f2; color: #334155; margin-top: 24px;
+        border-top: 1px solid #cbd5e1;
+      }
+      .fcl-footer-inner {
+        max-width: 1100px; margin: 0 auto; padding: 36px 20px 28px;
+        display: grid; gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      .fcl-footer h4 { margin: 0 0 12px; color: #0f172a; font-size: .95rem; }
+      .fcl-footer ul { list-style: none; padding: 0; margin: 0; }
+      .fcl-footer li { margin: 0 0 8px; font-size: .9rem; }
+      .fcl-footer a { color: #334155; text-decoration: none; }
+      .fcl-footer a:hover { color: #0f172a; }
+      .fcl-footer-brand { text-align: center; }
+      .fcl-footer-brand img { height: 72px; width: auto; margin: 0 auto 12px; display: block; }
+      .fcl-footer-brand p { font-size: .88rem; margin: 0; color: #475569; }
+      .fcl-copy {
+        max-width: 1100px; margin: 0 auto; padding: 0 20px 24px;
+        font-size: .8rem; color: #64748b;
+      }
+      @media (max-width: 720px) {
+        .fcl-nav { display: none; }
+        .fcl-top-inner { justify-content: center; }
       }
     </style>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Forest City Laser",
-  "description": "Custom engraved closing gifts, branded office pieces, and signage for real estate professionals in London, Ontario.",
-  "url": "https://forestcitylaser.com",
-  "email": "info@forestcitylaser.com"
-}
-</script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/assets/index-fcl-20260911.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-yTKWdhA_.css">
-</head>
-  <body>
-    <div id="root">
-      <section style="display:none">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Real Estate Closing Gift Ideas That Feel Premium and Repeatable",
+      "description": "Premium real estate closing gift ideas that are memorable, branded, and repeatable for agents and brokerages in London, Ontario.",
+      "image": "https://forestcitylaser.com/assets/Custom_Cutting_Board-UaRrNgu4.webp",
+      "author": { "@id": "https://forestcitylaser.com/#organization" },
+      "publisher": { "@id": "https://forestcitylaser.com/#organization" },
+      "mainEntityOfPage": "https://forestcitylaser.com/blog/real-estate-closing-gift-ideas-that-feel-premium-and-repeatable/",
+      "dateModified": "2026-11-09"
+    }
+    </script>
+  </head>
+  <body class="fcl-static">
+
+    <header class="fcl-top">
+      <div class="fcl-top-inner">
+        <a class="fcl-logo" href="/" aria-label="Forest City Laser home">
+          <img src="/assets/Full_Logo-BhyC_fr_.webp" width="288" height="288" alt="Forest City Laser" />
+        </a>
+        <nav class="fcl-nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/real-estate-closing-gifts-signage-london-ontario/">Real Estate</a>
+          <a href="/custom-gifts-london-ontario/">Gifts</a>
+          <a href="/blog/">Blog</a>
+          <a class="fcl-nav-cta" href="/#quote">Get a Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="fcl-hero">
+      <div class="fcl-hero-inner">
+        <div class="fcl-kicker">Real Estate</div>
         <h1>Real Estate Closing Gift Ideas That Feel Premium and Repeatable</h1>
-        <p>The best closing gifts are the ones that feel thoughtful without becoming hard to repeat. For active agents and brokerages, the sweet spot is a gift that looks polished, feels personal, and can be reordered easily across multiple clients during the year.</p>
+        <p class="fcl-hero-lead">Wood, acrylic, and leather pieces an agent can approve once and reorder: what Forest City Laser already makes, and what to send with the quote.</p>
+        <div class="fcl-btn-row">
+          <a class="fcl-btn fcl-btn-primary" href="/real-estate-closing-gifts-signage-london-ontario/">Closing gifts and signage</a>
+          <a class="fcl-btn fcl-btn-ghost" href="/#quote">Quantity quote</a>
+        </div>
+      </div>
+    </section>
 
-        <h2>What Makes a Good Closing Gift</h2>
+    <div class="fcl-main">
+      <article class="fcl-card" id="static-seo">
+        <p>The best closing gifts feel thoughtful without becoming hard to repeat. For active agents and brokerages, that means a piece that looks polished, can take a light personalization, and can be ordered again for the next client. Forest City Laser, in the Riverbend area of London, Ontario, engraves and cuts wood, acrylic, and leather to order. There is no published price list. A quote uses the material, the piece count, and whether you expect to reorder the same setup. This article supports the <a href="/real-estate-closing-gifts-signage-london-ontario/">real estate closing gifts and branded signage</a> page.</p>
+
+        <h2>What Makes a Closing Gift Easy to Repeat</h2>
         <ul>
-          <li>It feels useful or display-worthy, not disposable</li>
-          <li>It can be lightly personalized without needing a whole custom design process every time</li>
-          <li>It reflects the agent or brokerage brand in a tasteful way</li>
-          <li>It is realistic to reorder for future clients</li>
+          <li>It is useful or worth displaying, such as a kitchen board, a desk sign, or a small leather piece.</li>
+          <li>Personalization stays light: one layout, such as a brokerage logo, with a client name or short message that can change.</li>
+          <li>The branding matches the office, so the same mark can sit on a gift and on a desk or open-house piece.</li>
+          <li>The first approved material and artwork are what the next order copies.</li>
         </ul>
+        <p>One-off pieces are still welcome. A design you reorder through the year is the stronger fit, because the layout and material stay locked in.</p>
 
-        <h2>Strong Closing Gift Categories</h2>
-        <ul>
-          <li>Engraved cutting boards and kitchen pieces</li>
-          <li>Branded wood or acrylic home decor</li>
-          <li>Desk pieces and office signs for referrals or team gifts</li>
-          <li>Client thank-you gifts with subtle personalization</li>
-          <li>Matching gift programs for active agents and brokerages</li>
-        </ul>
+        <h2>Wood Cutting Boards</h2>
+        <p>Cutting boards and other wood closing gifts are listed as common reorder items for realtors and teams on the <a href="/wood-laser-engraving-london-on/">wood laser engraving</a> page. The gallery already shows two board formats: a wood paddle board engraved with a name and a short line, and a larger wood board with a small logo. Either format can stay the same from client to client while the name or the line changes. The photos below are those gallery samples.</p>
+        <div class="fcl-figures">
+          <figure>
+            <img src="/assets/Custom_Cutting_Board-UaRrNgu4.webp" width="900" height="900" alt="Wood paddle cutting board laser-engraved with a name and a short line" />
+            <figcaption>Gallery sample: a name and a short line on a wood paddle board.</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/Custom_Etch_to_Cutting_Board-Co6SnTRy.webp" width="900" height="900" alt="Wood cutting board with a small circular logo engraved in one corner" />
+            <figcaption>Gallery sample: a small logo on a larger wood board.</figcaption>
+          </figure>
+        </div>
+        <p>Different woods mark with different contrast. Say whether the piece is for kitchen use, wall display, or an outdoor-adjacent spot. If names change per board, send the full list with the quantity so placement matches across the set. The laser bed is 20 by 28 inches, so the finished board has to fit that working area.</p>
 
-        <h2>Why Repeatability Matters</h2>
-        <p>One-off gifts can still be nice, but the stronger business model is when an agent finds a style that works and reorders it again and again. That creates consistency for the brand and makes the gift process easier over time.</p>
+        <h2>Acrylic Desk Signs and Office Pieces</h2>
+        <p>Desk signs, acrylic name plates, and open-house accents can share branding with the gift line. The gallery includes a black acrylic desk sign engraved with a business name. That matches the desk signs and office pieces already listed on the real estate service page.</p>
+        <div class="fcl-figures">
+          <figure>
+            <img src="/assets/Acrylic%20Desk%20Sign-aZM9155q.webp" width="763" height="763" alt="Black acrylic desk sign laser-engraved with a business name" />
+            <figcaption>Gallery sample: an acrylic desk sign with a business name.</figcaption>
+          </figure>
+        </div>
+        <p>An acrylic quote needs thickness, finished size, quantity, clear or colored stock, and indoor or outdoor use. Say if the edges should stay clear. Vector artwork (SVG, DXF, AI, or PDF) is the useful file when you have one. A logo or a short name can be engraved on the same piece. Details live on <a href="/acrylic-cutting-london-on/">acrylic cutting</a> and <a href="/custom-signage-london-ontario/">custom signage</a>.</p>
 
-        <h2>Explore Related Pages</h2>
+        <h2>Leather Journals, Wallets, and Small Client Gifts</h2>
+        <p>Leather work includes journals, wallets, branded patches, and other client gifts. Send the leather type if you know it, the finished size, the logo or text, the piece count, and the contrast you want. Natural leather varies slightly from piece to piece. A batch still keeps placement and branding consistent. See <a href="/custom-gifts-london-ontario/">custom engraved gifts</a> for the broader gift categories, including a single personalized piece.</p>
+
+        <h2>How to Order the First Set, Then Reorder It</h2>
+        <p>The real estate service page uses this flow:</p>
+        <ol>
+          <li>Approve one design and material, for example a branded cutting board or a desk piece.</li>
+          <li>Order a starter batch for upcoming closings.</li>
+          <li>Reorder that same setup as closings stack up.</li>
+        </ol>
+        <p>The quote form on the home page asks for your name, email, material type, quantity, and a project description. Material choices on the form are wood, acrylic, leather, lamicoid, or other. For these gifts, wood, acrylic, or leather is the relevant choice. In the description, include dimensions, the personalization (a logo, a name list, or a short message), and whether this is a first run or a reorder. The image-reference field can name a gallery item if you used Add to Quote. The same details can go to <a href="mailto:info@forestcitylaser.com">info@forestcitylaser.com</a>.</p>
+        <p>Quotes depend on material, piece count, layout complexity, and setup. There is no catalogue price list, and this article does not promise a delivery date. Hours are Monday to Friday, 9:00 a.m. to 5:00 p.m. Eastern. The shop is in the Riverbend area of London and serves South-Western Ontario.</p>
+        <p>The <a href="/quantity-quotes-reorders-london-ontario/">quantity quotes and reorders</a> guide is written for industrial batches. The same three inputs apply to a gift set: material, the full piece count, and whether the job repeats. After a first run is approved, say that the next request is a reorder and note any change in quantity so the next pieces match the approved layout.</p>
+
+        <h2>Request a Quote</h2>
+        <p><strong><a class="fcl-btn fcl-btn-primary" href="/#quote">Request a quantity quote</a></strong> and include the material, the full piece count, and whether you will reorder. For the service overview, use <a href="/real-estate-closing-gifts-signage-london-ontario/">real estate closing gifts and branded signage</a>.</p>
+        <p class="fcl-note">The live quote form is on the home page. It is the same form used by the other service pages.</p>
+
+        <h2>Related Pages</h2>
         <ul>
           <li><a href="/real-estate-closing-gifts-signage-london-ontario/">Real estate closing gifts and branded signage</a></li>
           <li><a href="/custom-gifts-london-ontario/">Custom engraved gifts</a></li>
           <li><a href="/wood-laser-engraving-london-on/">Wood laser engraving</a></li>
+          <li><a href="/acrylic-cutting-london-on/">Acrylic cutting</a></li>
+          <li><a href="/custom-signage-london-ontario/">Custom signage</a> for office and open-house pieces</li>
+          <li><a href="/quantity-quotes-reorders-london-ontario/">Quantity quotes and reorders</a></li>
         </ul>
-      </section>
+      </article>
     </div>
+
+    <footer class="fcl-footer">
+      <div class="fcl-footer-inner">
+        <div class="fcl-footer-brand">
+          <img src="/assets/Full_Logo-BhyC_fr_.webp" width="288" height="288" alt="Forest City Laser Full Logo" />
+          <p>Custom laser engraving and cutting for wood, acrylic, and leather in London, Ontario. Based in Riverbend, serving all of South-Western Ontario.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#quote">Request Quote</a></li>
+            <li><a href="/real-estate-closing-gifts-signage-london-ontario/">Real Estate Gifts</a></li>
+            <li><a href="/custom-gifts-london-ontario/">Custom Gifts</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul>
+            <li>Email: <a href="mailto:info@forestcitylaser.com">info@forestcitylaser.com</a></li>
+            <li>Location: <a href="https://maps.app.goo.gl/ZbxY5A2rgm2Le6Dq6" target="_blank" rel="noopener noreferrer">London, ON (Riverbend)</a></li>
+            <li><a href="https://www.instagram.com/forestcitylaser/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61580529627577" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="fcl-copy">&copy; 2026 Forest City Laser. All rights reserved.</p>
+    </footer>
+
     <script type="text/javascript">
       var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
       (function(){
