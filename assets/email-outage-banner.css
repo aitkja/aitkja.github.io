@@ -1,0 +1,60 @@
+/* TEMP EMAIL OUTAGE BANNER
+   One shared stylesheet for the temporary info@forestcitylaser.com outage.
+   Remove this file and every <!-- TEMP EMAIL OUTAGE BANNER --> block
+   when that mailbox is receiving mail again. */
+.fcl-email-outage {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  background: #f6c445;
+  color: #1a2e24;
+  border-bottom: 3px solid #2a4b3a;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  text-align: center;
+  overflow-wrap: break-word;
+  /* Above the page wash and sticky headers (z-index 40–50) so the
+     amber stays solid and the notice is not covered. */
+  position: relative;
+  z-index: 60;
+}
+
+/* The gallery viewer is full-screen. Drop back under it so its close
+   control stays reachable. */
+body:has(.fixed.inset-0.z-50) .fcl-email-outage {
+  position: static;
+  z-index: auto;
+}
+
+.fcl-email-outage a {
+  color: #1a2e24;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+
+.fcl-email-outage a:hover,
+.fcl-email-outage a:focus-visible {
+  color: #0d1c16;
+}
+
+.fcl-email-outage a:focus-visible {
+  outline: 2px solid #1a2e24;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (max-width: 420px) {
+  .fcl-email-outage {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.75rem;
+  }
+}
